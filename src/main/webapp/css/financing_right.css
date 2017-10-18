@@ -1,0 +1,54 @@
+.right{
+  margin: 5px;
+  width: 85%;
+  height: 473px;
+  float: left;
+  font-size: 22px;
+}
+.right-serch {
+    width: 800px;
+    height: 30px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+.right-serch #date{
+  width: 150px;
+    height: 25px;
+    font-size: 18px;
+    line-height: 25px;
+}
+.right-serch #account{
+  width: 150px;
+    height: 25px;
+    font-size: 18px;
+    line-height: 25px;
+}
+.right-serch #money{
+  width: 150px;
+    height: 25px;
+    font-size: 18px;
+    line-height: 25px;
+}
+.right-serch button {
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+}
+.roll-in-table{
+    position: relative;
+    text-align: center;
+    top: 20px;
+}
+.roll-in-table table{
+  width: 900px;
+  border-color: #EFF0EF;
+}
+.roll-in-table th{
+    height: 35px;
+    font-weight: 500;
+    background: #EFF0EF;
+}
+.roll-in-table .th1{
+  text-align: left;
+}
