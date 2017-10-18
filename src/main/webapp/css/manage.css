@@ -1,0 +1,113 @@
+body{
+	margin: 10px 10px 0 10px;
+	padding: 0;
+	background:#FFEC8B;
+}
+.head-1{
+	height: 80px;
+	background:#8B814C;
+	font-size: 25px;
+}
+#logo{
+	height: 80px;
+}
+.top-span-1{
+    float: right;
+    margin-right: 10px;
+    line-height: 80px;
+    text-decoration: none;
+}
+.head-2{
+	height: 40px;
+	font-size: 25px;
+	background: #FFFF00;
+}
+.top-span-2{
+    margin-right: 10px;
+    line-height: 40px;
+    text-decoration: none;
+}
+.left{
+	margin: 5px;
+	width: 15%;
+	height: 473px;
+	background:#CDCDB4;
+	float: left;
+	text-align: center;
+	font-size: 25px;
+	position: absolute;
+}
+.left-hr{
+	position: relative;
+    top: -14px;
+}
+.left-hr a{
+	text-decoration: none;
+	color: #000;
+}
+.right{
+	margin: 5px;
+	width: 85%;
+	height: 473px;
+	float: right;
+	font-size: 22px;
+}
+.right-serch {
+    width: 800px;
+    height: 30px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+.right-serch #date{
+	width: 150px;
+    height: 25px;
+    font-size: 18px;
+    line-height: 25px;
+}
+.right-serch #account{
+	width: 150px;
+    height: 25px;
+    font-size: 18px;
+    line-height: 25px;
+}
+.right-serch #money{
+	width: 150px;
+    height: 25px;
+    font-size: 18px;
+    line-height: 25px;
+}
+.right-serch button {
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+}
+.roll-in-table{
+    position: relative;
+    text-align: center;
+    top: 20px;
+}
+.roll-in-table table{
+	width: 1100px;
+	border-color: #EFF0EF;
+}
+.roll-in-table th{
+    height: 35px;
+    font-weight: 500;
+    background: #EFF0EF;
+}
+.roll-in-table .th1{
+	text-align: left;
+}
+
+.footer{
+	height: 25px;
+	background:#8B814C;
+	clear: both;
+	font-size: 18px;
+}
+.content{
+	height: 25px;
+	width: 215px;
+	float: right;
+}

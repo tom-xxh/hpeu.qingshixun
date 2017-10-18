@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="findUsers" class="userAction" method="findUsers">
+            <result name="list">/WEB-INF/jsp/list.jsp</result>
+        </action>
+        
+          <action name="delete" class="userAction" method="delete">
+            <result name="succeed">/WEB-INF/jsp/list.jsp</result>
+        </action>
+        
+        <action name="update" class="userAction" method="update">
+            <result name="succeed">/WEB-INF/jsp/list.jsp</result>
+        </action>
+        
+        <!-- 转入信息显示页面 -->
+        <action name="findTransferInInfos" class="TransferInAction" method="findTransferInInfos">
+            <result name="succeed">/WEB-INF/jsp/transferIn.jsp</result>
+        </action>
+        <!-- 转出信息显示页面 -->
+        <action name="findTransferOutInfos" class="TransferOutAction" method="findTransferOutInfos">
+            <result name="succeed">/WEB-INF/jsp/transferOut.jsp</result>
+        </action>
+        <!-- 收益信息显示页面 -->
+        <action name="findEarningsInfos" class="EarningsAction" method="findEarningsInfos">
+            <result name="succeed">/WEB-INF/jsp/earnings.jsp</result>
+        </action>
+    </package>
+</struts>
