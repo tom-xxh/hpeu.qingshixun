@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/jquery.luara.0.0.1.min.js"></script>
 <title>Index</title>
@@ -14,7 +15,7 @@
 <body>
 	<div class="top">
 		<div class="right">
-			<a href="index.html">首页</a>&nbsp;&nbsp; <a href="usermodelpages/personalInformation.html">投资</a>&nbsp;&nbsp;
+			<a href="index.jsp">首页</a>&nbsp;&nbsp; <a href="usermodelpages/personalInformation.jsp">投资</a>&nbsp;&nbsp;
 			<a href="#">理财</a>&nbsp;&nbsp; <a id="L">登录</a>&nbsp;&nbsp;
 			<a id="R">注册</a>
 		</div>
@@ -238,5 +239,4 @@
 		</div>
 	</div>
 </body>
-
 </html>

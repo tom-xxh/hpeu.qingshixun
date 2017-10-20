@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html lang="zh">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>用户模块</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>用户界面</title>
 <link rel="stylesheet" type="text/css" href="../css/person.css">
 <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
 </head>
@@ -17,7 +18,7 @@
 				</div>
 				<!-- <div class="title">理财精灵</div> -->
 				<div class="exit">
-					<a href="../index.html">退出</a>
+					<a href="../index.jsp">退出</a>
 				</div>
 				<div class="help">
 					<a href="#">帮助</a>
@@ -25,22 +26,28 @@
 			</div>
 			<div class="top-down">
 				<li id="back"><a href="#" id="check">个人信息管理</a></li>
-				<li><a href="../managemodelpages/manage_moule.html" id="check">理财产品管理</a></li>
+				<li><a href="../managemodelpages/manage_moule.jsp" id="check">理财产品管理</a></li>
 			</div>
 			<div class="left">
 				<div class="first" id="first">
 					<div class="first-menu" id="first-menu1">个人信息查看</div>
 					<div class="first-menu-down" id="first-menu1-down">
-						<li><a href="myInformation.html" target="myIframe">个人信息查看</a></li>
+						<li><a href="myInformation.jsp" target="myIframe">个人信息查看</a></li>
 					</div>
 					<div class="first-menu" id="first-menu2">银行卡管理</div>
 					<div class="first-menu-down" id="first-menu2-down">
-						<li><a href="addCard.html" target="myIframe">银行卡添加</a></li>
-						<li><a href="deleteCard.html" target="myIframe">银行卡解绑</a></li>
+						<li><a href="addCard.jsp" target="myIframe">银行卡添加</a></li>
+						<li>
+							<form id="deleteCard" action="deleteBankcardAction">
+								<button type="submit">
+									<a href="#" target="myIframe">银行卡解绑</a>
+								</button>
+							</form>
+						</li>
 					</div>
 					<div class="first-menu" id="first-menu3">个人信息修改</div>
 					<div class="first-menu-down" id="first-menu3-down">
-						<li><a href="EditInformation.html" target="myIframe">个人信息修改</a></li>
+						<li><a href="EditInformation.jsp" target="myIframe">个人信息修改</a></li>
 					</div>
 				</div>
 			</div>
@@ -79,5 +86,4 @@
 		});
 	</script>
 </body>
-
 </html>

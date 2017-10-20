@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>转入金额</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>转入查询</title>
 	<link rel="stylesheet" type="text/css" href="../css/financing_right.css">
 </head>
 
 <body>
 	<div class="right">
 		<div class="right-serch">
-            <form action="TransferInAction" method="post">
-                <label>请选择银行卡账号:</label>
-                <input type="text" id="account" name="account">
-                <label>请输入转入金额:</label>
-                <input type="text" id="money" name="money">
-                <button type="submit">转入</button>
+            <form action="#" method="post">
+                <label for="date">时间:</label>
+                <input type="text" id="date" name="date"> ——
+                <input type="text" id="date" name="date">
+                <button type="submit">查询</button>
             </form>
             
 			<div class="roll-in-table">
@@ -33,19 +34,19 @@
                             <td class="th1">
                                 <input type="checkbox" name="checkboxItem">2017/10/1 9:20:30</td>
                             <td>1000</td>
-                            <td>XXX1234账号转入1000元</td>
+                            <td>转入123账号1000元</td>
                         </tr>
                         <tr>
                             <td class="th1">
                                 <input type="checkbox" name="checkboxItem">2017/10/2 15:20:30</td>
                             <td>2000</td>
-                            <td>XXX2345账号转入2000元</td>
+                            <td>转入234账号2000元</td>
                         </tr>
                         <tr>
                             <td class="th1">
                                 <input type="checkbox" name="checkboxItem">2017/10/3 20:20:30</td>
                             <td>3000</td>
-                            <td>XXX4567账号转入3000元</td>
+                            <td>转入456账号3000元</td>
                         </tr>
                     </tbody>
             	</table>

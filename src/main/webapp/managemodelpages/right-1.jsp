@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>理财模块-转出金额转账界面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>转入金额</title>
 	<link rel="stylesheet" type="text/css" href="../css/financing_right.css">
 </head>
+
 <body>
 	<div class="right">
 		<div class="right-serch">
             <form action="#" method="post">
-                <label>请选择银行卡账号:</label>
+                <label>转入账号:</label>
                 <input type="text" id="account" name="account">
-                <label>请输入转出金额:</label>
+                <label>转入金额:</label>
                 <input type="text" id="money" name="money">
-                <button type="submit">转出</button>
+                <button type="submit">转入</button>
             </form>
             
 			<div class="roll-in-table">
@@ -23,7 +26,7 @@
                         	<th class="th1">
                                  <input type="checkbox" name="checkboxItem" id="choice">日期
                             </th>
-                        	<th>转出金额</th>
+                        	<th>转入金额</th>
                         	<th>详细信息</th>
                 		</tr>
             		</thead>
@@ -32,19 +35,19 @@
                             <td class="th1">
                                 <input type="checkbox" name="checkboxItem">2017/10/1 9:20:30</td>
                             <td>1000</td>
-                            <td>转出1000元到XXX1234账号</td>
+                            <td>转入123账号1000元</td>
                         </tr>
                         <tr>
                             <td class="th1">
                                 <input type="checkbox" name="checkboxItem">2017/10/2 15:20:30</td>
                             <td>2000</td>
-                            <td>转出2000元到XXX2345账号</td>
+                            <td>转入234账号2000元</td>
                         </tr>
                         <tr>
                             <td class="th1">
                                 <input type="checkbox" name="checkboxItem">2017/10/3 20:20:30</td>
                             <td>3000</td>
-                            <td>转出3000元到XXX4567账号</td>
+                            <td>转入456账号3000元</td>
                         </tr>
                     </tbody>
             	</table>
