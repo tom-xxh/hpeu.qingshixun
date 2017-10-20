@@ -23,6 +23,39 @@ body {
     margin: 0 auto;
 }
 
+span{
+    position: absolute;
+     right: 17px;
+padding: 1em 0em 1em 0.5em;
+color: #ea6153;
+color: #ea6153;
+font-size: 18px;
+pointer-events: none;
+visibility: hidden;
+color: #ea6153;
+}
+.error_msg {
+top: 29%;
+}
+.error_msg2 {
+top: 42%;
+}
+.error_msg3{
+        top: 68%;
+}
+.error_msgone {
+        right: 42px;
+        top: 23%;
+}
+.error_msg2one {
+        right: 42px;
+        top: 36%;
+}
+.error_msg3oen{
+        right: 42px;    
+        top: 62%;
+}
+
 .top {
     width: 100%;
     margin: 0 auto;

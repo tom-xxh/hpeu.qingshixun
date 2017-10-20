@@ -4,6 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+<<<<<<< Updated upstream
 	<package name="default" namespace="/" extends="struts-default">
 		<action name="findUsers" class="userAction" method="findUsers">
 			<result name="list">/WEB-INF/jsp/list.jsp</result>
@@ -47,4 +48,41 @@
 			<result name="succeed">/WEB-INF/jsp/earnings.jsp</result>
 		</action>
 	</package>
+=======
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="findUsers" class="userAction" method="findUsers">
+            <result name="list">/WEB-INF/jsp/list.jsp</result>
+        </action>
+        
+          <action name="delete" class="userAction" method="delete">
+            <result name="succeed">/WEB-INF/jsp/list.jsp</result>
+        </action>
+        
+        <action name="update" class="userAction" method="update">
+            <result name="succeed">/WEB-INF/jsp/list.jsp</result>
+        </action>
+        
+        <!-- 转入信息显示页面 -->
+        <action name="findTransferInInfos" class="TransferInAction" method="findTransferInInfos">
+            <result name="succeed">/WEB-INF/jsp/transferIn.jsp</result>
+        </action>
+        <!-- 转出信息显示页面 -->
+        <action name="findTransferOutInfos" class="TransferOutAction" method="findTransferOutInfos">
+            <result name="succeed">/WEB-INF/jsp/transferOut.jsp</result>
+        </action>
+        <!-- 收益信息显示页面 -->
+        <action name="findEarningsInfos" class="EarningsAction" method="findEarningsInfos">
+            <result name="succeed">/WEB-INF/jsp/earnings.jsp</result>
+        </action>
+                <!-- 添加用户显示页面 -->
+        <action name="add" class="userAction" method="add">
+            <result name="add">/index.html</result>
+        </action>
+                <!-- 登录页面显示页面 -->
+        <action name="login" class="userAction" method="login">
+            <result name="login">/usermodelpages/personalInformation.html</result>
+            <result name="error">/index.html</result>
+        </action>
+    </package>
+>>>>>>> Stashed changes
 </struts>

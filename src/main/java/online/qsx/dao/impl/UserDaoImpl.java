@@ -25,4 +25,21 @@ public class UserDaoImpl {
 	public void updateUserModel(UserModel userModel) {
 		baseDao.getHibernateTemplate().delete(userModel);
 	}
+	
+	//增加
+			public void addUserMode(UserModel userModel){
+				baseDao.getHibernateTemplate().save(userModel);
+			}
+		//登录查询
+			@SuppressWarnings("unchecked")
+			public List<UserModel> findUserModel(String name,String password){
+				@SuppressWarnings("unused")
+				String  hql="from UserModel UM where UM.name=? and UM.password=?";
+			
+				List<UserModel> id= (List<UserModel>) baseDao.getHibernateTemplate().find(hql,new String[]{name, password});
+				for (UserModel userModel : id) {
+					System.out.println("1231"+id.toString());
+				}
+				return id;
+			}
 }
