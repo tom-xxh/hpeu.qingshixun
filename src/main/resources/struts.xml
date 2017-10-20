@@ -18,7 +18,7 @@
         </action>
         
         <!-- 转入信息显示页面 -->
-        <action name="findTransferInInfos" class="TransferInAction" method="findTransferInInfos">
+        <action name="TransferInAction" class="TransferInAction" method="findTransferInInfos">
             <result name="succeed">/WEB-INF/jsp/transferIn.jsp</result>
         </action>
         <!-- 转出信息显示页面 -->
