@@ -50,7 +50,7 @@ public class UserAction {
 	}
 	//登录查询
 	public String login(){
-		System.out.println("最后的index：");
+		System.out.println("最后的index："+index);
 		List<UserModel> list = userServerImpl.findUserModel(userModel.getName(), userModel.getPassword());
 		for (UserModel userModel : list) {
 			index= userModel.getId();
