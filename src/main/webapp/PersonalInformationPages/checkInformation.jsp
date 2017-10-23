@@ -29,7 +29,7 @@
 								<tr>
 									<td>ID</td>
 									<td>姓名</td>
-									<td>用户名</td>
+									<td>身份证号</td>
 									<td>密码</td>
 									<td>邮箱</td>
 									<td>操作</td>
@@ -38,8 +38,8 @@
 							<tbody>
 								<tr>
 									<td>${userModel.id}</td>
-									<td>${userModel.name}</td>
-									<td>${userModel.username}</td>
+									<td>${userModel.phonenumber}</td>
+									<td>${userModel.IDcard}</td>
 									<td>${userModel.password}</td>
 									<td>${userModel.email}</td>
 									<td><a href="#">修改</a> <a href="#">详细</a></td>
@@ -53,5 +53,4 @@
 	</div>
 	</div>
 </body>
-
 </html>

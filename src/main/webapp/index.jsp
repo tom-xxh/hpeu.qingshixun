@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,69 +15,81 @@
 <body>
 	<div class="top">
 		<div class="right">
-			<a href="index.jsp">首页</a>&nbsp;&nbsp; <a href="usermodelpages/personalInformation.jsp">投资</a>&nbsp;&nbsp;
-			<a href="#">理财</a>&nbsp;&nbsp; <a id="L">登录</a>&nbsp;&nbsp;
+			<a href="index.jsp">首页</a>&nbsp;&nbsp; <a
+				href="PersonalInformationPages/checkInformation.jsp">投资</a>&nbsp;&nbsp;
+			<a href="info?userModel.id=1">理财</a>&nbsp;&nbsp; <a id="L">登录</a>&nbsp;&nbsp;
 			<a id="R">注册</a>
 		</div>
 		<div id="wrapper">
 			<div id="login" class="animate form">
-			<form action="login" method="post">
-                        <h1>
-                                <img src="images/logo3.png">
-                            </h1>
-                        <p>
-                            <label for="username" class="uname" data-icon="u">用户名</label>
-                            <input id="username" name="userModel.name" required="required" type="text" placeholder="请输入用户名" />
-                        </p>
-                        <p>
-                            <label for="password" class="youpasswd" data-icon="p"> 密码 </label>
-                            <input id="password" name="userModel.password" required="required" type="password" placeholder="请输入密码" />
-                        </p>
-                        <p class="keeplogin">
-                            <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
-                            <label for="loginkeeping">记住密码</label>
-                        </p>
-                       <p class="login button">
+				<a class="aflate" id="Alogin">x</a>
+				<form action="userLogin" method="post">
+					<h1>
+						<img src="images/logo3.png">
+					</h1>
+					<p>
+						<label for="username" class="uname" data-icon="u">用户名</label> <input
+							id="username" name="userModel.name" required="required"
+							type="text" placeholder="请输入用户名" />
+					</p>
+					<p>
+						<label for="password" class="youpasswd" data-icon="p"> 密码
+						</label> <input id="password" name="userModel.password"
+							required="required" type="password" placeholder="请输入密码" />
+					</p>
+					<p class="keeplogin">
+						<input type="checkbox" name="loginkeeping" id="loginkeeping"
+							value="loginkeeping" /> <label for="loginkeeping">记住密码</label>
+					</p>
+					<p class="login button">
 						<input type="submit" value="登录" class="submit" />
 					</p>
 					<p class="change-link">
 						没有账号 ? <a href="#" class="to-register">注册</a>
-					</p>                    </form>
-                </div>
-             <div id="register" class="animate form">
-                    <form  action="add" method="post">
-                        <h1>
-                         <img src="images/logo3.png"> 
-                        </h1>
-                        <p>
-                            <label for="usernamesignup" class="uname" data-icon="u">用户名</label>
-                            <input id="usernamesignup" name="userModel.name" required="required" type="text" placeholder="请输入用户名" />
-                            <span id="spannameOne" class="error_msgone">您输入的用户名已存,在请重新输入</span>
-                            <span id="spanname" class="error_msg">X</span>
-                        </p>
-                        <p>
-                            <label for="emailsignup" class="youmail" data-icon="e"> 邮箱地址</label>
-                            <input id="emailsignup" name="userModel.email" required="required" type="email" placeholder="请输入邮箱地址" />
-                             <span id="spanemailOne" class="error_msg2one">您输入的邮箱有误,在请重新输入</span>
-                            <span id="spanemail" class="error_msg2">X</span>
-                        </p>
-                        <p>
-                            <label for="passwordsignup"  class="youpasswd" data-icon="p">密码 </label>
-                            <input id="passwordsignup" name="userModel.password" required="required" type="password" placeholder="请输入密码" />
-                        </p>
-                        <p>
-                            <label for="passwordsignup-confirm" class="youpasswd" data-icon="p">重复密码 </label>
-                            <input id="passwordsignup-confirm" name="passwordsignup-confirm" required="required" type="password" placeholder="请输入密码" />
-                            <span id="passwordSpanOne" class="error_msg3oen">您输入的密码有误,在请重新输入</span>
-                            <span id="passwordSpan" class="error_msg3">X</span>
-                        </p>
-                       <p class="signin button">
+					</p>
+				</form>
+			</div>
+			<div id="register" class="animate form">
+				<a class="aflate" id="Alogin">x</a>
+				<form action="add" method="post">
+					<h1>
+						<img src="images/logo3.png">
+					</h1>
+					<p>
+						<label for="usernamesignup" class="uname" data-icon="u">用户名</label>
+						<input id="usernamesignup" name="userModel.name"
+							required="required" type="text" placeholder="请输入用户名" /> <span
+							id="spannameOne" class="error_msgone">您输入的用户名已存,在请重新输入</span> <span
+							id="spanname" class="error_msg">X</span>
+					</p>
+					<p>
+						<label for="emailsignup" class="youmail" data-icon="e">
+							邮箱地址</label> <input id="emailsignup" name="userModel.email"
+							required="required" type="email" placeholder="请输入邮箱地址" /> <span
+							id="spanemailOne" class="error_msg2one">您输入的邮箱有误,在请重新输入</span> <span
+							id="spanemail" class="error_msg2">X</span>
+					</p>
+					<p>
+						<label for="passwordsignup" class="youpasswd" data-icon="p">密码
+						</label> <input id="passwordsignup" name="userModel.password"
+							required="required" type="password" placeholder="请输入密码" />
+					</p>
+					<p>
+						<label for="passwordsignup-confirm" class="youpasswd"
+							data-icon="p">重复密码 </label> <input id="passwordsignup-confirm"
+							name="passwordsignup-confirm" required="required" type="password"
+							placeholder="请输入密码" /> <span id="passwordSpanOne"
+							class="error_msg3oen">您输入的密码有误,在请重新输入</span> <span
+							id="passwordSpan" class="error_msg3">X</span>
+					</p>
+					<p class="signin button">
 						<input type="submit" value="注册" />
-					</p>                                            </form>
-                        <p class="change-link">
-						已有账号 ? <a href="#" class="to-login"> 直接登录 </a>
-					</p>                
-				</div>           
+					</p>
+				</form>
+				<p class="change-link">
+					已有账号 ? <a href="#" class="to-login"> 直接登录 </a>
+				</p>
+			</div>
 		</div>
 	</div>
 	<div class="log">
@@ -100,77 +112,144 @@
 		</div>
 		<!--Luara图片切换骨架end-->
 		<script>
-			$(document).ready(function() {
-				$('#L').on('click', function() {
-					if ($("#login").css("display") == "none") {
-						$('#login').css("display", 'block');
-						$('#register').css("display", 'none');
-					}
-				});
-				$('#R').on('click', function() {
-					if ($("#register").css("display") == "none") {
-						$('#register').css("display", 'block');
-						$('#login').css("display", 'none');
-					}
-				});
-				$('.to-login').on('click', function() {
-					if ($("#login").css("display") == "none") {
-						$('#login').css("display", 'block');
-						$('#register').css("display", 'none');
-					}
-				});
-				$('.to-register').on('click', function() {
-					if ($("#register").css("display") == "none") {
-						$('#register').css("display", 'block');
-						$('#login').css("display", 'none');
-					}
-				});
-				$('.close').on('click', function() {
-					$('#register').css("display", 'none');
-					$('#login').css("display", 'none');
-				});
-				<!--调用Luara示例-->
-				$(".example").luara({
-					width : "1250",
-					height : "400",
-					interval : 4500,
-					selected : "seleted",
-					deriction : "left"
-				});
-				
-				<!--注册账户示例-->
-				  $('#usernamesignup').on("blur",function(){
-		                if ($('#usernamesignup').val().length<6) {
-		                     $('#spannameOne').css('visibility', 'visible');
-		                $('#spanname').css('visibility', 'visible');
-		                    }else{
-		                 $('#spannameOne').css('visibility', 'hidden');
-		                 $('#spanname').css('visibility', 'hidden');
-		                 }
-		         })
-				<!--注册邮箱示例-->
-		            $('#emailsignup').on("blur",function(){
-		                if ($('#emailsignup').val().indexOf('@')==-1) {
-		                    $('#spanemailOne').css('visibility', 'visible');
-		                    $('#spanemail').css('visibility', 'visible');
-		                 }else{
-		                    $('#spanemailOne').css('visibility', 'hidden');
-		                 $('#spanemail').css('visibility', 'hidden');
-		                 }
-		             })
-		             
-		             <!--注册密码示例-->
-		            $('#passwordsignup-confirm').on("blur",function(){
-		                if($('#passwordsignup-confirm').val()==$('#passwordsignup').val()){
-		                    $('#passwordSpanOne').css('visibility', 'hidden');
-		                          $('#passwordSpan').css('visibility', 'hidden');
-		                }else{
-		                       $('#passwordSpanOne').css('visibility', 'visible');
-		                             $('#passwordSpan').css('visibility', 'visible');
-		                 }
-		             })
-				
-			})
+			$(document)
+					.ready(
+							function() {
+								$('#L').on('click', function() {
+									if ($("#login").css("display") == "none") {
+										$('#login').css("display", 'block');
+										$('#register').css("display", 'none');
+									}
+								});
+								$('#R').on('click', function() {
+													if ($("#register").css(
+															"display") == "none") {
+														$('#register').css(
+																"display",
+																'block');
+														$('#login').css(
+																"display",
+																'none');
+													}
+												});
+								$('.to-login').on('click', function() {
+									if ($("#login").css("display") == "none") {
+										$('#login').css("display", 'block');
+										$('#register').css("display", 'none');
+									}
+								});
+								$('.to-register')
+										.on(
+												'click',
+												function() {
+													if ($("#register").css(
+															"display") == "none") {
+														$('#register').css(
+																"display",
+																'block');
+														$('#login').css(
+																"display",
+																'none');
+													}
+												});
+								$('.close').on('click', function() {
+									$('#register').css("display", 'none');
+									$('#login').css("display", 'none');
+								});
+								<!--调用Luara示例-->
+								$(".example").luara({
+									width : "1250",
+									height : "400",
+									interval : 4500,
+									selected : "seleted",
+									deriction : "left"
+								});
+
+								<!--注册账户示例-->
+								$('#usernamesignup')
+										.on(
+												"blur",
+												function() {
+													if ($('#usernamesignup')
+															.val().length < 6) {
+														$('#spannameOne').css(
+																'visibility',
+																'visible');
+														$('#spanname').css(
+																'visibility',
+																'visible');
+													} else {
+														$('#spannameOne').css(
+																'visibility',
+																'hidden');
+														$('#spanname').css(
+																'visibility',
+																'hidden');
+													}
+												})
+								<!--注册邮箱示例-->
+								$('#emailsignup')
+										.on(
+												"blur",
+												function() {
+													if ($('#emailsignup').val()
+															.indexOf('@') == -1) {
+														$('#spanemailOne').css(
+																'visibility',
+																'visible');
+														$('#spanemail').css(
+																'visibility',
+																'visible');
+													} else {
+														$('#spanemailOne').css(
+																'visibility',
+																'hidden');
+														$('#spanemail').css(
+																'visibility',
+																'hidden');
+													}
+												})
+
+								<!--注册密码示例-->
+								$('#passwordsignup-confirm')
+										.on(
+												"blur",
+												function() {
+													if ($(
+															'#passwordsignup-confirm')
+															.val() == $(
+															'#passwordsignup')
+															.val()) {
+														$('#passwordSpanOne')
+																.css(
+																		'visibility',
+																		'hidden');
+														$('#passwordSpan').css(
+																'visibility',
+																'hidden');
+													} else {
+														$('#passwordSpanOne')
+																.css(
+																		'visibility',
+																		'visible');
+														$('#passwordSpan').css(
+																'visibility',
+																'visible');
+													}
+												})
+								/* $('#Alogin').on('click', function() {
+
+									$('#login').css("visibility", 'hidden');
+
+								}); */
+								// 								$('#Aregister').on('click', function() {
+								// 									$('#register').css("visibility", 'hidden');
+								// 								});
+								$('.aflate').on('click', function() {
+									$('#register').css("display", 'none');
+									$('#login').css("display", 'none');
+								});
+							})
 		</script>
 	</div>
 	<div class="hxd_data">

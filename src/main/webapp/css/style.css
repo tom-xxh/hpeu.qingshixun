@@ -364,3 +364,10 @@ li {
     line-height: 20px;
     font-size: 14px;
 }
+.aflate{
+  margin: 0;
+  float:right;
+  color: #FF870C;
+  font-size: 24;
+  cursor: pointer;
+}

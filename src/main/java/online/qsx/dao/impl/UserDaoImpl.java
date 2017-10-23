@@ -33,11 +33,11 @@ public class UserDaoImpl {
 	// 登录查询
 	@SuppressWarnings("unchecked")
 	public List<UserModel> findUserModel(String name, String password) {
+		System.out.println("1231");
 		@SuppressWarnings("unused")
 		String hql = "from UserModel UM where UM.name=? and UM.password=?";
 
-		List<UserModel> id = (List<UserModel>) baseDao.getHibernateTemplate().find(hql,
-				new String[] { name, password });
+		List<UserModel> id = (List<UserModel>) baseDao.getHibernateTemplate().find(hql,new String[] { name, password });
 		for (UserModel userModel : id) {
 			System.out.println("1231" + id.toString());
 		}

@@ -27,6 +27,7 @@ public class UserAction {
 		
 	public String info() {
 		userModel=userServerImpl.getUser(userModel);
+		System.out.println("-----"+userModel.getId());
 		return "info";
 	}
 

@@ -31,6 +31,7 @@ public class UserServerImpl {
 
 	// 查询
 	public List<UserModel> findUserModel(String name, String password) {
+		System.out.print("XXXXXX");
 		List<UserModel> list = userDaoImpl.findUserModel(name, password);
 
 		return list;
