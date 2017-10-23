@@ -24,4 +24,8 @@ public class UserServerImpl {
 	public void updateUserModel(UserModel userModel) {
 		userDaoImpl.updateUserModel(userModel);
 	}
+	
+	public UserModel getUser(UserModel userModel) {
+		return userDaoImpl.getUser(userModel);
+	}
 }

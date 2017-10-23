@@ -25,4 +25,8 @@ public class UserDaoImpl {
 	public void updateUserModel(UserModel userModel) {
 		baseDao.getHibernateTemplate().delete(userModel);
 	}
+	
+	public UserModel getUser(UserModel userModel) {
+		 return baseDao.getHibernateTemplate().get(UserModel.class, userModel.getId());
+	}
 }

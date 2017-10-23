@@ -19,7 +19,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/test"/>
         <property name="username" value="root"/>
-        <property name="password" value="txd19931018txd"/>
+        <property name="password" value="abc123"/>
     </bean>
     
     <!-- hibernate -->

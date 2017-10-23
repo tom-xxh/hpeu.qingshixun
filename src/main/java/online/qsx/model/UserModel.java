@@ -16,11 +16,26 @@ public class UserModel {
 	@Column(name = "ID")
 	private long id;
 
-	@Column(name = "NAME")
+	@Column(name = "name")
 	private String name;
+	
+	@Column(name = "username")
+	private String username;
+	
+	@Column(name = "password")
+	private String password;
+	
+	@Column(name = "repeatPassword")
+	private String repeatPassword;
 
 	@Column(name = "AGE")
 	private int age;
+
+	@Column(name = "idCard")
+	private String idCard;
+
+	@Column(name = "email")
+	private String email;
 
 	public long getId() {
 		return id;
@@ -46,9 +61,51 @@ public class UserModel {
 		this.age = age;
 	}
 
-	@Override
-	public String toString() {
-		return "UserModel [id=" + id + ", name=" + name + ", age=" + age + "]";
+	public String getIdCard() {
+		return idCard;
 	}
 
+	public void setIdCard(String idCard) {
+		this.idCard = idCard;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRepeatPassword() {
+		return repeatPassword;
+	}
+
+	public void setRepeatPassword(String repeatPassword) {
+		this.repeatPassword = repeatPassword;
+	}
+
+	@Override
+	public String toString() {
+		return "UserModel [id=" + id + ", name=" + name + ", username=" + username + ", password=" + password
+				+ ", repeatPassword=" + repeatPassword + ", age=" + age + ", idCard=" + idCard + ", email=" + email
+				+ "]";
+	}
+	
 }

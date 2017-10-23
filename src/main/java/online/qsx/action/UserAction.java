@@ -21,12 +21,17 @@ public class UserAction {
 		list = userServerImpl.getUsers();
 		return "list";
 	}
+		
+	public String info() {
+		userModel=userServerImpl.getUser(userModel);
+		return "info";
+	}
 
 	public String delete() {
 		userServerImpl.deleteUserModel(userModel);
 		list = userServerImpl.getUsers();
 		return "succeed";
-	}
+	}	
 
 	public String update() {
 		userServerImpl.updateUserModel(userModel);

@@ -14,9 +14,11 @@
         </action>
         
         <action name="update" class="userAction" method="update">
-            <result name="succeed">/WEB-INF/jsp/list.jsp</result>
+            <result name="succeed">EditInformation.jsp</result>
         </action>
-        
+        <action name="info" class="userAction" method="info">
+        	<result name="info">PersonalInformationPages/checkInformation.jsp</result>
+        </action>
         <!-- 转入信息显示页面 -->
         <action name="findTransferInInfos" class="TransferInAction" method="findTransferInInfos">
             <result name="succeed">/WEB-INF/jsp/transferIn.jsp</result>

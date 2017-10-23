@@ -1,0 +1,307 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0 auto;
+/* 	padding: 0 auto; */
+}
+body{
+	
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	text-align: center;
+}
+
+
+
+.big {
+	width: 100%;
+	
+}
+
+.main {
+	width: 100%;
+	/*margin-left: 7px;*/
+	padding-top: 5px;
+}
+
+.top {
+	width: 80%;
+	height: 70px;
+	background-color: white;
+	
+}
+
+.img {
+	float: left;
+	height: 70px;
+	line-height: 70px;
+}
+
+.img img {
+	width: 165px;
+	margin-top: 16px;
+	margin-left: 5px;
+}
+
+.title {
+	float: left;
+	height: 70px;
+	line-height: 70px;
+	font-size: 30px;
+	color: white;
+}
+
+.help {
+	float: right;
+	height: 70px;
+	line-height: 70px;
+	/*font-size: 18px;*/
+	margin-right: 10px;
+	color: #FF870C;
+	cursor: pointer;
+}
+
+.help a {
+	color: #FF870C;
+}
+
+.exit {
+	float: right;
+	height: 70px;
+	line-height: 70px;
+	/*font-size: 18px;*/
+	margin-right: 10px;
+	color: #FF870C;
+	cursor: pointer;
+}
+
+.exit a {
+	color: #FF870C;
+}
+
+.top-down {
+	height: 40px;
+	width: 100%;
+	background-color:#FF870C;
+}
+
+.top-down #back {
+		
+	text-align: center;
+}
+.top-guide{
+	width: 80%;
+	height: 100%;
+	/*background-color: red;*/
+	/*border: 1px soild red;*/
+}
+
+.top-guide li {
+	text-align: center;
+	height: 40px;
+	/*margin-left: 165px;*/
+	color: #fff;
+	width: 160px;
+	line-height: 40px;
+	float: left;
+	cursor: pointer;
+	/*border: 1px solid red;*/
+}
+
+.top-down li #check {
+	color: #fff;
+}
+
+.left {
+	/*margin-left: 18%;*/
+	text-align: center;	
+	width: 14%;
+	float: left;
+	background-color: white;
+	display:inline;
+}
+
+.first {
+	width: 100%;
+	padding-top: 10px;
+}
+
+.first-menu {
+	color: #FF870C;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	font-size: 15px;
+	width: 100%;
+	border: 1px solid #FF870C;
+}
+
+.first-menu:hover{
+	background:#FF870C;
+	color: white; 
+	cursor: pointer;
+}
+.first-menu:hover a{
+	color: white; 
+}
+.first .first-menu-down {
+	display: none;
+}
+
+.first-menu-down li {
+	margin-top: 4px;
+	width: 100%;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.first-menu-down li a {
+	color: #888;
+}
+
+.first-menu-down li:hover {
+	cursor: pointer;
+}
+
+.first-menu a {
+	color: #FF870C;
+}
+.first-menu a:hover{
+	color:white;	
+}
+
+.new {
+	background-color: #FF870C;
+	color: white;
+}
+
+.right {
+	/*margin-right: 18%;*/
+	margin-top: 21px;
+	width: 84%;
+	float: left;
+	margin-left: 16px;
+	/*background-color: gray;*/
+	/*background: red;*/
+	border:1px solid #FF870C;
+	/*height: 10px;*/
+	height: 550px;
+	display:inline;
+}
+
+.myIframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.content{
+	width: 80%;
+}
+
+/*查看check的css*/
+
+.guide {
+    height: 40px;
+    background-color: #eee;
+    /*border-bottom: 1px solid #FF870C;*/
+    line-height: 40px;
+    padding-left: 25px;
+}
+
+.check table {
+    width: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-color: red;*/
+    /*padding-left: 20px;*/
+    text-align: center;
+}
+
+.check tr {
+    height: 40px;
+}
+
+.check td {
+    /*border: 1px solid black;*/
+}
+
+.info {
+    height: 40px;
+    background-color: lightgrey;
+}
+
+.info li {
+    line-height: 40px;
+    list-style: none;
+    display: inline;
+    /*padding-right: 70px;*/
+    /*padding-left: 20px;*/
+}
+
+.check thead {
+    background-color: lightgrey;
+}
+
+/*修改edit的css*/
+
+.edit {
+    /*width: 40%;*/
+    text-align: center;
+    margin: 0 auto;
+}
+
+.grxx {
+    margin-top: 20px;
+    height: 20px;
+}
+
+.viewInfo,
+.input {
+    width: 250px;
+}
+
+.viewInfo {
+    visibility: hidden;
+}
+
+.anniu {
+    margin-top: 20px;
+    /*margin-right: 20px;*/
+    width: 40px;
+    height: 30px;
+}
+
+
+input:not([type="text"],[type="checkbox"]) {
+    width: 120px;
+    height: 30px;
+    background-color: white;
+    border: 1px orange solid;
+    color: #FF870C;
+}
+
+input[type="submit"] {
+	width: 120px;
+    height: 30px;
+    color: white;
+    background-color: #FF870C;
+    margin-left: 15px;
+    margin-right: 20px;
+    border:none;
+/*     border: 1px orange solid; */
+}
+input[type="reset"]{
+	width: 120px;
+    height: 30px;
+    border: none;
+}
+ul{
+	list-style: none;
+}
