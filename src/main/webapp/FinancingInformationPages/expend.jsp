@@ -20,15 +20,16 @@
 			<%@include file="FI-GUIDE.jsp"%>
 			<div class="right">
 				<!--当前页面位置信息加在这里 ↓-->
-				<div class="guide">理财信息管理->转出金额</div>
+				<div class="guide">理财信息管理->提现</div>
 				<div class=" function">
 					<!--当前页面内容加在这里 ↓-->
 					<div class="right-serch">
 						<form action="#" method="post">
-							<label>转出账号:</label> <input type="text" id="account"
-								name="account"> <label>转出金额:</label> <input type="text"
-								id="money" name="money">
-							<button type="submit">转出</button>
+							<label>请输入银行卡账号:</label> 
+								<input type="text" id="account" name="account"> <br>
+							<label>请输入提现金额:</label> 
+								<input type="text" id="money" name="money">
+							<button type="submit">提现</button>
 						</form>
 						<div class="roll-in-table">
 							<table border="1" cellpadding="0" cellspacing="0">

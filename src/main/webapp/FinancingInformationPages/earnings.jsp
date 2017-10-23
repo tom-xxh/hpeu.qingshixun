@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>理财模块-收益管理</title>
+<title>理财模块-转入金额</title>
 <base href="<%=basePath%>">
 <link rel="stylesheet" type="text/css" href="css/mmm.css">
 <link rel="stylesheet" type="text/css" href="css/financing_right.css">
@@ -20,7 +20,7 @@
 			<%@include file="FI-GUIDE.jsp"%>
 			<div class="right">
 				<!--当前页面位置信息加在这里 ↓-->
-				<div class="guide">理财信息管理->收益管理</div>
+				<div class="guide">理财信息管理->金额转入</div>
 				<!--当前页面内容加在这里 ↓-->
 				<div class=" function">
 					<div class="right-serch">

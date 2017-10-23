@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>理财模块-转入金额查询</title>
+<title>理财模块-收益管理</title>
 <base href="<%=basePath%>">
 <link rel="stylesheet" type="text/css" href="css/mmm.css">
 <link rel="stylesheet" type="text/css" href="css/financing_right.css">
@@ -20,21 +20,22 @@
 			<%@include file="FI-GUIDE.jsp"%>
 			<div class="right">
 				<!--当前页面位置信息加在这里 ↓-->
-				<div class="guide">理财信息管理->转入金额查询</div>
+				<div class="guide">理财信息管理->收益管理</div>
 				<div class=" function">
 					<!--当前页面内容加在这里 ↓-->
 					<div class="right-serch">
 						<form action="#" method="post">
-							<label for="date">按时间查询:</label> <input type="text" id="date"
-								name="date"> —— <input type="text" id="date" name="date">
-							<button type="submit">查询</button>
-							<br> <label for="date">按账号查询:</label> <input type="text"
-								id="account" name="account">
-							<button type="submit">查询</button>
-							<br> <label for="date">按时间账号查询:<br>时间: <input
-								type="text" id="date" name="date"> —— <input type="text"
-								id="date" name="date"><br>账号： <input type="text"
-								id="account" name="account"></label>
+							<label for="date">按时间段查询:</label><br>
+								&nbsp; &nbsp; <input type="text" id="date" name="date"> —— <input type="text" id="date" name="date">
+							<button type="submit">查询</button><br>
+							
+							<label for="date">按银行卡账号查询:</label><br> 
+								&nbsp; &nbsp; <input type="text" id="account" name="account">
+							<button type="submit">查询</button><br>
+							
+							<label for="date">按时间段以及银行卡账号查询:<br>
+							&nbsp; &nbsp; 时间段:<input type="text" id="date" name="date"> —— <input type="text" id="date" name="date"><br>
+							&nbsp; &nbsp; 银行卡账号： <input type="text" id="account" name="account"></label>
 							<button type="submit">查询</button>
 							<br>
 						</form>
