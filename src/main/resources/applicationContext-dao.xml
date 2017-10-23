@@ -21,6 +21,7 @@
         <property name="username" value="root"/>
         <property name="password" value="tt19950821"/>
 
+
     </bean>
     
     <!-- hibernate -->

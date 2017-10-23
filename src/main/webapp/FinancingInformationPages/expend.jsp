@@ -20,44 +20,41 @@
 			<%@include file="FI-GUIDE.jsp"%>
 			<div class="right">
 				<!--当前页面位置信息加在这里 ↓-->
-				<div class="guide">理财信息管理->转出金额</div>
+				<div class="guide">理财信息管理->提现</div>
 				<div class=" function">
 					<!--当前页面内容加在这里 ↓-->
 					<div class="right-serch">
 						<form action="#" method="post">
-							<label>转出账号:</label> <input type="text" id="account"
-								name="account"> <label>转出金额:</label> <input type="text"
-								id="money" name="money">
-							<button type="submit">转出</button>
+							<label>请输入银行卡账号:</label> 
+								<input type="text" id="account" name="account"> <br>
+							<label>请输入提现金额:</label> 
+								<input type="text" id="money" name="money">
+							<button type="submit">提现</button>
 						</form>
 						<div class="roll-in-table">
 							<table border="1" cellpadding="0" cellspacing="0">
 								<thead>
 									<tr>
-										<th class="th1"><input type="checkbox"
-											name="checkboxItem" id="choice">日期</th>
-										<th>转出金额</th>
+										<th>日期</th>
+										<th>提现金额</th>
 										<th>详细信息</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td class="th1"><input type="checkbox"
-											name="checkboxItem">2017/10/1 9:20:30</td>
+										<td>2017/10/1 9:20:30</td>
 										<td>1000</td>
-										<td>123账号转出1000元</td>
+										<td>账户提现1000元到123账号</td>
 									</tr>
 									<tr>
-										<td class="th1"><input type="checkbox"
-											name="checkboxItem">2017/10/2 15:20:30</td>
+										<td>2017/10/2 15:20:30</td>
 										<td>2000</td>
-										<td>234账号转出2000元</td>
+										<td>账户提现2000元到234账号</td>
 									</tr>
 									<tr>
-										<td class="th1"><input type="checkbox"
-											name="checkboxItem">2017/10/3 20:20:30</td>
+										<td>2017/10/3 20:20:30</td>
 										<td>3000</td>
-										<td>456账号转出3000元</td>
+										<td>账户提现3000元到456账号</td>
 									</tr>
 								</tbody>
 							</table>

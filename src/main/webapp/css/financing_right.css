@@ -1,9 +1,3 @@
-.right{
-  margin: 5px;
-  width: 85%;
-  height: 473px;
-  float: left;
-}
 .right-serch {
     width: 800px;
     height: 30px;
@@ -37,7 +31,7 @@
     top: 20px;
 }
 .roll-in-table table{
-  width: 900px;
+  width: 850px;
   border-color: #EFF0EF;
 }
 .roll-in-table th{
