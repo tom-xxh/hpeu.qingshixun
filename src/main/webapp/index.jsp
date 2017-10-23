@@ -23,7 +23,7 @@
 		<div id="wrapper">
 			<div id="login" class="animate form">
 				<a class="aflate" id="Alogin">x</a>
-				<form action="userLogin" method="post">
+				<form action="login" method="post">
 					<h1>
 						<img src="images/logo3.png">
 					</h1>
