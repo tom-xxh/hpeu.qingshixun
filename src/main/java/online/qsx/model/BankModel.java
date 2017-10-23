@@ -6,7 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/*
+ * 银行卡 model类
+ */
 @Entity
 @Table(catalog = "test", name = "t_bank")
 public class BankModel {

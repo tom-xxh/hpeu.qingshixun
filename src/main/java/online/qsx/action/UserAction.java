@@ -18,8 +18,9 @@ public class UserAction {
 	private UserModel userModel;
 
 	//当前用户下标
-		long index=0;
-		
+	public static long index=0;
+	//当前用户身份
+	public static long userState;
 	public String findUsers() {
 		list = userServerImpl.getUsers();
 		return "list";
@@ -56,10 +57,11 @@ public class UserAction {
 	}
 	//登录查询
 	public String login(){
-		System.out.println("最后的index："+index);
 		List<UserModel> list = userServerImpl.findUserModel(userModel.getName(), userModel.getPassword());
 		for (UserModel userModel : list) {
 			index= userModel.getId();
+			userState=userModel.getState();
+			System.out.println("最后的state："+userState);
 			System.out.println("最后的："+list.toString());
 			System.out.println("最后的index："+index);
 		}

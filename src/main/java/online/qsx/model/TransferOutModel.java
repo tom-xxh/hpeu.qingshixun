@@ -7,10 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/*
+ * è½¬å‡ºç±»
+ */
 @Entity
 @Table(name = "t_transferOut")
-public class TransferOutModel {// ×ª³ö±í
+public class TransferOutModel {// ×ªï¿½ï¿½ï¿½ï¿½
 	private Long transferOutId;
 	private Date date;
 	private double transferOutMoney;

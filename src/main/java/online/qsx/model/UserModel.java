@@ -11,7 +11,7 @@ import javax.persistence.UniqueConstraint;
 //用户
 	@Entity
 	//使用小组名首字母缩写加上类名及为表名
-	@Table(name="tb_user",uniqueConstraints={@UniqueConstraint(columnNames={"username"}),@UniqueConstraint(columnNames={"e_mail"}),@UniqueConstraint(columnNames={"idcard"})})
+	@Table(name="CM_user",uniqueConstraints={@UniqueConstraint(columnNames={"username"}),@UniqueConstraint(columnNames={"e_mail"}),@UniqueConstraint(columnNames={"idcard"})})
 	public class UserModel {
 		//用户id
 		@Id

@@ -7,10 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/*
+ * 转入类
+ */
 @Entity
 @Table(name = "t_transferIn")
-public class TransferInModel {// ת��
+public class TransferInModel {
 	private Long transferInId;
 	private Date date;
 	private double transferInMoney;
