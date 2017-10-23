@@ -12,7 +12,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_transferIn")
-public class TransferInModel {
+public class TransferInModel {//转入
 	private Long transferInId;
 	private Date date;
 	private double transferInMoney;

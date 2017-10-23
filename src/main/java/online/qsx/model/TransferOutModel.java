@@ -1,19 +1,21 @@
 package online.qsx.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-/*
- * 转出类
- */
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 @Entity
 @Table(name = "t_transferOut")
-public class TransferOutModel {// ת����
+public class TransferOutModel {
 	private Long transferOutId;
+	
+	@Temporal(TemporalType.DATE)
 	private Date date;
 	private double transferOutMoney;
 	private Long bankcard;
@@ -57,5 +59,19 @@ public class TransferOutModel {// ת����
 		return "TransferOutModel [transferOutId=" + transferOutId + ", date=" + date + ", transferOutMoney="
 				+ transferOutMoney + ", bankcard=" + bankcard + "]";
 	}
+
+	public TransferOutModel(Date date, double transferOutMoney, Long bankcard) {
+		super();
+		this.date = date;
+		this.transferOutMoney = transferOutMoney;
+		this.bankcard = bankcard;
+	}
+
+	public TransferOutModel() {
+		super();
+	}
+	
+	
+	
 
 }

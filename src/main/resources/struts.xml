@@ -43,9 +43,15 @@
 		</action>
 		<!-- 转出信息显示页面 -->
 		<action name="TransferOutAction" class="TransferOutAction"
-			method="findTransferOutInfos">
-			<result name="succeed">/WEB-INF/jsp/transferOut.jsp</result>
+			method="transferOut">
+			<result name="transferOut">/FinancingInformationPages/expend.jsp</result>
 		</action>
+		<!-- 转出查询页面 -->
+		<action name="FindTransferOutAction" class="TransferOutAction"
+			method="findTransferOutInfos">
+			<result name="succeed">/FinancingInformationPages/expend.jsp</result>
+		</action>
+		
 		<!-- 收益信息显示页面 -->
 		<action name="EarningsAction" class="EarningsAction" method="findEarningsInfos">
 			<result name="succeed">/WEB-INF/jsp/earnings.jsp</result>

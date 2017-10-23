@@ -24,11 +24,11 @@
 				<div class=" function">
 					<!--当前页面内容加在这里 ↓-->
 					<div class="right-serch">
-						<form action="#" method="post">
+						<form action="TransferOutAction" method="post">
 							<label>请输入银行卡账号:</label> 
-								<input type="text" id="account" name="account"> <br>
+								<input type="text" id="account" name="transferOutModel.bankcard"> <br>
 							<label>请输入提现金额:</label> 
-								<input type="text" id="money" name="money">
+								<input type="text" id="money" name="transferOutModel.transferOutMoney">
 							<button type="submit">提现</button>
 						</form>
 						<div class="roll-in-table">
@@ -52,10 +52,27 @@
 										<td>账户提现2000元到234账号</td>
 									</tr>
 									<tr>
-										<td>2017/10/3 20:20:30</td>
-										<td>3000</td>
-										<td>账户提现3000元到456账号</td>
+										<td>${TransferOutModel.date}</td>
+							 			<td>${TransferOutModel.transferOutMoney}</td>
+							 			<td>账户提现${TransferOutModel.transferOutMoney}元到${TransferOutModel.bankcard}账户</td>
+							 			
 									</tr>
+									<c:forEach items="${list }" var="temp" varStatus="vs">
+								 		<tr
+								 		  
+									 		   <c:if test="${vs.index%2==0 }">
+									 				style="background-color: red"
+									 		   </c:if>
+									 		   <c:if test="${vs.index%2==1 }">
+									 				style="background-color: green"
+									 		   </c:if>
+								 		  
+								 		>
+								 			<td>${TransferOutModel.date}</td>
+							 				<td>${TransferOutModel.transferOutMoney}</td>
+							 				<td>账户提现${TransferOutModel.transferOutMoney}元到${TransferOutModel.bankcard}账户</td>
+								 		</tr>
+							 		</c:forEach>
 								</tbody>
 							</table>
 						</div>

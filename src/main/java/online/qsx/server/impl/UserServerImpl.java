@@ -24,21 +24,18 @@ public class UserServerImpl {
 	public void updateUserModel(UserModel userModel) {
 		userDaoImpl.updateUserModel(userModel);
 	}
+	//查询
+	public List<UserModel> findUserModel(String name,String password){
+		List<UserModel> list= userDaoImpl.findUserModel(name, password);	
+		return list;
+	}
+	//添加
+	public void addUserModel(UserModel userModel){
+		userDaoImpl.addUserMode(userModel);
+	}
 	
 	public UserModel getUser(UserModel userModel) {
 		return userDaoImpl.getUser(userModel);
 	}
 
-	// 查询
-	public List<UserModel> findUserModel(String name, String password) {
-		System.out.print("XXXXXX");
-		List<UserModel> list = userDaoImpl.findUserModel(name, password);
-
-		return list;
-	}
-
-	// 添加
-	public void addUserModel(UserModel userModel) {
-		userDaoImpl.addUserModel(userModel);
-	}
 }

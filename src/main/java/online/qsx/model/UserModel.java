@@ -1,10 +1,17 @@
 package online.qsx.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -27,15 +34,30 @@ import javax.persistence.UniqueConstraint;
 		//用户邮箱
 		@Column(name="e_mail")
 		private String email;
-		//用户身份证号 
+		
 		@Column(name="idcard")
-		private String IDcard;
-		//用户电话
-		@Column(name="phonenumber")
-		private String phonenumber;
+		private String id_card;
+		
+		private Long phonenumber;
+		
 		//用户状态
 		@Column(name="state")
 		private int state;//0为普通用户，1为管理员
+		//账户余额
+		private Double user_count;
+		
+		@OneToMany(cascade={CascadeType.ALL} ,fetch = FetchType.LAZY)
+		@JoinColumn(name="user_id")
+		private Set<TransferInModel> transferInModels = new HashSet<TransferInModel>();
+		
+		@OneToMany(cascade={CascadeType.ALL} ,fetch = FetchType.LAZY)
+		@JoinColumn(name="user_id")
+		private Set<TransferOutModel> transferOutModels = new HashSet<TransferOutModel>();
+		
+		@OneToMany(cascade={CascadeType.ALL} ,fetch = FetchType.LAZY)
+		@JoinColumn(name="user_id")
+		private Set<BankModel> bankModels = new HashSet<BankModel>();
+		
 		public long getId() {
 			return id;
 		}
@@ -61,28 +83,57 @@ import javax.persistence.UniqueConstraint;
 			this.email = email;
 		}
 		
-		public String getPhonenumber() {
-			return phonenumber;
-		}
-		public void setPhonenumber(String phonenumber) {
-			this.phonenumber = phonenumber;
-		}
 		public int getState() {
 			return state;
 		}
 		public void setState(int state) {
 			this.state = state;
 		}
-		public String getIDcard() {
-			return IDcard;
+		public Double getUser_count() {
+			return user_count;
 		}
-		public void setIDcard(String iDcard) {
-			IDcard = iDcard;
+		public void setUser_count(Double user_count) {
+			this.user_count = user_count;
+		}
+		public Set<TransferInModel> getTransferInModels() {
+			return transferInModels;
+		}
+		public void setTransferInModels(Set<TransferInModel> transferInModels) {
+			this.transferInModels = transferInModels;
+		}
+		
+		
+		public Set<TransferOutModel> getTransferOutModels() {
+			return transferOutModels;
+		}
+		
+		public void setTransferOutModels(Set<TransferOutModel> transferOutModels) {
+			this.transferOutModels = transferOutModels;
+		}
+		
+		public Set<BankModel> getBankModels() {
+			return bankModels;
+		}
+		
+		public void setBankModels(Set<BankModel> bankModels) {
+			this.bankModels = bankModels;
+		}
+		public String getId_card() {
+			return id_card;
+		}
+		public void setId_card(String id_card) {
+			this.id_card = id_card;
+		}
+		public Long getPhonenumber() {
+			return phonenumber;
+		}
+		public void setPhonenumber(Long phonenumber) {
+			this.phonenumber = phonenumber;
 		}
 		@Override
 		public String toString() {
 			return "UserModel [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email
-					+ ", IDcard=" + IDcard + ", phonenumber=" + phonenumber + ", state=" + state + "]";
+					+ ", id_card=" + id_card + ", phonenumber=" + phonenumber + ", state=" + state + ", user_count="
+					+ user_count + "]";
 		}
-		
 	}
