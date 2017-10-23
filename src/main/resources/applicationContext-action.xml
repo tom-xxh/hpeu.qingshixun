@@ -7,7 +7,6 @@
     	classpath:org/springframework/beans/factory/xml/spring-beans-4.3.xsd     	
         http://www.springframework.org/schema/context 
         classpath:org/springframework/context/config/spring-context-4.3.xsd ">
-
     <!-- 识别Action -->
     <context:component-scan base-package="online.qsx.action"/> 
 </beans>

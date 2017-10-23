@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+跳转成功
 <table>
 		<c:forEach items="${list}" var="obj">
 			<tr>

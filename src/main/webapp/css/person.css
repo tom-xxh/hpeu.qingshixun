@@ -145,6 +145,12 @@ a {
 	color: #888;
 }
 
+.first-menu-down li button {
+	border: none;
+	font-size: 16px;
+	background: #fff;
+}
+
 .first-menu-down li:hover {
 	cursor: pointer;
 }

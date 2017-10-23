@@ -6,106 +6,83 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
-@Entity
-@Table(catalog = "test", name = "tb_user")
-public class UserModel {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID")
-	private long id;
-
-	@Column(name = "name")
-	private String name;
-	
-	@Column(name = "username")
-	private String username;
-	
-	@Column(name = "password")
-	private String password;
-	
-	@Column(name = "repeatPassword")
-	private String repeatPassword;
-
-	@Column(name = "AGE")
-	private int age;
-
-	@Column(name = "idCard")
-	private String idCard;
-
-	@Column(name = "email")
-	private String email;
-
-	public long getId() {
-		return id;
+//用户
+	@Entity
+	//使用小组名首字母缩写加上类名及为表名
+	@Table(name="tb_user",uniqueConstraints={@UniqueConstraint(columnNames={"username"}),@UniqueConstraint(columnNames={"e_mail"}),@UniqueConstraint(columnNames={"idcard"})})
+	public class UserModel {
+		//用户id
+		@Id
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
+		@Column(name="user_id")
+		private long id;
+		//用户名
+		@Column(name="username")
+		private String name;
+		//用户密码
+		@Column(name="password")
+		private String password;
+		//用户邮箱
+		@Column(name="e_mail")
+		private String email;
+		//用户身份证号 
+		@Column(name="idcard")
+		private String IDcard;
+		//用户电话
+		@Column(name="phonenumber")
+		private String phonenumber;
+		//用户状态
+		@Column(name="state")
+		private int state;//0为普通用户，1为管理员
+		public long getId() {
+			return id;
+		}
+		public void setId(long id) {
+			this.id = id;
+		}
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public String getPassword() {
+			return password;
+		}
+		public void setPassword(String password) {
+			this.password = password;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
+		
+		public String getPhonenumber() {
+			return phonenumber;
+		}
+		public void setPhonenumber(String phonenumber) {
+			this.phonenumber = phonenumber;
+		}
+		public int getState() {
+			return state;
+		}
+		public void setState(int state) {
+			this.state = state;
+		}
+		public String getIDcard() {
+			return IDcard;
+		}
+		public void setIDcard(String iDcard) {
+			IDcard = iDcard;
+		}
+		@Override
+		public String toString() {
+			return "UserModel [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email
+					+ ", IDcard=" + IDcard + ", phonenumber=" + phonenumber + ", state=" + state + "]";
+		}
+		
 	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public String getIdCard() {
-		return idCard;
-	}
-
-	public void setIdCard(String idCard) {
-		this.idCard = idCard;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getRepeatPassword() {
-		return repeatPassword;
-	}
-
-	public void setRepeatPassword(String repeatPassword) {
-		this.repeatPassword = repeatPassword;
-	}
-
-	@Override
-	public String toString() {
-		return "UserModel [id=" + id + ", name=" + name + ", username=" + username + ", password=" + password
-				+ ", repeatPassword=" + repeatPassword + ", age=" + age + ", idCard=" + idCard + ", email=" + email
-				+ "]";
-	}
-	
-}

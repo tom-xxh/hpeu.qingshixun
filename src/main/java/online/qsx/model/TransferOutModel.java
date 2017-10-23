@@ -10,11 +10,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "t_transferOut")
-public class TransferOutModel {// è½¬å‡º
+public class TransferOutModel {// ×ª³ö±í
 	private Long transferOutId;
 	private Date date;
 	private double transferOutMoney;
-	private String status;
+	private Long bankcard;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,18 +42,18 @@ public class TransferOutModel {// è½¬å‡º
 		this.transferOutMoney = transferOutMoney;
 	}
 
-	public String getStatus() {
-		return status;
+	public Long getBankcard() {
+		return bankcard;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setBankcard(Long bankcard) {
+		this.bankcard = bankcard;
 	}
 
 	@Override
 	public String toString() {
 		return "TransferOutModel [transferOutId=" + transferOutId + ", date=" + date + ", transferOutMoney="
-				+ transferOutMoney + ", status=" + status + "]";
+				+ transferOutMoney + ", bankcard=" + bankcard + "]";
 	}
 
 }

@@ -32,4 +32,56 @@
             <result name="succeed">/WEB-INF/jsp/earnings.jsp</result>
         </action>
     </package>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="findUsers" class="userAction" method="findUsers">
+			<result name="list">/WEB-INF/jsp/list.jsp</result>
+		</action>
+
+		<action name="delete" class="userAction" method="delete">
+			<result name="succeed">/WEB-INF/jsp/list.jsp</result>
+		</action>
+
+		<action name="update" class="userAction" method="update">
+			<result name="succeed">/WEB-INF/jsp/list.jsp</result>
+		</action>
+
+		<!-- 添加银行卡 -->
+		<action name="addBankcardAction" class="addBankcardAction"
+			method="addBankcardInfos">
+			<result name="succeed">/usermodelpages/addCard.jsp</result>
+		</action>
+		<!-- 解绑银行卡 -->
+		<action name="deleteBankcardAction" class="deleteBankcardAction"
+			method="deleteBankcardInfos">
+			<result name="succeed">/usermodelpages/personalInformation.jsp</result>
+		</action>
+		<!-- 查询银行卡信息 -->
+		<action name="deleteBankcardAction" class="deleteBankcardAction"
+			method="findBankcardInfos">
+			<result name="list">/usermodelpages/deleteCard.jsp</result>
+		</action>
+		<!-- 转入信息显示页面 -->
+		<action name="TransferInAction" class="TransferInAction"
+			method="findTransferInInfos">
+			<result name="succeed">/WEB-INF/jsp/transferIn.jsp</result>
+		</action>
+		<!-- 转出信息显示页面 -->
+		<action name="TransferOutAction" class="TransferOutAction"
+			method="findTransferOutInfos">
+			<result name="succeed">/WEB-INF/jsp/transferOut.jsp</result>
+		</action>
+		<!-- 收益信息显示页面 -->
+		<action name="EarningsAction" class="EarningsAction" method="findEarningsInfos">
+			<result name="succeed">/WEB-INF/jsp/earnings.jsp</result>
+		</action>
+		<!-- 添加用户显示页面 -->
+		<action name="add" class="userAction" method="add">
+			<result name="add">/index.jsp</result>
+		</action>
+		<!-- 登录页面显示页面 -->
+		<action name="login" class="userAction" method="login">
+			<result name="login">/usermodelpages/personalInformation.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+	</package>
 </struts>

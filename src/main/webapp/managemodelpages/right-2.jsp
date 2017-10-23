@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>理财模块-转出金额查询界面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>转入查询</title>
 	<link rel="stylesheet" type="text/css" href="../css/financing_right.css">
 </head>
 
@@ -23,7 +25,7 @@
                         	<th class="th1">
                                  <input type="checkbox" name="checkboxItem" id="choice">日期
                             </th>
-                        	<th>转出金额</th>
+                        	<th>转入金额</th>
                         	<th>详细信息</th>
                 		</tr>
             		</thead>
@@ -32,19 +34,19 @@
                             <td class="th1">
                                 <input type="checkbox" name="checkboxItem">2017/10/1 9:20:30</td>
                             <td>1000</td>
-                            <td>123账号转出1000元</td>
+                            <td>转入123账号1000元</td>
                         </tr>
                         <tr>
                             <td class="th1">
                                 <input type="checkbox" name="checkboxItem">2017/10/2 15:20:30</td>
                             <td>2000</td>
-                            <td>234账号转出2000元</td>
+                            <td>转入234账号2000元</td>
                         </tr>
                         <tr>
                             <td class="th1">
                                 <input type="checkbox" name="checkboxItem">2017/10/3 20:20:30</td>
                             <td>3000</td>
-                            <td>456账号转出3000元</td>
+                            <td>转入456账号3000元</td>
                         </tr>
                     </tbody>
             	</table>
