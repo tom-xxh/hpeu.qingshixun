@@ -166,11 +166,9 @@ a {
 
 .right {
 	margin-top: 15px;
-	width: 84%;
-	float: left;
-	margin-left: 26px;
+	width: 83%;
+	float: right;
 	background-color: white;
-	/*border-right: 1px solid #8D8D8D;*/
 }
 
 .myIframe {
