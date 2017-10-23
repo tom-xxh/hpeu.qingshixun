@@ -35,30 +35,26 @@
 							<table border="1" cellpadding="0" cellspacing="0">
 								<thead>
 									<tr>
-										<th class="th1"><input type="checkbox"
-											name="checkboxItem" id="choice">日期</th>
-										<th>转出金额</th>
+										<th>日期</th>
+										<th>提现金额</th>
 										<th>详细信息</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td class="th1"><input type="checkbox"
-											name="checkboxItem">2017/10/1 9:20:30</td>
+										<td>2017/10/1 9:20:30</td>
 										<td>1000</td>
-										<td>123账号转出1000元</td>
+										<td>账户提现1000元到123账号</td>
 									</tr>
 									<tr>
-										<td class="th1"><input type="checkbox"
-											name="checkboxItem">2017/10/2 15:20:30</td>
+										<td>2017/10/2 15:20:30</td>
 										<td>2000</td>
-										<td>234账号转出2000元</td>
+										<td>账户提现2000元到234账号</td>
 									</tr>
 									<tr>
-										<td class="th1"><input type="checkbox"
-											name="checkboxItem">2017/10/3 20:20:30</td>
+										<td>2017/10/3 20:20:30</td>
 										<td>3000</td>
-										<td>456账号转出3000元</td>
+										<td>账户提现3000元到456账号</td>
 									</tr>
 								</tbody>
 							</table>
