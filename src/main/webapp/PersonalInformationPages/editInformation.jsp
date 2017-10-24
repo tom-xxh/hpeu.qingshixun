@@ -5,7 +5,7 @@
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,38 +25,47 @@
 				<div class=" function">
 					<!--当前页面内容加在这里 ↓-->
 					<div class="edit">
-						<form>
+						<form action="do_edit" method="post" name="editForm">
 							<ul>
 								<li class="grxx">
 									<div class="grxx">
 										&emsp;用户名: <input type="text" class="input" id="username"
-											name="username" class="text" maxlength="20"
-											onblur="checkUserName()" />
+											name="userModel.name" class="text" maxlength="20"
+											value="${userModel.name}" />
 									</div>
 								</li>
 								<li>
 									<div class="grxx">
 										&emsp;密&emsp;码: <input type="text" class="input" id="password"
-											name="password" class="text" maxlength="20"
-											onblur="checkUserName()" />
+											name="userModel.password" class="text" maxlength="20"
+											value="${userModel.password}" />
 									</div>
 								</li>
 								<li>
 									<div class="grxx">
-										&emsp;邮&emsp;箱: <input type="text" class="input" id="email"
-											name="email" class="text" maxlength="20"
-											onblur="checkUserName()" />
+										&emsp;邮&emsp;箱: <input type="email" class="input" id="email"
+											name="userModel.email" class="text" maxlength="20"
+											value="${userModel.email}" />
+									</div>
+								</li>
+								<li>
+									<div class="grxx">
+										&emsp;电&emsp;话: <input type="text" class="input" id="email"
+											name="userModel.phonenumber" class="text" maxlength="20"
+											value="${userModel.phonenumber}" />
 									</div>
 								</li>
 								<li>
 									<div class="grxx">
 										&emsp;身份证: <input type="text" class="input" id="idcard"
-											name="idcard" class="text" maxlength="20"
-											onblur="checkUserName()" />
+											name="userModel.IDcard" class="text" maxlength="20"
+											value="${userModel.IDcard}" />
 									</div>
 								</li>
-								<li><input class="anniu" type="submit" name="submit">
-									<input class="anniu" type="reset" name="reset"></li>
+								<li><input class="anniu" type="submit" name="submit"
+									value="保存"> <input class="anniu" type="button"
+									name="return" value="返回" onclick="javascript:history.back(-1);">
+								</li>
 							</ul>
 						</form>
 					</div>

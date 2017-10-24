@@ -4,12 +4,31 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<package name="default" namespace="/" extends="struts-default">
-		<action name="info" class="userAction" method="info">
-			<result name="info">PersonalInformationPages/checkInformation.jsp
-			</result>
-		</action>
 
+    <package name="default" namespace="/" extends="struts-default">
+<!--     	登录后跳转页面 -->
+        <action name="info" class="userAction" method="info">
+        	<result name="info">PersonalInformationPages/checkInformation.jsp</result>
+        </action>
+<!--         密码验证及更新 -->
+        <action name="PasswordUpdateSave" class="userAction" method="passwordUpdate">
+			<result name="input">PersonalInformationPages/passwordUpdate.jsp</result>
+		</action>
+<!-- 		个人信息修改        -->
+        <action name="updateInfo" class="userAction" method="updateInfo">
+        	<result name="updateInfo">PersonalInformationPages/editInformation.jsp</result>
+        </action>
+        <!-- 		个人信息修改查询        -->
+		<action name="to_edit" class="userAction" method="to_edit">
+			<result name="update">PersonalInformationPages/editInformation.jsp</result>
+		</action>
+		<!-- 		个人信息修改        -->
+		<action name="do_edit" class="userAction" method="do_edit">
+			<result name="list">PersonalInformationPages/checkInformation.jsp</result>
+		</action>
+		<action name="delete" class="userAction" method="delete">
+			<result name="succeed">/WEB-INF/jsp/list.jsp</result>
+		</action>
 		<!-- 添加银行卡 -->
 		<action name="addBankcardAction" class="addBankcardAction"
 			method="addBankcardInfos">

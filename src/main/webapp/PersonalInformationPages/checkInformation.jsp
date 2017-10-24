@@ -29,40 +29,19 @@
 								<tr>
 									<td>ID</td>
 									<td>姓名</td>
-									<td>身份证号</td>
-									<td>密码</td>
 									<td>邮箱</td>
+									<td>电话</td>
+									<td>身份证</td>
 									<td>操作</td>
 								</tr>
 							</thead>
 							<tbody>
-							<c:forEach items="${list}" var="temp" varStatus="vs">
-								 		<tr
-								 		  
-									 		  <%--  <c:if test="${vs.index%2==0 }">
-									 				style="background-color: red"
-									 		   </c:if>
-									 		   <c:if test="${vs.index%2==1 }">
-									 				style="background-color: green"
-									 		   </c:if> --%>
-								 		  
-								 		>
-								 			<td>${temp.id}</td>
-									<td>${temp.phonenumber}</td>
-									<td>${temp.id_card}</td>
-									<td>${temp.password}</td>
-									<td>${temp.email}</td>
-									<td><a href="#">修改</a> <a href="#">详细</a></td>
-								 		</tr>
-							 		</c:forEach>
-								<%-- <tr>
-									<td>${userModel.id}</td>
-									<td>${userModel.phonenumber}</td>
-									<td>${userModel.id_card}</td>
-									<td>${userModel.password}</td>
+								 	<td>${userModel.id}</td>
+									<td>${userModel.name}</td>
 									<td>${userModel.email}</td>
-									<td><a href="#">修改</a> <a href="#">详细</a></td>
-								</tr> --%>
+									<td>${userModel.phonenumber}</td>
+									<td>${userModel.IDcard}</td>
+									<td><a href="to_edit">修改</a></td>
 							</tbody>
 						</table>
 					</div>

@@ -15,7 +15,7 @@ public class DeleteBankcardAction {
 
 	private List<BankModel> list;
 	private BankModel bankModel;
-
+   
 	public String deleteBankcardInfos() {
 		deleteBankServerImpl.deletebankModel(bankModel);
 		list = deleteBankServerImpl.getBankInfos();

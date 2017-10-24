@@ -1,5 +1,6 @@
 package online.qsx.server.impl;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,18 +25,29 @@ public class UserServerImpl {
 	public void updateUserModel(UserModel userModel) {
 		userDaoImpl.updateUserModel(userModel);
 	}
-	//查询
-	public List<UserModel> findUserModel(String name,String password){
-		List<UserModel> list= userDaoImpl.findUserModel(name, password);	
-		return list;
-	}
 	//添加
 	public void addUserModel(UserModel userModel){
-		userDaoImpl.addUserMode(userModel);
+		userDaoImpl.addUserModel(userModel);
 	}
 	
 	public UserModel getUser(UserModel userModel) {
 		return userDaoImpl.getUser(userModel);
 	}
+
+	public void edit(UserModel userModel) {
+		userDaoImpl.edit(userModel);
+	}
+	//验证密码
+	public List<UserModel> checkPwd(String Password,String Password2){
+			userDaoImpl.checkPwd(Password, Password2);
+		return null;		
+	}
+	// 查询
+	public List<UserModel> findUserModel(String name, String password) {
+		List<UserModel> list = userDaoImpl.findUserModel(name, password);
+		return list;
+	}
+
+
 
 }

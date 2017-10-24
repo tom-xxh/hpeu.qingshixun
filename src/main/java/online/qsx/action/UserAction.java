@@ -2,6 +2,7 @@ package online.qsx.action;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,10 +18,19 @@ public class UserAction {
 	private List<UserModel> list;
 	private UserModel userModel;
 
-	//当前用户下标
-	public static long index=0;
 	//当前用户身份
 	public static long userState;
+	//当前用户下标
+	public  static long index=0;
+	public String Password;
+	public String Password2;
+	//密码验证	
+	public String passwordUpdate(){
+		System.out.println(Password+"/"+Password2);
+		userServerImpl.checkPwd(Password, Password2);
+		return "input";
+	}
+	
 	public String findUsers() {
 		list = userServerImpl.getUsers();
 		return "list";
@@ -30,6 +40,12 @@ public class UserAction {
 		userModel=userServerImpl.getUser(userModel);
 		System.out.println("-----"+userModel.getId());
 		return "info";
+	}
+	
+	public String updateInfo() {
+		userModel=userServerImpl.getUser(userModel);
+		System.out.println("-----"+userModel.getId());
+		return "updateInfo";
 	}
 
 	public String delete() {
@@ -43,7 +59,18 @@ public class UserAction {
 		list = userServerImpl.getUsers();
 		return "succeed";
 	}
-
+	//修改
+	public String to_edit() {
+		userModel=userServerImpl.getUser(userModel);
+		return "update";
+	}
+	
+	public String do_edit() {
+		userServerImpl.edit(userModel);
+		list = userServerImpl.getUsers();
+		return "list";
+	}
+	
 	public List<UserModel> getList() {
 		return list;
 	}
@@ -63,7 +90,7 @@ public class UserAction {
 			userState=userModel.getState();
 			System.out.println("最后的state："+userState);
 			System.out.println("最后的："+list.toString());
-			System.out.println("最后的index："+index);
+			System.out.println("最后的index："+index);			
 		}
 		if (index<=0) {
 			index= userModel.getId();

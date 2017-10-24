@@ -26,10 +26,10 @@
 	<div class="left">
 		<div class="first" id="first">
 			<div class="first-menu" id="first-menu1"
-				onclick="window.location.href='PersonalInformationPages/checkInformation.jsp';">个人信息查看
+				onclick="window.location.href='info';">个人信息查看
 			</div>
 			<div class="first-menu" id="first-menu3"
-				onclick="window.location.href='PersonalInformationPages/editInformation.jsp';">个人信息修改</div>
+				onclick="window.location.href='PersonalInformationPages/passwordUpdate.jsp';">修改密码</div>
 			<div class="first-menu" id="first-menu2"
 				onclick="window.location.href='PersonalInformationPages/addCard.jsp';">银行卡添加</div>
 			<div class="first-menu" id="first-menu4"
