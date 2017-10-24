@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import javax.persistence.Query;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -12,7 +11,6 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import online.qsx.action.UserAction;
 import online.qsx.common.BaseDao;
 import online.qsx.model.UserModel;
 
@@ -82,7 +80,6 @@ public class UserDaoImpl {
 	public List<UserModel> findUserModel(String name, String password) {
 		System.out.println("1231");
 		Long in = null;
-		@SuppressWarnings("unused")
 		String hql = "from UserModel UM where UM.name=? and UM.password=?";
 		List<UserModel> id = (List<UserModel>) baseDao.getHibernateTemplate().find(hql,
 				new String[] { name, password });

@@ -1,0 +1,309 @@
+* {
+	margin: 0 auto;
+	padding: 0 auto;
+}
+html{font-family: sans-serif;
+ background-color: #386dbd;
+       	
+
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #800cff;
+	text-align: center;
+}
+
+
+
+.big {
+	width: 85%;
+	margin-top: 20px;
+    border:5px solid #00416a; 
+    height:550px;
+    border-radius: 14px;
+	
+}
+
+.main {
+	width: 100%;
+	 border-radius: 7px;
+	 background-color: #3d4e6f;	
+	padding-top: 5px;
+}
+
+.top {
+	width: 99%;
+	height: 44px;
+	background-color: #00416a;
+	 border-radius: 14px;
+	
+}
+
+.img {
+	float: left;
+	height: 70px;
+	line-height: 70px;
+	 border-radius: 14px;
+}
+
+.img img {
+	width: 165px;
+	 border-radius: 14px;
+	margin-left: 5px;
+}
+
+.title {
+	float: left;
+	height: 70px;
+	line-height: 70px;
+	font-size: 30px;
+	color: white;
+}
+
+.help {
+	float: right;
+	height: 47px;
+	line-height: 41px;
+	/*font-size: 18px;*/
+	margin-right: 10px;
+	color: #FF870C;
+	cursor: pointer;
+}
+
+.help a {
+	color: #FF870C;
+}
+
+.exit {
+	float: right;
+	height: 47px;
+	line-height: 41px;
+	
+	margin-right: 10px;
+	color: #FF870C;
+	cursor: pointer;
+}
+
+.exit a {
+	color: #FF870C;
+}
+
+.top-down {
+	border-radius: 14px;
+	height: 40px;
+	width: 100%;
+	background-color:#095688;
+}
+
+.top-down #back {
+		
+	text-align: center;
+}
+
+.top-down li {
+	height: 40px;
+	
+	color: #fff;
+	width: 120px;
+	line-height: 40px;
+	float: left;
+	cursor: pointer;
+}
+
+.top-down li #check {
+	color: #fff;
+
+}
+
+.left {
+	text-align: center;
+	width: 14%;
+	float: left;
+	background-color: #aad1e8;
+	border-radius: 10px;
+	height: 455px;
+
+}
+
+.first {
+	
+	width: 80%;
+	
+}
+
+.first-menu {
+	color: #800cff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 15px;
+	width: 98%;
+	border: 3px solid #00416a;
+	border-radius: 10px;
+}
+
+.first-menu:hover {
+	cursor: pointer;
+}
+
+.first .first-menu-down {
+	display: none;
+}
+
+.first-menu-down li {
+	margin-top: 4px;
+	width: 99%;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.first-menu-down li a {
+	color: #888;
+}
+
+.first-menu-down li:hover {
+	cursor: pointer;
+}
+
+.first-menu a {
+	
+}
+
+.new {
+	background-color: #FF870C;
+	color: white;
+}
+
+.right {
+	margin-top: 21px;
+	width: 84%;
+	float: left;
+	margin-left: 16px;
+	border: 2px dashed blue;
+	height: 430px;
+	border-radius: 15px;
+	background-color: #e8dce5;
+	
+}
+
+.myIframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.content{
+	width: 100%;
+	border-radius: 14px;
+	background-color: #045f98;
+	height: 462px;
+}
+.seachbox{
+	width: 40%;	
+	margin: 10px auto;
+	position: relative;
+}
+.seachbutton{
+	position: absolute;
+	height: 25px;
+	width: 75px;
+	line-height: 9px;	
+     margin-left: 16px;
+     margin-top: -1px;
+     background-color: green;
+
+}
+.ruselt{
+	margin: 5px auto;
+	width: 940px;
+	height: 360px;
+	
+}
+.red{
+	color: red;
+}
+.addbox{
+
+	  margin: 0 auto;
+}
+.memberadd-content{
+	width: 300px;
+	height: 400px;
+	margin: 0 auto;
+}
+.inputbox{
+
+	width: 200px;
+}
+.ruseltable{
+	width: 942px;
+	
+	
+}
+table
+  {
+  border-collapse:collapse;
+  }
+
+table,th, td
+  {
+    border: 1px solid blue;
+  }
+  td
+  {
+  height:50px;
+  text-align: center;
+ 
+  }	
+ thead{
+ 	background-color: green;
+ 		
+ }
+ .tableinfobox{
+ 	height:50px;
+ }
+.addbox{
+	width: 310px;
+	height: 20px;
+	margin-top: 10px;
+
+}
+.addbutton {
+	width: 120px;
+	height: 34px;
+	margin-top: 10px;
+	background-color: green;
+}
+.resetbutton {
+	margin-left: 20px;
+	width: 120px;
+	height: 34px;
+	background-color: yellow;
+}
+.deletebutton{
+	width: 70px;
+	height: 32px;
+	background-color: red;
+}
+.confirmbutton{
+	background-color: green;
+	width: 70px;
+	height: 32px;
+}
+.prodect-add-content{
+	margin: 0 auto;
+	width: 300px;
+}
+.productdescription{
+
+}
+.update{
+	background-color: yellow;
+	width: 70px;
+	height: 32px;
+}
