@@ -16,7 +16,7 @@
 	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/test" />
+		<property name="url" value="jdbc:mysql://localhost:3306/test4" />
 		<property name="username" value="root" />
 		<property name="password" value="123456" />
 
@@ -33,7 +33,6 @@
 				hibernate.dialect=org.hibernate.dialect.MySQLDialect
 				hibernate.show_sql=true
 				hibernate.format_sql=true
-				hibernate.hbm2ddl.auto=create
 				hibernate.hbm2ddl.auto=update
 			</value>
 		</property>

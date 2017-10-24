@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>理财模块-转入金额</title>
+<title>理财模块-订单管理</title>
 <base href="<%=basePath%>">
 <link rel="stylesheet" type="text/css" href="css/mmm.css">
 <link rel="stylesheet" type="text/css" href="css/financing_right.css">
@@ -19,14 +19,12 @@
 		<div class="main">
 			<%@include file="FI-GUIDE.jsp"%>
 			<div class="right">
-				<div class="guide">理财信息管理->金额转入</div>
-				<div class="function">
-					<form action="#" method="post">
-						<label>请输入银行卡账号:</label> <input type="text" id="account"
-							name="account"><br><br> <label>&nbsp; &nbsp;请输入转入金额:</label> <input
-							type="text" id="money" name="money"><br><br>
-						<button type="submit">转入</button>
-					</form>
+				<!--当前页面位置信息加在这里 ↓-->
+				<div class="guide">理财信息管理->订单管理</div>
+				<div class="order">
+					<!--当前页面内容加在这里 ↓-->
+
+					<!--当前页面内容加在这里 ↑-->
 				</div>
 			</div>
 		</div>

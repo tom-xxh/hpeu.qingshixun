@@ -22,8 +22,6 @@
 			<div class="right">
 				<!--当前页面位置信息加在这里 ↓-->
 				<div class="guide">理财信息管理->理财产品</div>
-				<div class=" function">
-					<!--当前页面内容加在这里 ↓-->
 					<div class="products">
 						<table>
 							<tr>
@@ -50,12 +48,9 @@
 								</tr>
 							</c:forEach>
 						</table>
-					</div>
-					<!--当前页面内容加在这里 ↑-->
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

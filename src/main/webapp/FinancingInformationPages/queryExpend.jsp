@@ -21,8 +21,6 @@
 			<div class="right">
 				<!--当前页面位置信息加在这里 ↓-->
 				<div class="guide">理财信息管理->收益管理</div>
-				<div class=" function">
-					<!--当前页面内容加在这里 ↓-->
 					<div class="right-serch">
 						<form action="#" method="post">
 							<label for="date">按时间段查询:</label><br>
@@ -44,8 +42,7 @@
 							<table border="1" cellpadding="0" cellspacing="0">
 								<thead>
 									<tr>
-										<th class="th1"><input type="checkbox"
-											name="checkboxItem" id="choice">日期</th>
+										<th>日期</th>
 										<th>账号</th>
 										<th>转入金额</th>
 										<th>转出金额</th>
@@ -54,24 +51,21 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td class="th1"><input type="checkbox"
-											name="checkboxItem">2017/10/1</td>
+										<td>2017/10/1</td>
 										<td>123</td>
 										<td>1000</td>
 										<td>2000</td>
 										<td>-1000</td>
 									</tr>
 									<tr>
-										<td class="th1"><input type="checkbox"
-											name="checkboxItem">2017/10/2</td>
+										<td>2017/10/2</td>
 										<td>234</td>
 										<td>2000</td>
 										<td>1000</td>
 										<td>1000</td>
 									</tr>
 									<tr>
-										<td class="th1"><input type="checkbox"
-											name="checkboxItem">2017/10/3</td>
+										<td>2017/10/3</td>
 										<td>456</td>
 										<td>3000</td>
 										<td>3000</td>
@@ -80,12 +74,9 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
-					<!--当前页面内容加在这里 ↑-->
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

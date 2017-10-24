@@ -28,14 +28,16 @@
 			<div class="first-menu" id="first-menu1"
 				onclick="window.location.href='FinancingInformationPages/earnings.jsp';">转入金额</div>
 			<div class="first-menu" id="first-menu2"
-				onclick="window.location.href='FinancingInformationPages/expend.jsp';">提现</div>
+				onclick="window.location.href='FinancingInformationPages/expend.jsp';">提取现金</div>
 			<div class="first-menu" id="first-menu3"
-				onclick="window.location.href='FinancingInformationPages/income.jsp';">账单查询</div>
+				onclick="window.location.href='FinancingInformationPages/income.jsp';">账单详情</div>
 			<div class="first-menu" id="first-menu4"
 				onclick="window.location.href='FinancingInformationPages/queryExpend.jsp';">收益管理</div>
 			<div class="first-menu" id="first-menu5"
 				onclick="window.location.href='FinancingInformationPages/statisticalStatement.jsp';">统计报表</div>
 			<div class="first-menu" id="first-menu6"
-				onclick="window.location.href='findProductAction';">理财产品管理</div>
+				onclick="window.location.href='FinancingInformationPages/products.jsp';">理财产品管理</div>
+			<div class="first-menu" id="first-menu7"
+				onclick="window.location.href='FinancingInformationPages/order.jsp';">订单管理</div>
 		</div>
 	</div>

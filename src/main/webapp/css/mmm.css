@@ -96,8 +96,6 @@ a {
 .top-guide {
 	width: 80%;
 	height: 100%;
-	/*background-color: red;*/
-	/*border: 1px soild red;*/
 }
 
 .top-guide li {
@@ -206,11 +204,9 @@ a {
 	width: 80%;
 }
 
-/*查看check的css*/
 .guide {
 	height: 40px;
 	background-color: #eee;
-	/*border-bottom: 1px solid #FF870C;*/
 	line-height: 40px;
 	padding-left: 25px;
 }
