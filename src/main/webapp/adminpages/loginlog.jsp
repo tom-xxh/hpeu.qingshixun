@@ -42,7 +42,7 @@
 				<li id="back"><a href="adminpages/prodect.jsp" id="check"><span>产品管理</span></a>
 				</li>
 				<li id="back"><a href="adminpages/systemm.jsp" id="check"><span>系统维护</span></a></li>
-				<li id="back"><a href="adminpages/personalinfo.jsp" id="check"><span>个人信息</span></a></li>
+				<li id="back"><a href="findAdmin" id="check"><span>个人信息</span></a></li>
 				</ul>
 			</div>
             <div class="content">
@@ -57,7 +57,7 @@
 				<div class="positioninfo" id="positioninfo"><span class="webinfospan">会员管理>登录日志</span></div>
                  <div class="memberinfobox">目前在线人数：<span>1000</span></div>
                  <div class="loginfo">
-                 	<table>
+                 	<table>                	
                  		这里显示登录的日志！
                  	</table>
                  </div>

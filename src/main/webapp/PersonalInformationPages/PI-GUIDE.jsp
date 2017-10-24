@@ -17,7 +17,7 @@
 	<div class="top-guide">
 		<ul>
 			<li id="back"><a
-				href="PersonalInformationPages/checkInformation.jsp" id="check"><span>个人信息管理</span></a></li>
+				href="info" id="check"><span>个人信息管理</span></a></li>
 			<li><a href="FinancingInformationPages/earnings.jsp" id="check"><span>理财信息管理</span></a></li>
 		</ul>
 	</div>

@@ -78,6 +78,12 @@
 				return false;
 			}
 		}
+		function isNull(str){
+			if ( str == "" ) return true;
+			var regu = "^[ ]+$";
+			var re = new RegExp(regu);
+			return re.test(str);
+			}
 	</script>
 </body>
 

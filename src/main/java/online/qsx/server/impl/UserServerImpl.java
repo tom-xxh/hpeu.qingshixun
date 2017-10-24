@@ -1,6 +1,5 @@
 package online.qsx.server.impl;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +34,7 @@ public class UserServerImpl {
 	}
 
 	public void edit(UserModel userModel) {
+		System.out.println("111");
 		userDaoImpl.edit(userModel);
 	}
 	//验证密码

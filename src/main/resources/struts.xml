@@ -31,6 +31,28 @@
 			<result name="list">PersonalInformationPages/checkInformation.jsp
 			</result>
 		</action>
+		<!-- 管理员信息查看1 -->
+		<action name="infoAdmin" class="adminAction" method="infoAdmin">
+			<result name="infoAdmin">adminpages/personalinfo-update.jsp
+			</result>
+		</action>
+		<!-- 管理员信息修改 -->
+		<action name="editAdmin" class="adminAction" method="editAdmin">
+			<result name="editAdmin">adminpages/personalinfo.jsp
+			</result>
+		</action>
+		<!-- 管理员信息查看2 -->
+		<action name="findAdmin" class="adminAction" method="findAdmin">
+			<result name="findAdmin">adminpages/personalinfo.jsp
+			</result>
+		</action>
+		<!-- 密码验证及更新 -->
+		<action name="PasswordUpdateAdmin" class="adminAction" method="passwordUpdate">
+			<result name="input">adminpages/password-update.jsp
+			</result>
+		</action>
+
+
 		<action name="delete" class="userAction" method="delete">
 			<result name="succeed">/WEB-INF/jsp/list.jsp</result>
 		</action>
@@ -100,9 +122,9 @@
 		</action>
 		<!-- 登录页面显示页面 -->
 		<action name="login" class="userAction" method="login">
-			<result name="login">PersonalInformationPages/checkInformation.jsp
-			</result>
+			<result name="login">PersonalInformationPages/checkInformation.jsp</result>
 			<result name="error">/index.jsp</result>
+			<result name="admin">adminpages/memberm.jsp</result>
 		</action>
 	</package>
 </struts>

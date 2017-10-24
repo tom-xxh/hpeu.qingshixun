@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import online.qsx.common.BaseDao;
-import online.qsx.model.BankModel;
 import online.qsx.model.ProductModel;
 
 @Repository

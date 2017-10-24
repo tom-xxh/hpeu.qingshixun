@@ -37,7 +37,7 @@
 				<li id="back"><a href="adminpages/memberm.jsp" id="check"><span>会员管理</span></a></li>
 				<li id="back"><a href="adminpages/prodect.jsp" id="check"><span>产品管理</span></a></li>
 				<li id="back"><a href="adminpages/systemm.jsp" id="check"><span>系统维护</span></a></li>
-				<li id="back"><a href="adminpages/personalinfo.jsp" id="check"><span>个人信息</span></a></li>
+				<li id="back"><a href="findAdmin" id="check"><span>个人信息</span></a></li>
 				</ul>
 			</div>
 			<div class="content">

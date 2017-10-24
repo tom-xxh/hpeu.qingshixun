@@ -36,15 +36,14 @@
 				<li id="back"><a href="adminpages/memberm.jsp" id="check"><span>会员管理</span></a></li>
 				<li id="back"><a href="adminpages/prodect.jsp" id="check"><span>产品管理</span></a></li>
 				<li id="back"><a href="adminpages/systemm.jsp" id="check"><span>系统维护</span></a></li>
-				<li id="back"><a href="adminpages/personalinfo.jsp" id="check"><span>个人信息</span></a></li>
+				<li id="back"><a href="findAdmin" id="check"><span>个人信息</span></a></li>
 				</ul>
 			</div>
             <div class="content">
 			<div class="left">
 				<div class="first" id="first">
 					<a href="adminpages/memberquery.jsp"><div class="first-menu" id="first-menu1">查询会员</div></a>
-					<a href="adminpages/memberadd.jsp"><div class="first-menu" id="first-menu2">添加会员</div></a>
-			
+					<a href="adminpages/memberadd.jsp"><div class="first-menu" id="first-menu2">添加会员</div></a>			
 					<a href="adminpages/loginlog.jsp"><div class="first-menu" id="first-menu5">登录日志</div></a>
 				</div>
 			</div>

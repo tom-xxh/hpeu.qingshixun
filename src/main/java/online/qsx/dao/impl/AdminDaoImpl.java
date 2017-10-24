@@ -15,35 +15,22 @@ import online.qsx.common.BaseDao;
 import online.qsx.model.UserModel;
 
 @Repository
-public class UserDaoImpl {
+public class AdminDaoImpl {
 	@Autowired
 	private BaseDao baseDao;
 	UserModel userModel;
-
+	//通过id查信息
+	public UserModel getUser(UserModel userModel) {
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		Long idd = (Long) session.getAttribute("id");
+		System.out.println(baseDao.getHibernateTemplate().get(UserModel.class, idd));
+		return baseDao.getHibernateTemplate().get(UserModel.class, idd);
+	}
 	@SuppressWarnings("unchecked")
 	public List<UserModel> getUsers() {
 		return (List<UserModel>) baseDao.getHibernateTemplate().find("from UserModel");
 	}
-
-	public void deleteUserModel(UserModel userModel) {
-		baseDao.getHibernateTemplate().delete(userModel);
-	}
-
-	public void updateUserModel(UserModel userModel) {
-		baseDao.getHibernateTemplate().update(userModel);
-	}
-
-	public void edit(UserModel userModel) {
-		baseDao.getHibernateTemplate().saveOrUpdate(userModel);
-	}
-
-	public UserModel getUser(UserModel userModel) {
-		HttpSession session = ServletActionContext.getRequest().getSession();
-		Long idd = (Long) session.getAttribute("id");
-		return baseDao.getHibernateTemplate().get(UserModel.class, idd);
-	}
-
-	//
+	//验证管理员密码并修改
 	public void checkPwd(String Password, String Password2) {
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		Long idd = (Long) session.getAttribute("id");
@@ -59,45 +46,21 @@ public class UserDaoImpl {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		System.out.println(idd);
 		UserModel user = baseDao.getHibernateTemplate().get(UserModel.class, idd);
 		if (user.getPassword().equals(Password)) {
 			user.setPassword(Password2);
 			out.print(
-					"<script language='javascript'>alert('密码修改成功！');window.location='PersonalInformationPages/passwordUpdate.jsp';</script>");
+					"<script language='javascript'>alert('密码修改成功！');window.location='adminpages/password-update.jsp';</script>");
 			out.flush();
 			out.close();
 			System.out.println("密码修改成功");
 		} else {
 			out.print(
-					"<script language='javascript'>alert('密码错误！');window.location='PersonalInformationPages/passwordUpdate.jsp';</script>");
+					"<script language='javascript'>alert('密码错误！');window.location='adminpages/password-update.jsp';</script>");
 			out.flush();
 			out.close();
 			System.out.println("密码错误");
 		}
 	}
-
-	// 登录查询
-	@SuppressWarnings("unchecked")
-
-	public List<UserModel> findUserModel(String name, String password) {
-		System.out.println("1231");
-		Long in = null;
-		String hql = "from UserModel UM where UM.name=? and UM.password=?";
-		List<UserModel> id = (List<UserModel>) baseDao.getHibernateTemplate().find(hql, name, password);
-		for (UserModel us : id) {
-			in = us.getId();
-			System.out.println("1231" + id.toString());
-		}
-		HttpSession session = ServletActionContext.getRequest().getSession();
-		session.setAttribute("id", in);
-		return id;
-	}
-
-	// 增加
-	public void addUserModel(UserModel userModel) {
-		baseDao.getHibernateTemplate().save(userModel);
-	}
-
 }

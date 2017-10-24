@@ -5,8 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.opensymphony.xwork2.ActionSupport;
-
 import online.qsx.model.BankModel;
 import online.qsx.server.impl.AddBankServerImpl;
 
