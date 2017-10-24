@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import online.qsx.dao.impl.ProductDaoImpl;
-import online.qsx.model.BankModel;
 import online.qsx.model.ProductModel;
 
 @Service
@@ -17,7 +16,11 @@ public class ProductServerImpl {
 	public List<ProductModel> getProductInfos() {
 		return productDaoImpl.getProductInfos();
 	}
-	public void saveproductModel(ProductModel productModel) {
-		productDaoImpl.addProductModel(productModel);
+	public void saveproductInfos(ProductModel productModel) {
+		productDaoImpl.addProductInfos(productModel);
+	}
+	public ProductModel getProductInfo(ProductModel productModel) {
+		System.out.println(22222222);
+		return  productDaoImpl.getProductInfo(productModel);
 	}
 }

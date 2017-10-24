@@ -22,7 +22,7 @@ public class ProductAction {
 	}
 
 	public String saveProductInfos() {
-		productServerImpl.saveproductModel(productModel);
+		productServerImpl.saveproductInfos(productModel);
 		return "succeed";
 	}
 	

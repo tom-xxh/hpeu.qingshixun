@@ -29,7 +29,7 @@
 								<th>产品名称</th>
 								<th>产品类型</th>
 								<th>单股价格</th>
-								<th>跌涨率</th>
+								<th>跌涨率(%)</th>
 								<th>操作</th>
 							</tr>
 							<c:forEach items="${list}" var="obj" varStatus="stuts">
@@ -44,7 +44,7 @@
 								<td>${obj.producttype }</td>
 								<td>${obj.productprice }</td>
 								<td>${obj.interestrate }</td>
-								<td><a href="saveProductAction?productModel.id=${obj.id }">买入</a></td>
+								<td><a href="saveOrderAction?productModel.id=${obj.id }">买入</a></td>
 								</tr>
 							</c:forEach>
 						</table>

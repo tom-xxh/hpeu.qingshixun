@@ -77,9 +77,24 @@
 			<result name="list">FinancingInformationPages/products.jsp
 			</result>
 		</action>
-		<!-- 买入理财产品 -->
+		<!-- 添加理财产品 -->
 		<action name="saveProductAction" class="ProductAction" method="saveProductInfos">
 			<result name="succeed">FinancingInformationPages/products.jsp
+			</result>
+		</action>
+		<!-- 查询订单列表 -->
+		<action name="findOrderAction" class="OrderAction" method="findOrderInfos">
+			<result name="list">FinancingInformationPages/order.jsp
+			</result>
+		</action>
+		<!-- 添加订单列表 -->
+		<action name="saveOrderAction" class="OrderAction" method="saveOrderInfos">
+			<result name="succeed">FinancingInformationPages/products.jsp
+			</result>
+		</action>
+		<!-- 取消订单 -->
+		<action name="deleteOrderAction" class="OrderAction" method="deleteOrderInfos">
+			<result name="succeed">FinancingInformationPages/order.jsp
 			</result>
 		</action>
 
