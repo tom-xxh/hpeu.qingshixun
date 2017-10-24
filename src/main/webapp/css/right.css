@@ -45,3 +45,29 @@ input[type="submit"] {
 	margin: 0 auto;
 	text-align: center;
 }
+
+
+
+table {
+	width: 900px;
+}
+
+th, td {
+	text-align: center;
+	padding: 7px 10px 10px 10px;
+}
+
+th {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 90%;
+	border-bottom: 2px solid #111111;
+}
+
+tr.even {
+	background-color: #efefef;
+}
+
+tr:hover {
+	background-color: #c3e6e5;
+}

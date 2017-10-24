@@ -36,6 +36,6 @@
 			<div class="first-menu" id="first-menu5"
 				onclick="window.location.href='FinancingInformationPages/statisticalStatement.jsp';">统计报表</div>
 			<div class="first-menu" id="first-menu6"
-				onclick="window.location.href='FinancingInformationPages/products.jsp';">理财产品管理</div>
+				onclick="window.location.href='findProductAction';">理财产品管理</div>
 		</div>
 	</div>

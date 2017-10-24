@@ -4,38 +4,41 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="default" namespace="/" extends="struts-default">
-        <action name="info" class="userAction" method="info">
-        	<result name="info">PersonalInformationPages/checkInformation.jsp</result>
-        </action>
-       
-		<action name="findUsers" class="userAction" method="findUsers">
-			<result name="list">/WEB-INF/jsp/list.jsp</result>
-		</action>
-
-		<action name="delete" class="userAction" method="delete">
-			<result name="succeed">/WEB-INF/jsp/list.jsp</result>
-		</action>
-
-		<action name="update" class="userAction" method="update">
-			<result name="succeed">/WEB-INF/jsp/list.jsp</result>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="info" class="userAction" method="info">
+			<result name="info">PersonalInformationPages/checkInformation.jsp
+			</result>
 		</action>
 
 		<!-- 添加银行卡 -->
 		<action name="addBankcardAction" class="addBankcardAction"
 			method="addBankcardInfos">
-			<result name="succeed">/usermodelpages/addCard.jsp</result>
+			<result name="succeed">PersonalInformationPages/addCard.jsp</result>
 		</action>
 		<!-- 解绑银行卡 -->
 		<action name="deleteBankcardAction" class="deleteBankcardAction"
 			method="deleteBankcardInfos">
-			<result name="succeed">/usermodelpages/personalInformation.jsp</result>
+			<result name="succeed">PersonalInformationPages/deleteCard.jsp
+			</result>
 		</action>
 		<!-- 查询银行卡信息 -->
-		<action name="deleteBankcardAction" class="deleteBankcardAction"
+		<action name="findBankcardAction" class="deleteBankcardAction"
 			method="findBankcardInfos">
-			<result name="list">/usermodelpages/deleteCard.jsp</result>
+			<result name="list">PersonalInformationPages/deleteCard.jsp</result>
 		</action>
+		<!-- 查询理财产品 -->
+		<action name="findProductAction" class="ProductAction"
+			method="findProductInfos">
+			<result name="list">FinancingInformationPages/products.jsp
+			</result>
+		</action>
+		<!-- 买入理财产品 -->
+		<action name="saveProductAction" class="ProductAction"
+			method="saveProductInfos">
+			<result name="succeed">FinancingInformationPages/products.jsp
+			</result>
+		</action>
+		
 		<!-- 转入信息显示页面 -->
 		<action name="TransferInAction" class="TransferInAction"
 			method="findTransferInInfos">
@@ -62,7 +65,8 @@
 		</action>
 		<!-- 登录页面显示页面 -->
 		<action name="login" class="userAction" method="login">
-			<result name="login">PersonalInformationPages/checkInformation.jsp</result>
+			<result name="login">PersonalInformationPages/checkInformation.jsp
+			</result>
 			<result name="error">/index.jsp</result>
 		</action>
 	</package>

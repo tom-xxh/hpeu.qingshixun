@@ -2,9 +2,6 @@ package online.qsx.action;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -20,11 +17,8 @@ public class DeleteBankcardAction {
 	private BankModel bankModel;
 
 	public String deleteBankcardInfos() {
-		HttpServletRequest request = ServletActionContext.getRequest();
-		Long bankcard = Long.valueOf(request.getParameter("bankid"));
-		System.out.println(bankcard);
-		bankModel.setBankcard(bankcard);
 		deleteBankServerImpl.deletebankModel(bankModel);
+		list = deleteBankServerImpl.getBankInfos();
 		return "succeed";
 	}
 

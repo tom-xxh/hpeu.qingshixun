@@ -19,9 +19,8 @@ public class AddBankcardAction {
 	private BankModel bankModel;
 
 	public String addBankcardInfos() {
-		System.out.println(bankModel.toString());
+		bankModel.setBank_count(20000.0);
 		bankServerImpl.addbankModel(bankModel);
-		list = bankServerImpl.getBankInfos();
 		return "succeed";
 	}
 

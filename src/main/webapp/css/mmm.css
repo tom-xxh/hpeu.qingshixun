@@ -2,9 +2,10 @@
 
 * {
 	margin: 0 auto;
-/* 	padding: 0 auto; */
+	/* 	padding: 0 auto; */
 }
-body{
+
+body {
 	
 }
 
@@ -18,11 +19,8 @@ a {
 	text-align: center;
 }
 
-
-
 .big {
 	width: 100%;
-	
 }
 
 .main {
@@ -35,7 +33,6 @@ a {
 	width: 80%;
 	height: 70px;
 	background-color: white;
-	
 }
 
 .img {
@@ -89,14 +86,14 @@ a {
 .top-down {
 	height: 40px;
 	width: 100%;
-	background-color:#FF870C;
+	background-color: #FF870C;
 }
 
 .top-down #back {
-		
 	text-align: center;
 }
-.top-guide{
+
+.top-guide {
 	width: 80%;
 	height: 100%;
 	/*background-color: red;*/
@@ -121,11 +118,11 @@ a {
 
 .left {
 	/*margin-left: 18%;*/
-	text-align: center;	
+	text-align: center;
 	width: 14%;
 	float: left;
 	background-color: white;
-	display:inline;
+	display: inline;
 }
 
 .first {
@@ -143,14 +140,16 @@ a {
 	border: 1px solid #FF870C;
 }
 
-.first-menu:hover{
-	background:#FF870C;
-	color: white; 
+.first-menu:hover {
+	background: #FF870C;
+	color: white;
 	cursor: pointer;
 }
-.first-menu:hover a{
-	color: white; 
+
+.first-menu:hover a {
+	color: white;
 }
+
 .first .first-menu-down {
 	display: none;
 }
@@ -173,8 +172,9 @@ a {
 .first-menu a {
 	color: #FF870C;
 }
-.first-menu a:hover{
-	color:white;	
+
+.first-menu a:hover {
+	color: white;
 }
 
 .new {
@@ -190,10 +190,10 @@ a {
 	margin-left: 16px;
 	/*background-color: gray;*/
 	/*background: red;*/
-	border:1px solid #FF870C;
+	border: 1px solid #FF870C;
 	/*height: 10px;*/
 	height: 550px;
-	display:inline;
+	display: inline;
 }
 
 .myIframe {
@@ -201,107 +201,230 @@ a {
 	height: 100%;
 	border: 0;
 }
-.content{
+
+.content {
 	width: 80%;
 }
 
 /*查看check的css*/
-
 .guide {
-    height: 40px;
-    background-color: #eee;
-    /*border-bottom: 1px solid #FF870C;*/
-    line-height: 40px;
-    padding-left: 25px;
+	height: 40px;
+	background-color: #eee;
+	/*border-bottom: 1px solid #FF870C;*/
+	line-height: 40px;
+	padding-left: 25px;
 }
 
 .check table {
-    width: 100%;
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*background-color: red;*/
-    /*padding-left: 20px;*/
-    text-align: center;
+	width: 100%;
+	/*width: 100%;*/
+	/*height: 100%;*/
+	/*background-color: red;*/
+	/*padding-left: 20px;*/
+	text-align: center;
 }
 
 .check tr {
-    height: 40px;
+	height: 40px;
 }
 
 .check td {
-    /*border: 1px solid black;*/
+	/*border: 1px solid black;*/
+	
 }
 
 .info {
-    height: 40px;
-    background-color: lightgrey;
+	height: 40px;
+	background-color: lightgrey;
 }
 
 .info li {
-    line-height: 40px;
-    list-style: none;
-    display: inline;
-    /*padding-right: 70px;*/
-    /*padding-left: 20px;*/
+	line-height: 40px;
+	list-style: none;
+	display: inline;
+	/*padding-right: 70px;*/
+	/*padding-left: 20px;*/
 }
 
 .check thead {
-    background-color: lightgrey;
+	background-color: lightgrey;
 }
 
 /*修改edit的css*/
-
 .edit {
-    /*width: 40%;*/
-    text-align: center;
-    margin: 0 auto;
+	/*width: 40%;*/
+	text-align: center;
+	margin: 0 auto;
 }
 
 .grxx {
-    margin-top: 20px;
-    height: 20px;
+	margin-top: 20px;
+	height: 20px;
 }
 
-.viewInfo,
-.input {
-    width: 250px;
+.viewInfo, .input {
+	width: 250px;
 }
 
 .viewInfo {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 .anniu {
-    margin-top: 20px;
-    /*margin-right: 20px;*/
-    width: 40px;
-    height: 30px;
+	margin-top: 20px;
+	/*margin-right: 20px;*/
+	width: 40px;
+	height: 30px;
 }
 
+input
 
-input:not([type="text"],[type="checkbox"]) {
-    width: 120px;
-    height: 30px;
-    background-color: white;
-    border: 1px orange solid;
-    color: #FF870C;
+
+
+
+:not
+
+
+ 
+
+
+(
+[
+type
+=
+"text"
+]
+,
+[
+type
+=
+"checkbox"
+]
+
+
+ 
+
+
+)
+{
+width
+
+
+
+
+:
+
+
+ 
+
+
+120
+px
+
+
+
+
+;
+height
+
+
+
+
+:
+
+
+ 
+
+
+30
+px
+
+
+
+
+;
+background-color
+
+
+
+
+:
+
+
+ 
+
+
+white
+
+
+
+
+;
+border
+
+
+
+
+:
+
+
+ 
+
+
+1
+px
+
+
+ 
+
+
+orange
+
+
+ 
+
+
+solid
+
+
+
+
+;
+color
+
+
+
+
+:
+
+
+ 
+
+
+#FF870C
+
+
+
+
+;
 }
-
 input[type="submit"] {
 	width: 120px;
-    height: 30px;
-    color: white;
-    background-color: #FF870C;
-    margin-left: 15px;
-    margin-right: 20px;
-    border:none;
-/*     border: 1px orange solid; */
+	height: 30px;
+	color: white;
+	background-color: #FF870C;
+	margin-left: 15px;
+	margin-right: 20px;
+	border: none;
+	/*     border: 1px orange solid; */
 }
-input[type="reset"]{
+
+input[type="reset"] {
 	width: 120px;
-    height: 30px;
-    border: none;
+	height: 30px;
+	border: none;
 }
-ul{
+
+ul {
 	list-style: none;
 }

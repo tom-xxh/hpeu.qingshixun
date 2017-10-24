@@ -1,70 +1,77 @@
 package online.qsx.model;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 /*
  * 银行卡 model类
  */
 @Entity
-@Table(catalog = "test", name = "t_bank")
+@Table(name = "t_bank")
 public class BankModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "bank_id")
 	private Long id;
-	
+
 	private String realName;
 	private Long id_card;
 	private Long bankcard;
 	private Long phonenumber;
 	private Double bank_count;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getRealName() {
 		return realName;
 	}
+
 	public void setRealName(String realName) {
 		this.realName = realName;
 	}
+
 	public Long getId_card() {
 		return id_card;
 	}
+
 	public void setId_card(Long id_card) {
 		this.id_card = id_card;
 	}
+
 	public Long getBankcard() {
 		return bankcard;
 	}
+
 	public void setBankcard(Long bankcard) {
 		this.bankcard = bankcard;
 	}
+
 	public Long getPhonenumber() {
 		return phonenumber;
 	}
+
 	public void setPhonenumber(Long phonenumber) {
 		this.phonenumber = phonenumber;
 	}
+
 	public Double getBank_count() {
 		return bank_count;
 	}
+
 	public void setBank_count(Double bank_count) {
 		this.bank_count = bank_count;
 	}
+
 	@Override
 	public String toString() {
 		return "BankModel [id=" + id + ", realName=" + realName + ", id_card=" + id_card + ", bankcard=" + bankcard

@@ -23,33 +23,33 @@
 				<div class=" function">
 					<!--当前页面内容加在这里 ↓-->
 					<div class="addCard">
-						<form id="register">
+						<form id="addCard" action="addBankcardAction" method="post">
 							<ul>
 								<li class="grxx">
 									<div class="grxx">
 										&emsp;真实姓名: <input type="text" class="input" id="username"
-											name="username" class="text" maxlength="20"
+											name="bankModel.realName" class="text" maxlength="20"
 											onblur="checkUserName()" />
 									</div>
 								</li>
 								<li>
 									<div class="grxx">
 										&emsp;身份证号: <input type="text" class="input" id="password"
-											name="password" class="text" maxlength="20"
+											name="bankModel.id_card" class="text" maxlength="20"
 											onblur="checkUserName()" />
 									</div>
 								</li>
 								<li>
 									<div class="grxx">
 										银行卡卡号: <input type="text" class="input" id="email"
-											name="email" class="text" maxlength="20"
+											name="bankModel.bankcard" class="text" maxlength="20"
 											onblur="checkUserName()" />
 									</div>
 								</li>
 								<li>
 									<div class="grxx">
 										&emsp;手机号码: <input type="text" class="input" id="idcard"
-											name="idcard" class="text" maxlength="20"
+											name="bankModel.phonenumber" class="text" maxlength="20"
 											onblur="checkUserName()" />
 									</div>
 								</li>
