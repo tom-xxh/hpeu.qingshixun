@@ -62,19 +62,32 @@
 		</action>
 
 		<!-- 转入信息显示页面 -->
-		<action name="TransferInAction" class="TransferInAction"
-			method="findTransferInInfos">
-			<result name="succeed">/WEB-INF/jsp/transferIn.jsp</result>
+		<action name="TransferInAction" class="TransferAction"
+			method="transferIn">
+			<result name="transferIn">/FinancingInformationPages/income.jsp</result>
+			<result name="bankcardnotexit">/FinancingInformationPages/bankCardNotExitOther.jsp</result>
+			<result name="default">/FinancingInformationPages/transferInDefault.jsp</result>
 		</action>
 		<!-- 转出信息显示页面 -->
-		<action name="TransferOutAction" class="TransferOutAction"
+		<action name="TransferOutAction" class="TransferAction"
 			method="transferOut">
-			<result name="transferOut">/FinancingInformationPages/expend.jsp</result>
+			<result name="transferOut">/FinancingInformationPages/income.jsp</result>
+			<result name="default">/FinancingInformationPages/transferOutDefault.jsp</result>
+			<result name="bankcardnotexit">/FinancingInformationPages/bankCardNotExit.jsp</result>
 		</action>
+		
 		<!-- 转出查询页面 -->
-		<action name="FindTransferOutAction" class="TransferOutAction"
-			method="findTransferOutInfos">
-			<result name="succeed">/FinancingInformationPages/expend.jsp</result>
+		<action name="FindTransferOutAction" class="TransferAction"
+			method="findTransferInfos">
+			<result name="succeed">/FinancingInformationPages/income.jsp</result>
+			
+			
+		</action>
+		
+		<!-- 删除信息页面 -->
+		<action name="DeleteTransferInfos" class="TransferAction"
+			method="deleteTransferInfos">
+			<result name="succeed">/FinancingInformationPages/income.jsp</result>
 		</action>
 
 		<!-- 收益信息显示页面 -->

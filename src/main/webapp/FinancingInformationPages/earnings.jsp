@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -21,10 +22,10 @@
 			<div class="right">
 				<div class="guide">理财信息管理->金额转入</div>
 				<div class="function">
-					<form action="#" method="post">
+					<form action="TransferInAction" method="post">
 						<label>请输入银行卡账号:</label> <input type="text" id="account"
-							name="account"><br><br> <label>&nbsp; &nbsp;请输入转入金额:</label> <input
-							type="text" id="money" name="money"><br><br>
+							name="transferModel.bankcard"><br><br> <label>&nbsp; &nbsp;请输入转入金额:</label> <input
+							type="text" id="money" name="transferModel.transfer_Money"><br><br>
 						<button type="submit">转入</button>
 					</form>
 				</div>

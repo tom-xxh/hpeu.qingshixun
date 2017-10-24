@@ -6,14 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import online.qsx.dao.impl.TransferInDaoImpl;
-import online.qsx.model.TransferInModel;
+import online.qsx.model.TransferModel;
 
 @Service
 public class TransferInServerImpl {
 	@Autowired
 	private TransferInDaoImpl transferInDaoImpl;
 
-	public List<TransferInModel> getTransferInInfos() {
-		return transferInDaoImpl.getTransferInInfos();
+	public List<TransferModel> getTransferInInfos() {
+		return transferInDaoImpl.getTransferInfos();
+	}
+	
+	//保存转入信息
+	public int saveTransferIn(TransferModel transferModel){
+		return transferInDaoImpl.saveTransferIn(transferModel);
 	}
 }
