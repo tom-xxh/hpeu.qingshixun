@@ -26,7 +26,7 @@
 				</div>
 				
 				<div class="exit">
-					<a href="../index.html">退出</a>
+					<a href="index.html">退出</a>
 				</div>
 				<div class="help">
 					<a href="#">帮助</a>

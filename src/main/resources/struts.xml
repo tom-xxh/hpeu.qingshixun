@@ -74,15 +74,36 @@
 			<result name="findAdmin">adminpages/personalinfo.jsp
 			</result>
 		</action>
-		<!-- 密码验证及更新 -->
+		<!-- 管理员密码验证及更新 -->
 		<action name="PasswordUpdateAdmin" class="adminAction" method="passwordUpdate">
 			<result name="input">adminpages/password-update.jsp
 			</result>
 		</action>
-
-
+		<!-- 管理员添加会员 -->
+		<action name="addUser" class="adminAction" method="addUser">
+			<result name="addUser">adminpages/memberadd.jsp</result>
+		</action>
+		<!-- 管理员查询会员 -->
+		<action name="queryUser" class="adminAction" method="queryUser">
+			<result name="queryUser">adminpages/memberquery.jsp</result>
+			<result name="queryError">adminpages/memberquery.jsp</result>
+		</action>
+		<!-- 管理员修改会员 -->
+		<action name="editUser" class="adminAction" method="editUser">
+			<result name="editUser">adminpages/memberupdate.jsp</result>
+		</action>
+		<!-- 管理员修改会员 -->
+		<action name="saveUser" class="adminAction" method="saveUser">
+			<result name="saveUser">adminpages/memberupdate.jsp</result>
+		</action>
+		<!-- 管理员修改会员 -->
+		<action name="countUser" class="adminAction" method="countUser">
+			<result name="countUser">adminpages/memberm.jsp</result>
+		</action>
+		
+                                    
 		<action name="delete" class="userAction" method="delete">
-			<result name="succeed">/WEB-INF/jsp/list.jsp</result>
+			<result name="succeed">adminpages/memberquery.jsp</result>
 		</action>
 		<!-- 添加银行卡 -->
 		<action name="addBankcardAction" class="addBankcardAction"
@@ -126,29 +147,25 @@
 			</result>
 		</action>
 
+
 		<!-- 转入信息显示页面 -->
-		<action name="TransferInAction" class="TransferAction"
-			method="transferIn">
+		<action name="TransferInAction" class="TransferAction" method="transferIn">
 			<result name="transferIn">/FinancingInformationPages/income.jsp</result>
 			<result name="bankcardnotexit">/FinancingInformationPages/bankCardNotExitOther.jsp</result>
 			<result name="default">/FinancingInformationPages/transferInDefault.jsp</result>
 		</action>
 		<!-- 转出信息显示页面 -->
-		<action name="TransferOutAction" class="TransferAction"
-			method="transferOut">
+		<action name="TransferOutAction" class="TransferAction" method="transferOut">
 			<result name="transferOut">/FinancingInformationPages/income.jsp</result>
 			<result name="default">/FinancingInformationPages/transferOutDefault.jsp</result>
 			<result name="bankcardnotexit">/FinancingInformationPages/bankCardNotExit.jsp</result>
 		</action>
-		
+
 		<!-- 转出查询页面 -->
 		<action name="FindTransferOutAction" class="TransferAction"
 			method="findTransferInfos">
 			<result name="succeed">/FinancingInformationPages/income.jsp</result>
-			
-			
 		</action>
-		
 		<!-- 删除信息页面 -->
 		<action name="DeleteTransferInfos" class="TransferAction"
 			method="deleteTransferInfos">

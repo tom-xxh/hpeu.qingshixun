@@ -36,14 +36,14 @@ public class UserDaoImpl {
 	public void edit(UserModel userModel) {
 		baseDao.getHibernateTemplate().saveOrUpdate(userModel);
 	}
-
+	//通过ID查询登录用户信息
 	public UserModel getUser(UserModel userModel) {
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		Long idd = (Long) session.getAttribute("id");
 		return baseDao.getHibernateTemplate().get(UserModel.class, idd);
 	}
 
-	//
+	//验证密码并修改
 	public void checkPwd(String Password, String Password2) {
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		Long idd = (Long) session.getAttribute("id");
@@ -80,7 +80,6 @@ public class UserDaoImpl {
 
 	// 登录查询
 	@SuppressWarnings("unchecked")
-
 	public List<UserModel> findUserModel(String name, String password) {
 		System.out.println("1231");
 		Long in = null;
@@ -95,9 +94,10 @@ public class UserDaoImpl {
 		return id;
 	}
 
-	//注册
-	public void addUserModel(UserModel userModel){
+	// 增加
+	public void addUserModel(UserModel userModel) {
 		baseDao.getHibernateTemplate().save(userModel);
+		System.out.println("XXXXXXX"+"WWWWW");
 	}
 	//注册账号查询
 			public  List<UserModel> findUserName(String name){

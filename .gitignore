@@ -3,3 +3,4 @@
 .project
 /target/
 src/main/java/online/qsx/action/UserAction.java.rej
+src/main/java/online/qsx/model/UserModel.java.rej

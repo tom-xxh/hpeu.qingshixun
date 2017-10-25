@@ -10,13 +10,10 @@ import online.qsx.server.impl.UserServerImpl;
 
 @Component("userAction")
 public class UserAction {
-
 	@Autowired
 	private UserServerImpl userServerImpl;
-
 	private List<UserModel> list;
 	private UserModel userModel;
-
 	// 当前用户身份
 	public static long userState;
 
