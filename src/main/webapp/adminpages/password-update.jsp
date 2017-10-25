@@ -77,6 +77,7 @@
 			</div>
 		</div>
 	</div>
+
 	<script language="JavaScript">
 		function checkPwd() {
 			if (isNull(puaForm.Password.value)) {
@@ -104,6 +105,10 @@
 			return re.test(str);
 		}
 	</script>
+
+	<script src="../js/li.js"></script>
+	 <div class="webfoot"><span>版权所有 © 2017 CodeMan.保留所有权</span></div>
+
 </body>
 
 </html>

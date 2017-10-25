@@ -55,40 +55,39 @@
                         <form>
                         <div><span>请输入<span class="red">新会员</span>以下信息：</span></div>
 
-                        <div class="addbox"><span>会员姓名:</span>&nbsp&nbsp&nbsp
+                        <div class="addbox"><span>会员姓名:</span>&nbsp;&nbsp;&nbsp;
                             <input type="text" class="inputbox" name="name">   </div>
 
-                            <div class="addbox"><span>会员性别:</span>&nbsp&nbsp&nbsp
+                            <div class="addbox"><span>会员性别:</span>&nbsp;&nbsp;&nbsp;
                                
                                <label><input name="gen" type="radio" value="nan" />男 </label> 
                                 <label><input name="gen" type="radio" value="nv" id="woman" />女 </label> 
                                    </div>
-                                  <div class="addbox"><span>会员密码:</span>&nbsp&nbsp&nbsp
+                                  <div class="addbox"><span>会员密码:</span>&nbsp;&nbsp;&nbsp;
                                 <input type="password" class="inputbox" name="password">
-
-                                <div class="addbox"><span>重复密码:</span>&nbsp&nbsp&nbsp
+                                 </div>
+                                <div class="addbox"><span>重复密码:</span>&nbsp;&nbsp;&nbsp;
                                     <input type="password" class="inputbox" name="repeatpassword">
-
-                                <div class="addbox"><span>会员证件:</span>&nbsp&nbsp&nbsp
+ 							  </div>
+                                <div class="addbox"><span>会员证件:</span>&nbsp;&nbsp;&nbsp;
                                     <input type="text" class="inputbox" name="idcard">
                                     </div>
-                                    <div class="addbox"><span>会员邮箱:</span>&nbsp&nbsp&nbsp
+                                    <div class="addbox"><span>会员邮箱:</span>&nbsp;&nbsp;&nbsp;
                                         <input type="text" class="inputbox" name="email">
                                        </div>
-                                            <div class="addbox"><span>会员电话:</span>&nbsp&nbsp&nbsp
+                                            <div class="addbox"><span>会员电话:</span>&nbsp;&nbsp;&nbsp;
                                                 <input type="text" class="inputbox" name="phonenumber">
                                              </div>
                                                 <button class="addbutton">添加</button>
-                                                <input type="reset"  class="resetbutton" name="">
-                                            
-                                        
-                                  
-                              
-                         
+                                                <input type="reset"  class="resetbutton" name="">     
                             </form>
                         </div>
                     </div>
+                    </div>
+                    </div>
+                    </div>
                         <script src="../js/li.js"></script>
+                    <div class="webfoot"><span>版权所有 © 2017 CodeMan.保留所有权</span></div>
 </body>
 
 </html>

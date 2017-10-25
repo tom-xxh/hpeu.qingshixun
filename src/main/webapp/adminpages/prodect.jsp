@@ -62,25 +62,28 @@
                     	<div class="ruselt">
                     		<table class="ruseltable">
                     			<thead>
+                    				<td>产品编号</td>
                     				<td>产品名称</td>
-                    				<td>产品利率</td>
-                    				<td>产品特征</td>
-                    				<td>产品描述</td>
+                    				<td>产品类型</td>
+                    				<td>单股价格(元)</td>
+                    				<td>涨跌利率</td>
                     				<td>操作</td>
                     			
                     			</thead>
                               <tbody>
-                              	<td class="tableinfobox">余额宝</td>
-                              	<td class="tableinfobox">0.66%</td>
-                              	<td class="tableinfobox">低风险 低收益</td>
-                              	<td class="tableinfobox" >阿里公司发布</td>
+                               <tr>
+                              	<td class="tableinfobox">001 </td>
+                              	<td class="tableinfobox">余额宝 </td>
+                              	<td class="tableinfobox">基金 </td>
+                              	<td class="tableinfobox" >10 </td>
+                              	<td class="tableinfobox" >+1.1% </td>
                               	<td class="tableinfobox" >
                                  <a href="adminpages/product-update.jsp"> <button class="update">修改</button></a>
                                   <button class="deletebutton">删除</button>
 
 
                               	</td>
-                             
+                               </tr>
 
                               </tbody>
 
@@ -97,7 +100,7 @@
 		</div>
 	</div>
 	<script src="../js/li.js"></script>
-	
+	 <div class="webfoot"><span>版权所有 © 2017 CodeMan.保留所有权</span></div>
 </body>
 
 </html>

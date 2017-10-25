@@ -95,6 +95,11 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< Updated upstream
+=======
+	<script src="../js/li.js"></script>
+	 <div class="webfoot"><span>版权所有 © 2017 CodeMan.保留所有权</span></div>
+>>>>>>> Stashed changes
 </body>
 
 </html>

@@ -11,7 +11,7 @@
 
 <head>
 <base href="<%=basePath%>">
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>管理模块</title>
 <link rel="stylesheet" type="text/css" href="css/admin.css">
 <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
@@ -59,21 +59,29 @@
 			  <form>
 			  	 <div class="prodect-add-content">
                         <div><span>请输入<span class="red">新产品</span>以下信息：</span></div>
+                        
+                        
+                          <div class="addbox"><span>产品编号:</span>
+                            <input class="productadd-input" type="text" name="productid">
+                             </div>
+                        
                         <div class="addbox"><span>产品名称:</span>
-                            <input type="text" name="productname">
+                            <input class="productadd-input" type="text" name="productname">
                              </div>
 
-                            <div class="addbox"><span>产品利率:</span>
-                                <input type="text" name="productrate">
+                            <div class="addbox"><span>涨跌利率:</span>
+                                <input class="productadd-input" type="text" name="productrate">
                             </div>
-                            <div class="addbox"><span>产品特征:</span>
-                            <input type="text" name="productfeatures">
+                            <div class="addbox"><span>产品类型:</span>
+                            <input class="productadd-input" type="text" name="productfeatures">
                             </div>
-                            <div class="addbox"><span>详细描述:</span>
-                            <input type="text" name="productdescription" class="productdescription">
+                            <div class="addbox"><span>单股价格:</span>
+                            <input class="productadd-input" type="text" name="productdemoney" class="productdescription">
                             </div>
                        <button class="addbutton">添加</button>
                        <input type="reset"  class="resetbutton" name="重置">
+                       <button class="goback">返回</button>
+                       
                     </div>
                      
 			  </form>
@@ -81,7 +89,9 @@
 		
 	</div>
 	<script src="../js/li.js"></script>
-	
+	</div>
+	</div>
+	 <div class="webfoot"><span>版权所有 © 2017 CodeMan.保留所有权</span></div>
 </body>
 
 </html>
