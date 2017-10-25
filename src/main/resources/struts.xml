@@ -4,32 +4,32 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-<!-- <package name=testJson" namespace="/" extends="json-default"></package> -->
+	<!-- <package name=testJson" namespace="/" extends="json-default"></package> -->
 	<package name="default2" extends="json-default">
-	<!-- 注册判断账号 -->
+		<!-- 注册判断账号 -->
 		<action name="useraction" class="online.qsx.action.UserAction"
 			method="ajaxUsername">
 			<result name="name" type="json">
 				<param name="root">name</param>
 			</result>
 		</action>
-		
-			<!-- 注册邮箱判断 -->
+
+		<!-- 注册邮箱判断 -->
 		<action name="useremail" class="online.qsx.action.UserAction"
 			method="ajaxUserEmail">
 			<result name="email" type="json">
 				<param name="root">email</param>
 			</result>
 		</action>
-		
+
 		<!-- 登录账号密码判断 -->
 		<action name="loginAA" class="online.qsx.action.UserAction"
-		method="ajaxLoginFromAction">
+			method="ajaxLoginFromAction">
 			<result name="loginName" type="json">
 				<param name="root">loginName</param>
-			</result>		
+			</result>
 		</action>
-		
+
 	</package>
 
 
@@ -96,12 +96,12 @@
 		<action name="saveUser" class="adminAction" method="saveUser">
 			<result name="saveUser">adminpages/memberupdate.jsp</result>
 		</action>
-		<!-- 管理员修改会员 -->
+		<!-- 查询会员人数 -->
 		<action name="countUser" class="adminAction" method="countUser">
-			<result name="countUser">adminpages/memberm.jsp</result>
+			<result name="countUser">adminpages/loginlog.jsp</result>
 		</action>
-		
-                                    
+
+
 		<action name="delete" class="userAction" method="delete">
 			<result name="succeed">adminpages/memberquery.jsp</result>
 		</action>

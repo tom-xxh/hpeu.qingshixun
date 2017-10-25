@@ -10,7 +10,7 @@
 		<a href="index.jsp">退出</a>
 	</div>
 	<div class="help">
-		<a href="#">帮助</a>
+		<a href="FinancingInformationPages/help.jsp" target="view_frame">帮助</a>
 	</div>
 </div>
 <div class="top-down">

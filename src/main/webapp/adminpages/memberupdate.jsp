@@ -25,17 +25,13 @@
 				<div class="img">
 					<img src="images/logo-blue.png">
 				</div>
-
 				<div class="exit">
 					<a href="index.jsp">退出</a>
-				</div>
-				<div class="help">
-					<a href="#">帮助</a>
 				</div>
 			</div>
 			<div class="top-down">
 				<ul>
-					<li id="back"><a href="countUser" id="check"><span>会员管理</span></a></li>
+					<li id="back"><a href="adminpages/memberm.jsp" id="check"><span>会员管理</span></a></li>
 					<li id="back"><a href="adminpages/prodect.jsp" id="check"><span>产品管理</span></a>
 					</li>
 					<li id="back"><a href="adminpages/systemm.jsp" id="check"><span>系统维护</span></a></li>
@@ -50,7 +46,7 @@
 						<div class="first-menu" id="first-menu2"
 							onclick="window.location.href='adminpages/memberadd.jsp'">添加会员</div>
 						<div class="first-menu" id="first-menu5"
-							onclick="window.location.href='adminpages/loginlog.jsp'">在线人数</div>
+							onclick="window.location.href='countUser'">在线人数</div>
 					</div>
 				</div>
 				<div class="right">
@@ -61,19 +57,15 @@
 						<form action="saveUser" method="post"
 							onSubmit="return checkUser()">
 							<div>
-								<span>请选择修改<span class="red">会员</span>以下信息：
-								</span>
+								<span>请选择修改<span class="red">会员</span>以下信息(<span
+									style="color: red">*</span><span>不可修改)：</span></span>
 							</div>
 							<div class="addbox">
 								<span>会员姓名:</span>&nbsp;&nbsp;&nbsp; <input type="text"
 									class="inputbox" name="userModel.name"
-									value="${userModel.name}" id="aName">
-							</div>
-							<div class="addbox">
-								<span>会员密码:</span>&nbsp;&nbsp;&nbsp; <input type="password"
-									class="inputbox" name="userModel.password"
-									value="${userModel.password}" id="aPassword">
-							</div>
+									value="${userModel.name}" id="aName" disabled><span
+									style="color: red">*</span>
+							</div>							
 							<div class="addbox">
 								<span>会员证件:</span>&nbsp;&nbsp;&nbsp; <input type="text"
 									class="inputbox" name="userModel.IDcard"
@@ -82,7 +74,8 @@
 							<div class="addbox">
 								<span>会员邮箱:</span>&nbsp;&nbsp;&nbsp; <input type="text"
 									class="inputbox" name="userModel.email"
-									value="${userModel.email}">
+									value="${userModel.email}" disabled><span
+									style="color: red">*</span>
 							</div>
 							<div class="addbox">
 								<span>会员电话:</span>&nbsp;&nbsp;&nbsp; <input type="text"

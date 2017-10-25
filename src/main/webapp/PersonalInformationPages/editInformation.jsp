@@ -21,52 +21,44 @@
 			<%@include file="PI-GUIDE.jsp"%>
 			<div class="right">
 				<!--当前页面位置信息加在这里 ↓-->
-				<div class="guide">个人信息管理->个人信息修改</div>
+				<div class="guide">个人信息管理->个人信息修改(<span style="color: red">*</span>不可修改)</div>
 				<div class=" function">
 					<!--当前页面内容加在这里 ↓-->
 					<div class="edit">
 						<form action="do_edit" method="post" name="editForm">
-							<ul>
-								<li class="grxx">
-									<div class="grxx">
-										&emsp;用户名: <input type="text" class="input" id="username"
-											name="userModel.name" class="text" maxlength="20"
-											value="${userModel.name}" />
-									</div>
-								</li>
-								<li>
-									<div class="grxx">
-										&emsp;密&emsp;码: <input type="text" class="input" id="password"
-											name="userModel.password" class="text" maxlength="20"
-											value="${userModel.password}" />
-									</div>
-								</li>
-								<li>
-									<div class="grxx">
-										&emsp;邮&emsp;箱: <input type="email" class="input" id="email"
-											name="userModel.email" class="text" maxlength="20"
-											value="${userModel.email}" />
-									</div>
-								</li>
-								<li>
-									<div class="grxx">
-										&emsp;电&emsp;话: <input type="text" class="input" id="email"
-											name="userModel.phonenumber" class="text" maxlength="20"
-											value="${userModel.phonenumber}" />
-									</div>
-								</li>
-								<li>
-									<div class="grxx">
-										&emsp;身份证: <input type="text" class="input" id="idcard"
-											name="userModel.IDcard" class="text" maxlength="20"
-											value="${userModel.IDcard}" />
-									</div>
-								</li>
-								<li><input class="anniu" type="submit" name="submit"
-									value="保存"> <input class="anniu" type="button"
-									name="return" value="返回" onclick="javascript:history.back(-1);">
-								</li>
-							</ul>
+							<div class="grxx">
+								&emsp;用户ID: <input type="text" class="input" id="usernamesignup"
+									name="userModel.id" class="text" maxlength="20"
+									value="${userModel.id}" disabled/><span style="color: red">*</span>
+							</div>
+							<div class="grxx">
+								&emsp;用户名: <input type="text" class="input" id="usernamesignup"
+									name="userModel.name" class="text" maxlength="20"
+									value="${userModel.name}" disabled/><span style="color: red">*</span>
+							</div>
+							<div class="grxx">
+								&emsp;邮&emsp;箱: <input type="email" class="input"
+									name="userModel.email" class="text" maxlength="20"
+									value="${userModel.email}" id="emailsignup" disabled/><span
+									style="color: red">*</span>
+							</div>
+							<div class="grxx">
+								&emsp;电&emsp;话: <input type="text" class="input" id="email"
+									name="userModel.phonenumber" class="text" maxlength="20"
+									value="${userModel.phonenumber}" /><span
+									style="color: white">*</span>
+							</div>
+							<div class="grxx">
+								&emsp;身份证: <input type="text" class="input" id="idcard"
+									name="userModel.IDcard" class="text" maxlength="20"
+									value="${userModel.IDcard}" /><span
+									style="color: white">*</span>
+							</div>
+							<div class="grxx">
+									<input class="anniu" type="submit" name="submit" value="保存">
+									<input class="anniu" type="button" name="return" value="返回"
+										onclick="javascript:history.back(-1);">
+								</div>
 						</form>
 					</div>
 					<!--当前页面内容加在这里 ↑-->
@@ -75,6 +67,7 @@
 		</div>
 	</div>
 	</div>
+
 </body>
 
 </html>

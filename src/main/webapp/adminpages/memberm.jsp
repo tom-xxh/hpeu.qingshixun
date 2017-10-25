@@ -11,7 +11,7 @@
 
 <head>
 <base href="<%=basePath%>">
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>管理模块</title>
 <link rel="stylesheet" type="text/css" href="css/admin.css">
 <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
@@ -24,17 +24,13 @@
 				<div class="img">
 					<img src="images/logo-blue.png">
 				</div>
-
 				<div class="exit">
 					<a href="index.jsp">退出</a>
-				</div>
-				<div class="help">
-					<a href="#">帮助</a>
 				</div>
 			</div>
 			<div class="top-down">
 				<ul>
-					<li id="back"><a href="countUser" id="check"><span>会员管理</span></a></li>
+					<li id="back"><a href="adminpages/memberm.jsp" id="check"><span>会员管理</span></a></li>
 					<li id="back"><a href="adminpages/prodect.jsp" id="check"><span>产品管理</span></a></li>
 					<li id="back"><a href="adminpages/systemm.jsp" id="check"><span>系统维护</span></a></li>
 					<li id="back"><a href="findAdmin" id="check"><span>个人信息</span></a></li>
@@ -48,7 +44,7 @@
 						<div class="first-menu" id="first-menu2"
 							onclick="window.location.href='adminpages/memberadd.jsp'">添加会员</div>
 						<div class="first-menu" id="first-menu5"
-							onclick="window.location.href='adminpages/loginlog.jsp'">在线人数</div>
+							onclick="window.location.href='countUser'">在线人数</div>
 					</div>
 				</div>
 				<div class="right">
@@ -56,11 +52,10 @@
 						<span class="webinfospan">会员管理</span>
 					</div>
 					<div class="memberinfobox">
-						<h1>目前已有注册会员：<span style="color:red;">${count}</span>人</h1>
+						<h1>欢迎来到<span style="color:red;">管理员</span>界面!</h1>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 	<div class="webfoot">

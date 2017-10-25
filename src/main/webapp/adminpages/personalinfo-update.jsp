@@ -6,13 +6,12 @@
 			+ path + "/";
 %>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 
-<html lang="zh">
-
+<html>
 <head>
 <base href="<%=basePath%>">
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>管理模块</title>
 <link rel="stylesheet" type="text/css" href="css/admin.css">
 <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
@@ -25,12 +24,8 @@
 				<div class="img">
 					<img src="images/logo-blue.png">
 				</div>
-
 				<div class="exit">
 					<a href="index.jsp">退出</a>
-				</div>
-				<div class="help">
-					<a href="#">帮助</a>
 				</div>
 			</div>
 			<div class="top-down">
@@ -43,9 +38,6 @@
 			</div>
 			<div class="content">
 				<div class="left">
-
-
-
 					<div class="first" id="4th">
 
 						<div class="first-menu" id="3rd-menu2"
@@ -62,23 +54,26 @@
 					<div class="memberadd-content">
 						<form name="editAdminForm" method="post" action="editAdmin">
 							<div>
-								<span>请选择修改<span class="red">管理员</span>以下信息：
+								<span>请选择修改<span class="red">管理员</span>以下信息(<span
+									style="color: red">*</span><span>不可修改)：</span>
 								</span>
 							</div>
 							<div class="addbox">
 								<span>姓名:</span>&nbsp;&nbsp;&nbsp; <input type="text"
 									class="inputbox" name="userModel.name"
-									value="${userModel.name}">
+									value="${userModel.name}" disabled><span
+									style="color: red">*</span>
+							</div>
+							<div class="addbox">
+								<span>邮箱:</span>&nbsp;&nbsp;&nbsp; <input type="text"
+									class="inputbox" name="userModel.email"
+									value="${userModel.email}" disabled><span
+									style="color: red">*</span>
 							</div>
 							<div class="addbox">
 								<span>证件:</span>&nbsp;&nbsp;&nbsp; <input type="text"
 									class="inputbox" name="userModel.IDcard"
 									value="${userModel.IDcard}">
-							</div>
-							<div class="addbox">
-								<span>邮箱:</span>&nbsp;&nbsp;&nbsp; <input type="text"
-									class="inputbox" name="userModel.email"
-									value="${userModel.email}">
 							</div>
 							<div class="addbox">
 								<span>电话:</span>&nbsp;&nbsp;&nbsp; <input type="text"
@@ -95,11 +90,9 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< Updated upstream
-=======
-	<script src="../js/li.js"></script>
-	 <div class="webfoot"><span>版权所有 © 2017 CodeMan.保留所有权</span></div>
->>>>>>> Stashed changes
+	<div class="webfoot">
+		<span>版权所有 © 2017 CodeMan.保留所有权</span>
+	</div>
 </body>
 
 </html>

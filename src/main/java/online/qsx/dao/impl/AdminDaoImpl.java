@@ -78,4 +78,12 @@ public class AdminDaoImpl {
 		System.out.println("信息查询成功！");
 		return qUser;
 	}
+	public Long getCountUser() {
+		String hql = "select count(*) from UserModel um where um.state=0";
+		@SuppressWarnings("unchecked")
+		List<Long> count=(List<Long>) baseDao.getHibernateTemplate().find(hql);
+		System.out.println(count);
+		System.out.println(count.get(0));
+		return count.get(0);
+	}
 }

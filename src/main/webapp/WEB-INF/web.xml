@@ -18,4 +18,17 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+    <!-- 注册在线人数监听器 -->
+  <listener>
+  <listener-class>online.qsx.listener.OnlineCounters</listener-class>
+  </listener>
+  
+    <!-- 设置session过期时间30分钟 -->
+    <session-config>
+    <session-timeout>30</session-timeout>
+    </session-config>
+  
+  
 </web-app>

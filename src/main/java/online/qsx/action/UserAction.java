@@ -2,16 +2,24 @@ package online.qsx.action;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.opensymphony.xwork2.ActionContext;
+
 import online.qsx.model.UserModel;
+import online.qsx.server.impl.AdminServerImpl;
 import online.qsx.server.impl.UserServerImpl;
 
 @Component("userAction")
 public class UserAction {
 	@Autowired
 	private UserServerImpl userServerImpl;
+	@Autowired
+	private AdminServerImpl adminServerImpl;
 	private List<UserModel> list;
 	private UserModel userModel;
 	// 当前用户身份
@@ -29,31 +37,28 @@ public class UserAction {
 		return "input";
 	}
 
-
-	
 	/*
 	 * 登录注册属性
 	 */
-	//注册验证账户1
-		private String name=null;
-		//注册验证账户2次账户
-		private String name2=null;
-		//注册账户长度
-		private	int nameLength;
-		//注册账户判断为空账户对比账户
-		private String name3=null;
-		//注册验证邮箱
-		private String email=null;
-		//注册验证2次邮箱
-		private String email2=null;
-		
-		//登录账号 ，密码
-		private  String loginName=null;
-		private  String loginPassword=null;
-		//容器
-		private  String loginName2=null;
-		private  String loginPassword2=null;
-	
+	// 注册验证账户1
+	private String name = null;
+	// 注册验证账户2次账户
+	private String name2 = null;
+	// 注册账户长度
+	private int nameLength;
+	// 注册账户判断为空账户对比账户
+	private String name3 = null;
+	// 注册验证邮箱
+	private String email = null;
+	// 注册验证2次邮箱
+	private String email2 = null;
+
+	// 登录账号 ，密码
+	private String loginName = null;
+	private String loginPassword = null;
+	// 容器
+	private String loginName2 = null;
+	private String loginPassword2 = null;
 
 	public String findUsers() {
 		list = userServerImpl.getUsers();
@@ -74,7 +79,10 @@ public class UserAction {
 
 	public String delete() {
 		userServerImpl.deleteUserModel(userModel);
-		list = userServerImpl.getUsers();
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		String row = (String) session.getAttribute("queryRow");
+		String key = (String) session.getAttribute("queryKey");
+		list = adminServerImpl.queryUser(row, key);
 		return "succeed";
 	}
 
@@ -100,62 +108,61 @@ public class UserAction {
 		return list;
 	}
 
-	
-	//注册
-	public String add(){
+	// 注册
+	public String add() {
+		System.out.println("XXXXXXX________________________________________________________");
 		userServerImpl.addUserModel(userModel);
 		list = userServerImpl.getUsers();
 		System.out.println("2" + list.toString());
 		return "add";
 	}
 
-	//注册验证
-	//注册验证账户AJAX
-			@SuppressWarnings("unused")
-			public String ajaxUsername(){
+	// 注册验证
+	// 注册验证账户AJAX
+	@SuppressWarnings("unused")
+	public String ajaxUsername() {
 
-				List<UserModel> username=userServerImpl.findUserName(name);
-				for (UserModel userModel : username) {
-					name2=userModel.getName();
-				}
-				for (int i = 0; i < name.length(); i++) {
-					nameLength++;
-					System.out.println(nameLength);
-				}
-				if (!name.equals(name2)||name.length()<1) {
-					name=null;
-				}
-				if (nameLength<6||nameLength>12) {
-					name = "2";
-				}else if (name==null) {
-					name = "1";
-				}else {
-					name="0";
-				}
-				return "name";
-			}
-			
-			//注册验证邮箱AJAX
-			public String ajaxUserEmail(){
-				List<UserModel> useremail=userServerImpl.findUserEmail(email);
-				for (UserModel userModel : useremail) {
-					email2=userModel.getEmail();
-				}
-				System.out.println(email+"  "+email2);
-				if (!email.equals(email2)||email.length()<2) {
-					email=null;
-				}
-				if (email==null) {
-					email = "1";
-				}else {
-					email="0";
-				}
-				return "email";
-			}
-	
-	
-	//登录查询
-	public String login(){
+		List<UserModel> username = userServerImpl.findUserName(name);
+		for (UserModel userModel : username) {
+			name2 = userModel.getName();
+		}
+		for (int i = 0; i < name.length(); i++) {
+			nameLength++;
+			System.out.println(nameLength);
+		}
+		if (!name.equals(name2) || name.length() < 1) {
+			name = null;
+		}
+		if (nameLength < 6 || nameLength > 12) {
+			name = "2";
+		} else if (name == null) {
+			name = "1";
+		} else {
+			name = "0";
+		}
+		return "name";
+	}
+
+	// 注册验证邮箱AJAX
+	public String ajaxUserEmail() {
+		List<UserModel> useremail = userServerImpl.findUserEmail(email);
+		for (UserModel userModel : useremail) {
+			email2 = userModel.getEmail();
+		}
+		System.out.println(email + "  " + email2);
+		if (!email.equals(email2) || email.length() < 2) {
+			email = null;
+		}
+		if (email == null) {
+			email = "1";
+		} else {
+			email = "0";
+		}
+		return "email";
+	}
+
+	// 登录查询
+	public String login() {
 		List<UserModel> list = userServerImpl.findUserModel(userModel.getName(), userModel.getPassword());
 		for (UserModel userModel : list) {
 			index = userModel.getId();
@@ -178,31 +185,28 @@ public class UserAction {
 		}
 		return "error";
 	}
-	
-	//登录查询判断
-		 public String ajaxLoginFromAction(){
-				System.out.println("第一次进入ajaxLoginFromAction"+"     "+loginName+"  "+loginName2);
-				List<UserModel> list = userServerImpl.findUserModel(loginName, loginPassword);
-				for (UserModel userModel : list) {
-					loginName2=userModel.getName();
-					loginPassword2=userModel.getPassword();
-					System.out.println(loginName+"           "+loginPassword);
-				}
-				if (loginName2==null&&loginName2==null) {
-					loginName="1";
-					
-				}else{
-					loginName="0";
-				}
-				System.out.println(loginName2+"           "+loginPassword2);
-				System.out.println(loginName+"XXXXXXXXXXXXX");
-				return "loginName";
-		 }
-	
-	
-	
-	
-	//登录注册get  and  set
+
+	// 登录查询判断
+	public String ajaxLoginFromAction() {
+		System.out.println("第一次进入ajaxLoginFromAction" + "     " + loginName + "  " + loginName2);
+		List<UserModel> list = userServerImpl.findUserModel(loginName, loginPassword);
+		for (UserModel userModel : list) {
+			loginName2 = userModel.getName();
+			loginPassword2 = userModel.getPassword();
+			System.out.println(loginName + "           " + loginPassword);
+		}
+		if (loginName2 == null && loginName2 == null) {
+			loginName = "1";
+
+		} else {
+			loginName = "0";
+		}
+		System.out.println(loginName2 + "           " + loginPassword2);
+		System.out.println(loginName + "XXXXXXXXXXXXX");
+		return "loginName";
+	}
+
+	// 登录注册get and set
 
 	public String getName() {
 		return name;
@@ -283,9 +287,11 @@ public class UserAction {
 	public void setLoginPassword2(String loginPassword2) {
 		this.loginPassword2 = loginPassword2;
 	}
+
 	public UserModel getUserModel() {
 		return userModel;
 	}
+
 	public void setUserModel(UserModel userModel) {
 		this.userModel = userModel;
 	}

@@ -11,7 +11,7 @@
 
 <head>
 <base href="<%=basePath%>">
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>管理模块</title>
 <link rel="stylesheet" type="text/css" href="css/admin.css">
 <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
@@ -24,12 +24,8 @@
 				<div class="img">
 					<img src="images/logo-blue.png">
 				</div>
-
 				<div class="exit">
 					<a href="index.jsp">退出</a>
-				</div>
-				<div class="help">
-					<a href="#">帮助</a>
 				</div>
 			</div>
 			<div class="top-down">
@@ -102,10 +98,7 @@
 				return true;
 		}
 	</script>
-
-	<script src="../js/li.js"></script>
 	 <div class="webfoot"><span>版权所有 © 2017 CodeMan.保留所有权</span></div>
-
 </body>
 
 </html>

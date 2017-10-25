@@ -2,6 +2,9 @@ package online.qsx.action;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,10 +20,11 @@ public class AdminAction {
 	private UserServerImpl userServerImpl;
 	private UserModel userModel;
 	private List<UserModel> list;
-	public String Password;//验证旧密码
-	public String Password2;//新密码
-	public String queryKey;//查询关键词
-	public String queryRow;//查询条件
+	public String Password;// 验证旧密码
+	public String Password2;// 新密码
+	public String queryKey;// 查询关键词
+	public String queryRow;// 查询条件
+	private Long count;
 
 	// 通过id查管理员信息1
 	public String infoAdmin() {
@@ -50,59 +54,71 @@ public class AdminAction {
 		adminServerImpl.checkPwd(Password, Password2);
 		return "input";
 	}
-	
-	//添加会员
+
+	// 添加会员
 	public String addUser() {
 		adminServerImpl.addUserModel(userModel);
 		list = adminServerImpl.getUsers();
 		System.out.println("2" + list.toString());
 		return "addUser";
 	}
-	//查询会员
+
+	// 查询会员
 	public String queryUser() {
-		System.out.println("queryKey:"+queryKey+"/queryRow:"+queryRow);
-		if(queryKey.equals("")){
+		System.out.println("queryKey:" + queryKey + "/queryRow:" + queryRow);
+		if (queryKey.equals("")) {
 			return "queryError";
 		}
-		list=adminServerImpl.queryUser(queryRow,queryKey);
-		for(UserModel user:list){
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		session.setAttribute("queryRow", queryRow);
+		session.setAttribute("queryKey", queryKey);
+		list = adminServerImpl.queryUser(queryRow, queryKey);
+		for (UserModel user : list) {
 			System.out.println("1");
 			System.out.println(user.toString());
 		}
 		System.out.println("queryUser");
 		return "queryUser";
 	}
-	//查询修改管理员信息
-	public String editUser(){
+
+	// 查询修改管理员信息
+	public String editUser() {
 		System.out.println("查询待修改的管理员信息");
 		userModel = adminServerImpl.getUser(userModel);
 		return "editUser";
 	}
-	//查询修改管理员信息
-		public String saveUser(){
-			System.out.println("saveAdmin进来了");
-			userServerImpl.edit(userModel);
-			System.out.println("saveAdmin出来了");
-			list = userServerImpl.getUsers();
-			System.out.println("saveAdmin又进来了");
-			return "saveUser";
-		}
-	
+
+	// 查询修改管理员信息
+	public String saveUser() {
+		System.out.println("saveAdmin进来了");
+		userServerImpl.edit(userModel);
+		System.out.println("saveAdmin出来了");
+		list = userServerImpl.getUsers();
+		System.out.println("saveAdmin又进来了");
+		return "saveUser";
+	}
+	//统计会员注册人数
+	public String countUser(){
+		count=adminServerImpl.getCountUser();
+		return "countUser";
+	}
+
 	public UserModel getUserModel() {
 		return userModel;
 	}
-	
+
 	public void setUserModel(UserModel userModel) {
 		this.userModel = userModel;
 	}
-	
+
 	public List<UserModel> getList() {
 		return list;
 	}
-	
+
 	public void setList(List<UserModel> list) {
 		this.list = list;
 	}
+
 	public String getPassword() {
 		return Password;
 	}
@@ -134,6 +150,33 @@ public class AdminAction {
 	public void setQueryRow(String queryRow) {
 		this.queryRow = queryRow;
 	}
+
+	public AdminServerImpl getAdminServerImpl() {
+		return adminServerImpl;
+	}
+
+	public void setAdminServerImpl(AdminServerImpl adminServerImpl) {
+		this.adminServerImpl = adminServerImpl;
+	}
+
+	public UserServerImpl getUserServerImpl() {
+		return userServerImpl;
+	}
+
+	public void setUserServerImpl(UserServerImpl userServerImpl) {
+		this.userServerImpl = userServerImpl;
+	}
+
+
+
+	public void setCount(Long count) {
+		this.count = count;
+	}
+
+	public Long getCount() {
+		return count;
+	}
+
 
 
 }

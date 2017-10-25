@@ -11,7 +11,7 @@
 
 <head>
 <base href="<%=basePath%>">
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>管理模块</title>
 <link rel="stylesheet" type="text/css" href="css/admin.css">
 <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
@@ -27,9 +27,6 @@
 
 				<div class="exit">
 					<a href="index.jsp">退出</a>
-				</div>
-				<div class="help">
-					<a href="#">帮助</a>
 				</div>
 			</div>
 			<div class="top-down">
@@ -47,45 +44,51 @@
 							onclick="windows.location.herf='adminpages/prodect-add.jsp'">添加产品</div>
 					</div>
 				</div>
-			
+				<div class="right">
+					<div class="positioninfo" id="positioninfo">
+						<span class="webinfospan">产品管理>修改产品</span>
+					</div>
 
-			
+					<form>
+						<div class="prodect-add-content">
+							<div>
+								<span>请选择修改<span class="red">产品</span>以下信息：
+								</span>
+							</div>
+							<div class="addbox">
+								<span>产品编号:</span> <input class="productadd-input" type="text"
+									name="productid">
+							</div>
 
+							<div class="addbox">
+								<span>产品名称:</span> <input class="productadd-input" type="text"
+									name="productname">
+							</div>
 
-			<div class="right">
-				<div class="positioninfo" id="positioninfo"><span class="webinfospan">产品管理>修改产品</span></div>
-			
-			  <form>
-			  	 <div class="prodect-add-content">
-                        <div><span>请选择修改<span class="red">产品</span>以下信息：</span></div>
-                       <div class="addbox"><span>产品编号:</span>
-                            <input class="productadd-input" type="text" name="productid">
-                             </div>
-                        
-                        <div class="addbox"><span>产品名称:</span>
-                            <input class="productadd-input" type="text" name="productname">
-                             </div>
-
-                            <div class="addbox"><span>涨跌利率:</span>
-                                <input class="productadd-input" type="text" name="productrate">
-                            </div>
-                            <div class="addbox"><span>产品类型:</span>
-                            <input class="productadd-input" type="text" name="productfeatures">
-                            </div>
-                            <div class="addbox"><span>单股价格:</span>
-                            <input class="productadd-input" type="text" name="productdemoney" class="productdescription">
-                            </div>
-                       <a href="product-update.jsp"><button class="addbutton">修改</button></a>
-                        <input type="reset"  class="resetbutton" name="重置">
-                          <button class="goback">返回</button>
-                    </div>
-                     
-			  </form>
-			   </div>
-		
+							<div class="addbox">
+								<span>涨跌利率:</span> <input class="productadd-input" type="text"
+									name="productrate">
+							</div>
+							<div class="addbox">
+								<span>产品类型:</span> <input class="productadd-input" type="text"
+									name="productfeatures">
+							</div>
+							<div class="addbox">
+								<span>单股价格:</span> <input class="productadd-input" type="text"
+									name="productdemoney" class="productdescription">
+							</div>
+							<a href="product-update.jsp"><button class="addbutton">修改</button></a>
+							<input type="reset" class="resetbutton" name="重置">
+							<button class="goback">返回</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
-	<script src="../js/li.js"></script>
-	 <div class="webfoot"><span>版权所有 © 2017 CodeMan.保留所有权</span></div>
+	<div class="webfoot">
+		<span>版权所有 © 2017 CodeMan.保留所有权</span>
+	</div>
 </body>
 
 </html>

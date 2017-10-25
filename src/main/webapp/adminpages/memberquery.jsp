@@ -27,13 +27,10 @@
 				<div class="exit">
 					<a href="index.jsp">退出</a>
 				</div>
-				<div class="help">
-					<a href="#">帮助</a>
-				</div>
 			</div>
 			<div class="top-down">
 				<ul>
-					<li id="back"><a href="countUser" id="check"><span>会员管理</span></a></li>
+					<li id="back"><a href="adminpages/memberm.jsp" id="check"><span>会员管理</span></a></li>
 					<li id="back"><a href="adminpages/prodect.jsp" id="check"><span>产品管理</span></a></li>
 					<li id="back"><a href="adminpages/systemm.jsp" id="check"><span>系统维护</span></a></li>
 					<li id="back"><a href="findAdmin" id="check"><span>个人信息</span></a></li>
@@ -47,7 +44,7 @@
 						<div class="first-menu" id="first-menu2"
 							onclick="window.location.href='adminpages/memberadd.jsp'">添加会员</div>
 						<div class="first-menu" id="first-menu5"
-							onclick="window.location.href='adminpages/loginlog.jsp'">在线人数</div>
+							onclick="window.location.href='countUser'">在线人数</div>
 					</div>
 				</div>
 				<div class="right">

@@ -43,4 +43,8 @@ public class AdminServerImpl {
 		List<UserModel> list = adminDaoImpl.queryUser(queryRow,queryKey);
 		return list;
 	}
+
+	public Long getCountUser() {
+		return adminDaoImpl.getCountUser();		
+	}
 }

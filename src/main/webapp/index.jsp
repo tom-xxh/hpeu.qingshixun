@@ -84,6 +84,7 @@
 							class="error_msg3oen">您输入的密码有误,在请重新输入</span> <span
 							id="passwordSpan" class="error_msg3">X</span>
 					</p>
+					
 					<p class="signin button">
 						<input type="button" value="注册" id="addInput"/>
 					</p>
@@ -167,7 +168,7 @@
 									deriction : "left"
 								});
 
-								<!--注册账户示例-->
+								/* <!--注册账户示例-->
 								  $('#addInput').on("click",function(str){
 							        	 var obj=$(this);
 							        	 var msg="您可以注册此用户确定注册吗？";
@@ -177,6 +178,23 @@
 							        	 }else{
 							        		 return false;
 							        	 }
+								  }) */
+								  <!--注册账户示例-->
+								  $('#addInput').on("click",function(str){
+									
+					                  var addNmae=$('#usernamesignup').val();
+					                  var addEmailsignup=$('#emailsignup').val();
+					                  var addPassword=$('#passwordsignup-confirm').val();
+							        	 var obj=$(this);
+							        	 var msg="您可以注册此用户确定注册吗？";
+							        		 if(addNmae.length<6||addEmailsignup.length<3||addPassword.length<6){
+							        			 alert("用户注册信息不全!");
+							        			 return false; 
+							        		 }else if(confirm(msg)==true){
+							        			 obj.parents($('#fromAdd')).submit(); //验证码正确提交表单
+								        		 return false;
+							        		 }
+							        	
 								  })
 								$('.aflate').on('click', function() {
 									$('#register').css("display", 'none');

@@ -15,7 +15,6 @@
 <link rel="stylesheet" type="text/css" href="css/admin.css">
 <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
 </head>
-
 <body>
 	<div class="big">
 		<div class="main">
@@ -25,9 +24,6 @@
 				</div>
 				<div class="exit">
 					<a href="index.jsp">退出</a>
-				</div>
-				<div class="help">
-					<a href="#">帮助</a>
 				</div>
 			</div>
 			<div class="top-down">
@@ -46,7 +42,7 @@
 						<div class="first-menu" id="first-menu2"
 							onclick="window.location.href='adminpages/memberadd.jsp'">添加会员</div>
 						<div class="first-menu" id="first-menu5"
-							onclick="window.location.href='adminpages/loginlog.jsp'">登录日志</div>
+							onclick="window.location.href='countUser'">登录日志</div>
 					</div>
 				</div>
 				<div class="right">

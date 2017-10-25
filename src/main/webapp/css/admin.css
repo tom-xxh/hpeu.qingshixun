@@ -82,15 +82,14 @@ a {
 .exit {
 	float: right;
 	height: 47px;
-	line-height: 41px;
-	
+	line-height: 41px;	
 	margin-right: 10px;
-	color: #FF870C;
+	color:white;
 	cursor: pointer;
 }
 
 .exit a {
-	color: #FF870C;
+	color: white;
 }
 
 .top-down {
@@ -327,4 +326,9 @@ table,th, td
 }
 .productadd-input{
 	width: 300px;
+}
+.memberinfobox{
+	width:100%;
+	margin: 100px auto;
+	text-align:center;
 }

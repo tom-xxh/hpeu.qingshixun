@@ -24,35 +24,27 @@
 				<div class="guide">个人信息管理->个人信息修改</div>
 				<div class=" function">
 					<!--当前页面内容加在这里 ↓-->
-					<form name="form1" method="post" action="PasswordUpdateSave"
-						onSubmit="return mycheck()">
-						<table width="100%" border="0" cellspacing="0" cellpadding="0">
-							<tr>
-								<td width="33%" height="30" align="right">&nbsp;</td>
-								<td width="67%">&nbsp;</td>
-							</tr>
-							<tr>
-								<td height="30" align="right">请输入原密码：</td>
-								<td><input name="Password" type="password" class="text2"
-									id="Password"></td>
-							</tr>
-							<tr>
-								<td height="30" align="right">请输入新密码：</td>
-								<td><input name="Password2" type="password" class="text2"
-									id="Password2"></td>
-							</tr>
-							<tr>
-								<td height="30" align="right">请重复新密码：</td>
-								<td><input name="Password3" type="password" class="text2"
-									id="Password3"></td>
-							</tr>
-							<tr>
-								<td height="30">&nbsp;</td>
-								<td><input type="submit" name="button" id="button"
-									value="修改密码"></td>
-							</tr>
-						</table>
-					</form>
+					<div class="edit">
+						<form name="form1" method="post" action="PasswordUpdateSave"
+							onSubmit="return mycheck()">
+							<div class="grxx">
+								<span>请输入原密码：</span> <input name="Password" type="password"
+									class="text2" id="Password">
+							</div>
+							<div class="grxx">
+								<span>请输入新密码：</span> <input name="Password2" type="password"
+									class="text2" id="Password2">
+							</div>
+
+							<div class="grxx">
+								<span>请重复新密码：</span> <input name="Password3" type="password"
+									class="text2" id="Password3">
+							</div>
+							<div class="grxx">
+								<input type="submit" name="button" id="button" value="修改密码">
+							</div>
+						</form>
+					</div>
 					<!--当前页面内容加在这里 ↑-->
 				</div>
 			</div>
@@ -78,12 +70,13 @@
 				return false;
 			}
 		}
-		function isNull(str){
-			if ( str == "" ) return true;
+		function isNull(str) {
+			if (str == "")
+				return true;
 			var regu = "^[ ]+$";
 			var re = new RegExp(regu);
 			return re.test(str);
-			}
+		}
 	</script>
 </body>
 

@@ -10,12 +10,12 @@
 		<spring.version>4.3.8.RELEASE</spring.version>
 	</properties>
 	<dependencies>
-	
+
 		<dependency>
-    <groupId>org.apache.struts</groupId>
-    <artifactId>struts2-json-plugin</artifactId>
-    <version>2.3.34</version>
-</dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-json-plugin</artifactId>
+			<version>2.3.34</version>
+		</dependency>
 
 		<!-- spring ioc 支持的jar包 -->
 		<dependency>

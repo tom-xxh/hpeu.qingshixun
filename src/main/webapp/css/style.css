@@ -16,7 +16,9 @@ img {
 li {
     list-style: none;
 }
-
+#addStateInpu{
+	visibility: hidden;
+}
 body {
     width: 100%;
     height: auto;
