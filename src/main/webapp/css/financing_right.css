@@ -1,4 +1,4 @@
-.function{
+.function {
 	width: 400px;
 	height: 200px;
 	position: relative;
@@ -7,48 +7,44 @@
 	text-align: center;
 }
 
-
 .right-serch {
-    width: 800px;
-    height: 30px;
-    position: relative;
-    top: 20px;
-    left: -40px;
+	width: 800px;
+	height: 40px;
+	position: relative;
+	top: 20px;
+	left: -40px;
 }
-.right-serch #date{
-  width: 150px;
-    height: 25px;
-    line-height: 25px;
+
+.right-serch input {
+	width: 150px;
+	height: 28px;
+	line-height: 28px;
 }
-.right-serch #account{
-  width: 150px;
-    height: 25px;
-    line-height: 25px;
-}
-.right-serch #money{
-  width: 150px;
-    height: 25px;
-    line-height: 25px;
-}
+
 .right-serch button {
-    width: 90px;
-    height: 30px;
-    line-height: 30px;
+	width: 90px;
+	height: 35px;
+	line-height: 35px;
 }
-.roll-in-table{
-    position: relative;
-    text-align: center;
-    top: 20px;
+
+.roll-in-table {
+	position: relative;
+	text-align: center;
+	top: 20px;
 }
-.roll-in-table table{
-  width: 850px;
-  border-color: #EFF0EF;
+
+.roll-in-table table {
+	width: 850px;
+	border-color: #EFF0EF;
 }
-.roll-in-table th{
-    height: 35px;
-    font-weight: 500;
-    background: #EFF0EF;
+
+.roll-in-table th {
+	height: 35px;
+	font-weight: 500;
+	background: #EFF0EF;
 }
-.roll-in-table .th1{
-/*   text-align: left; */
+
+.roll-in-table .th1 {
+	/*   text-align: left; */
+	
 }

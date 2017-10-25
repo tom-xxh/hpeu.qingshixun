@@ -18,7 +18,6 @@ import online.qsx.model.UserModel;
 public class UserDaoImpl {
 	@Autowired
 	private BaseDao baseDao;
-	UserModel userModel;
 
 	@SuppressWarnings("unchecked")
 	public List<UserModel> getUsers() {

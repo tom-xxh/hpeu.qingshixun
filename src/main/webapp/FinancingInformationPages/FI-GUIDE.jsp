@@ -16,8 +16,7 @@
 <div class="top-down">
 	<div class="top-guide">
 		<ul>
-			<li id="back"><a
-				href="info" id="check"><span>个人信息管理</span></a></li>
+			<li id="back"><a href="info" id="check"><span>个人信息管理</span></a></li>
 			<li><a href="FinancingInformationPages/earnings.jsp" id="check"><span>理财信息管理</span></a></li>
 		</ul>
 	</div>
@@ -31,9 +30,8 @@
 				onclick="window.location.href='FinancingInformationPages/expend.jsp';">提取现金</div>
 			<div class="first-menu" id="first-menu3"
 				onclick="window.location.href='FindTransferOutAction';">账单详情</div>
-
 			<div class="first-menu" id="first-menu4"
-				onclick="window.location.href='FinancingInformationPages/queryExpend.jsp';">收益管理</div>
+				onclick="window.location.href='EarningsAction';">收益管理</div>
 			<div class="first-menu" id="first-menu5"
 				onclick="window.location.href='FinancingInformationPages/statisticalStatement.jsp';">统计报表</div>
 			<div class="first-menu" id="first-menu6"

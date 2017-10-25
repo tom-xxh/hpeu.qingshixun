@@ -16,6 +16,7 @@
 <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
 </head>
 <body>
+
 	<div class="big">
 		<div class="main">
 			<div class="top">
@@ -29,7 +30,7 @@
 			<div class="top-down">
 				<ul>
 					<li id="back"><a href="adminpages/memberm.jsp" id="check"><span>会员管理</span></a></li>
-					<li id="back"><a href="adminpages/prodect.jsp" id="check"><span>产品管理</span></a></li>
+					<li id="back"><a href="searchProductAction" id="check"><span>产品管理</span></a></li>
 					<li id="back"><a href="adminpages/systemm.jsp" id="check"><span>系统维护</span></a></li>
 					<li id="back"><a href="findAdmin" id="check"><span>个人信息</span></a></li>
 				</ul>
@@ -147,7 +148,6 @@
 						obj.parents($('#fromAdd')).submit(); //验证码正确提交表单
 						return false;
 					}
-
 				})
 	</script>
 

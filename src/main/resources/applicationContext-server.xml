@@ -11,5 +11,5 @@
 	classpath:org/springframework/web/servlet/config/spring-mvc-4.3.xsd">
 	<!-- 识别Server -->
 	<context:component-scan base-package="online.qsx.server.impl" />
-
+	<context:annotation-config></context:annotation-config>
 </beans>

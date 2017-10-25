@@ -126,9 +126,32 @@
 			<result name="list">FinancingInformationPages/products.jsp
 			</result>
 		</action>
-		<!-- 添加理财产品 -->
+		<!-- 管理员查询理财产品 -->
+		<action name="searchProductAction" class="ProductAction"
+			method="searchProductInfos">
+			<result name="lists">adminpages/prodect.jsp
+			</result>
+		</action>
+		<!-- 管理员删除理财产品 -->
+		<action name="deleteProductAction" class="ProductAction"
+			method="deleteProductInfos">
+			<result name="succeed">adminpages/prodect.jsp
+			</result>
+		</action>
+		<!-- 管理员查询理财产品并跳转到修改页面 -->
+		<action name="searchProduct" class="ProductAction" method="searchProductInfo">
+			<result name="succeed">adminpages/product-update.jsp
+			</result>
+		</action>
+		<!-- 管理员在修改页面修改理财产品信息 -->
+		<action name="updateProductAction" class="ProductAction"
+			method="updateProductInfos">
+			<result name="succeed">adminpages/product-update.jsp
+			</result>
+		</action>
+		<!-- 管理员添加理财产品 -->
 		<action name="saveProductAction" class="ProductAction" method="saveProductInfos">
-			<result name="succeed">FinancingInformationPages/products.jsp
+			<result name="succeed">adminpages/product-add.jsp
 			</result>
 		</action>
 		<!-- 查询订单列表 -->
@@ -155,10 +178,20 @@
 		<!-- 转入信息显示页面 -->
 		<action name="TransferInAction" class="TransferAction" method="transferIn">
 			<result name="transferIn">/FinancingInformationPages/income.jsp</result>
+
+			<result name="bankcardnotexit">/FinancingInformationPages/bankCardNotExitOther.jsp
+			</result>
+			<result name="default">/FinancingInformationPages/transferInDefault.jsp
+			</result>
 		</action>
 		<!-- 转出信息显示页面 -->
 		<action name="TransferOutAction" class="TransferAction" method="transferOut">
 			<result name="transferOut">/FinancingInformationPages/income.jsp</result>
+
+			<result name="default">/FinancingInformationPages/transferOutDefault.jsp
+			</result>
+			<result name="bankcardnotexit">/FinancingInformationPages/bankCardNotExit.jsp
+			</result>
 		</action>
 
 		<!-- 转出查询页面 -->
@@ -166,23 +199,38 @@
 			method="findTransferInfos">
 			<result name="succeed">/FinancingInformationPages/income.jsp</result>
 		</action>
+
 		<!-- 删除信息页面 -->
 		<action name="DeleteTransferInfos" class="TransferAction"
 			method="deleteTransferInfos">
 			<result name="succeed">/FinancingInformationPages/income.jsp</result>
 		</action>
 
-		<!-- 收益信息显示页面 -->
+		<!-- 查找并显示收益信息记录 -->
 		<action name="EarningsAction" class="EarningsAction" method="findEarningsInfos">
-			<result name="succeed">/WEB-INF/jsp/earnings.jsp</result>
+			<result name="succeed">/FinancingInformationPages/queryExpend.jsp
+			</result>
 		</action>
+		<!-- 删除收益信息记录 -->
+		<action name="deleteEarningsAction" class="EarningsAction"
+			method="deleteEarningsInfos">
+			<result name="succeed">/FinancingInformationPages/queryExpend.jsp
+			</result>
+		</action>
+		<!-- 添加收益信息记录 -->
+		<action name="saveEarningsAction" class="EarningsAction"
+			method="saveEarningsInfos">
+			<result name="succeed">/FinancingInformationPages/order.jsp</result>
+		</action>
+
 		<!-- 添加用户显示页面 -->
 		<action name="add" class="userAction" method="add">
 			<result name="add">/index.jsp</result>
 		</action>
 		<!-- 登录页面显示页面 -->
 		<action name="login" class="userAction" method="login">
-			<result name="login">PersonalInformationPages/checkInformation.jsp</result>
+			<result name="login">PersonalInformationPages/checkInformation.jsp
+			</result>
 			<result name="error">/index.jsp</result>
 			<result name="admin">adminpages/memberm.jsp</result>
 		</action>

@@ -2,17 +2,18 @@ package online.qsx.dao.impl;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 
+
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javassist.expr.NewArray;
 import online.qsx.action.UserAction;
 import online.qsx.common.BaseDao;
 import online.qsx.model.BankModel;
@@ -44,6 +45,7 @@ public class TransferInDaoImpl {
 		int i=0;
 		Double count=(double) 0;
 		UserModel userModel1 = baseDao.getHibernateTemplate().get(UserModel.class,UserAction.index);
+		@SuppressWarnings("unchecked")
 		List<BankModel> list=(List<BankModel>) baseDao.getHibernateTemplate().find("from BankModel");
 		for (BankModel bankModel : list) {
 			if(bankModel.getBankcard().equals(transferModel.getBankcard())){

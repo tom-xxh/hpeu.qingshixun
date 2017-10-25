@@ -2,11 +2,15 @@ package online.qsx.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import javax.persistence.Temporal;
@@ -28,6 +32,19 @@ public class OrderModel {
 	@Temporal(TemporalType.DATE)
 	@Column(name = "createDate")
 	private Date createDate;// 购买日期
+	
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.ALL })
+	@JoinColumn(name = "user_id")
+	// 特殊属性
+	private UserModel userModel;
+
+	public UserModel getUserModel() {
+		return userModel;
+	}
+
+	public void setUserModel(UserModel userModel) {
+		this.userModel = userModel;
+	}
 
 	public Long getId() {
 		return id;

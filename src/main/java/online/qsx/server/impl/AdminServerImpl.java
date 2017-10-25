@@ -23,6 +23,7 @@ public class AdminServerImpl {
 	}
 
 	// 查询会员
+
 	public UserModel getUser(UserModel userModel) {
 		return adminDaoImpl.getUser(userModel);
 	}
@@ -37,14 +38,15 @@ public class AdminServerImpl {
 	public void addUserModel(UserModel userModel) {
 		adminDaoImpl.addUserModel(userModel);
 	}
-	
-	//模糊查询
+
+	// 模糊查询
 	public List<UserModel> queryUser(String queryRow, String queryKey) {
-		List<UserModel> list = adminDaoImpl.queryUser(queryRow,queryKey);
+		List<UserModel> list = adminDaoImpl.queryUser(queryRow, queryKey);
 		return list;
 	}
 
 	public Long getCountUser() {
-		return adminDaoImpl.getCountUser();		
+		return adminDaoImpl.getCountUser();
 	}
+
 }

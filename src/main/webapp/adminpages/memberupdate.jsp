@@ -32,8 +32,7 @@
 			<div class="top-down">
 				<ul>
 					<li id="back"><a href="adminpages/memberm.jsp" id="check"><span>会员管理</span></a></li>
-					<li id="back"><a href="adminpages/prodect.jsp" id="check"><span>产品管理</span></a>
-					</li>
+					<li id="back"><a href="searchProductAction" id="check"><span>产品管理</span></a></li>
 					<li id="back"><a href="adminpages/systemm.jsp" id="check"><span>系统维护</span></a></li>
 					<li id="back"><a href="findAdmin" id="check"><span>个人信息</span></a></li>
 				</ul>
@@ -65,7 +64,7 @@
 									class="inputbox" name="userModel.name"
 									value="${userModel.name}" id="aName" disabled><span
 									style="color: red">*</span>
-							</div>							
+							</div>
 							<div class="addbox">
 								<span>会员证件:</span>&nbsp;&nbsp;&nbsp; <input type="text"
 									class="inputbox" name="userModel.IDcard"

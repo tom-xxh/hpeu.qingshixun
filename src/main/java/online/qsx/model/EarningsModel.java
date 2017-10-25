@@ -1,59 +1,92 @@
 package online.qsx.model;
 
-import java.sql.Date;
+import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "t_earnings")
 public class EarningsModel {// 收益
-	private Long earningsId;
-	private Date date;
-	private double earningsMoney;
-	private String status;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Long getEarningsId() {
-		return earningsId;
+	private Long id;
+	private String productname;// 产品名称
+	private double totalmoney;// 花费金额
+	private double interestrate;// 利率
+	private Date createDate;// 购买日期
+	private double earnings;// 收益金额
+	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@JoinColumn(name = "user_id")
+	// 特殊属性
+	private UserModel userModel;
+	
+	public UserModel getUserModel() {
+		return userModel;
 	}
 
-	public void setEarningsId(Long earningsId) {
-		this.earningsId = earningsId;
+	public void setUserModel(UserModel userModel) {
+		this.userModel = userModel;
+	}
+	public Long getId() {
+		return id;
 	}
 
-	public Date getDate() {
-		return date;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public String getProductname() {
+		return productname;
 	}
 
-	public double getEarningsMoney() {
-		return earningsMoney;
+	public void setProductname(String productname) {
+		this.productname = productname;
 	}
 
-	public void setEarningsMoney(double earningsMoney) {
-		this.earningsMoney = earningsMoney;
+	public double getTotalmoney() {
+		return totalmoney;
 	}
 
-	public String getStatus() {
-		return status;
+	public void setTotalmoney(double totalmoney) {
+		this.totalmoney = totalmoney;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public double getInterestrate() {
+		return interestrate;
+	}
+
+	public void setInterestrate(double interestrate) {
+		this.interestrate = interestrate;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public double getEarnings() {
+		return earnings;
+	}
+
+	public void setEarnings(double earnings) {
+		this.earnings = earnings;
 	}
 
 	@Override
 	public String toString() {
-		return "EarningsModel [earningsId=" + earningsId + ", date=" + date + ", earningsMoney=" + earningsMoney
-				+ ", status=" + status + "]";
+		return "EarningsModel [id=" + id + ", productname=" + productname + ", totalmoney=" + totalmoney
+				+ ", interestrate=" + interestrate + ", createDate=" + createDate + ", earnings=" + earnings + "]";
 	}
 
 }

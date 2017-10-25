@@ -110,7 +110,7 @@ public class UserAction {
 
 	// 注册
 	public String add() {
-		System.out.println("XXXXXXX________________________________________________________");
+		userModel.setUser_count(0.0);
 		userServerImpl.addUserModel(userModel);
 		list = userServerImpl.getUsers();
 		System.out.println("2" + list.toString());

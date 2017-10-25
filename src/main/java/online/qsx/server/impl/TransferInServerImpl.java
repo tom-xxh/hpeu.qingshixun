@@ -16,9 +16,9 @@ public class TransferInServerImpl {
 	public List<TransferModel> getTransferInInfos() {
 		return transferInDaoImpl.getTransferInfos();
 	}
-	
-	//保存转入信息
-	public void saveTransferIn(TransferModel transferModel){
+
+	// 保存转入信息
+	public void saveTransferIn(TransferModel transferModel) {
 		transferInDaoImpl.saveTransferIn(transferModel);
 	}
 }

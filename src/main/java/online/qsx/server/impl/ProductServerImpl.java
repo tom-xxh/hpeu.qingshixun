@@ -16,11 +16,23 @@ public class ProductServerImpl {
 	public List<ProductModel> getProductInfos() {
 		return productDaoImpl.getProductInfos();
 	}
+
 	public void saveproductInfos(ProductModel productModel) {
 		productDaoImpl.addProductInfos(productModel);
 	}
+
 	public ProductModel getProductInfo(ProductModel productModel) {
-		System.out.println(22222222);
-		return  productDaoImpl.getProductInfo(productModel);
+		return productDaoImpl.getProductInfo(productModel);
+	}
+
+	public List<ProductModel> getProduct(ProductModel productModel) {
+		return productDaoImpl.getProduct(productModel);
+	}
+	public void deleteProductModel(ProductModel productModel) {
+		productDaoImpl.deleteProductModel(productModel);
+	}
+
+	public void updateProductModel(ProductModel productModel) {
+		productDaoImpl.updateProductModel(productModel);
 	}
 }

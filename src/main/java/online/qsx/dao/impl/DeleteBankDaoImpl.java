@@ -2,6 +2,9 @@ package online.qsx.dao.impl;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +19,11 @@ public class DeleteBankDaoImpl {
 
 	@SuppressWarnings("unchecked")
 	public List<BankModel> getBankInfos() {
-		return (List<BankModel>) baseDao.getHibernateTemplate().find("from BankModel");
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		Long idd = (Long) session.getAttribute("id");
+		String sql="from BankModel bm where bm.userModel.id = ? ";
+		return (List<BankModel>) baseDao.getHibernateTemplate().find(sql, idd);
+		
 	}
 
 	public void deletebankModel(BankModel bankModel) {

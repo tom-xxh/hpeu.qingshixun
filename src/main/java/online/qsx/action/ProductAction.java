@@ -21,11 +21,32 @@ public class ProductAction {
 		return "list";
 	}
 
+	public String searchProductInfos() {
+		list = productServerImpl.getProductInfos();
+		return "lists";
+	}
+
+	public String searchProductInfo() {
+		productModel = productServerImpl.getProductInfo(productModel);
+		return "succeed";
+	}
+
 	public String saveProductInfos() {
 		productServerImpl.saveproductInfos(productModel);
 		return "succeed";
 	}
-	
+
+	public String deleteProductInfos() {
+		productServerImpl.deleteProductModel(productModel);
+		list = productServerImpl.getProductInfos();
+		return "succeed";
+	}
+
+	public String updateProductInfos() {
+		productServerImpl.updateProductModel(productModel);
+		return "succeed";
+	}
+
 	public List<ProductModel> getList() {
 		return list;
 	}

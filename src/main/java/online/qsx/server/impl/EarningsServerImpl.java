@@ -16,4 +16,12 @@ public class EarningsServerImpl {
 	public List<EarningsModel> getEarningsInfos() {
 		return earningsDaoImpl.getEarningsInfos();
 	}
+
+	public void deleteEarningsModel(EarningsModel earningsModel) {
+		earningsDaoImpl.deleteEarningsModel(earningsModel);
+	}
+
+	public void saveEarningsInfos(EarningsModel earningsModel) {
+		earningsDaoImpl.saveEarningsInfos(earningsModel);
+	}
 }

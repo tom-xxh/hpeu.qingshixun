@@ -1,15 +1,12 @@
 package online.qsx.server.impl;
 
-import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import online.qsx.dao.impl.TransferOutDaoImpl;
-import online.qsx.model.BankModel;
 import online.qsx.model.TransferModel;
-import online.qsx.model.UserModel;
 
 @Service
 public class TransferOutServerImpl {

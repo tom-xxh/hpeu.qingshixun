@@ -19,7 +19,7 @@
 			<%@include file="PI-GUIDE.jsp"%>
 			<div class="right">
 				<!--当前页面位置信息加在这里 ↓-->
-				<div class="guide">个人信息管理-绑定银行卡</div>
+				<div class="guide">个人信息管理->绑定银行卡</div>
 				<div class=" function">
 					<!--当前页面内容加在这里 ↓-->
 					<div class="addCard">

@@ -18,7 +18,6 @@ public class AddBankDaoImpl {
 
 	@Autowired
 	private BaseDao baseDao;
-
 	@SuppressWarnings("unchecked")
 	public List<BankModel> getBankInfos() {
 		return (List<BankModel>) baseDao.getHibernateTemplate().find("from BankModel");
@@ -37,6 +36,7 @@ public class AddBankDaoImpl {
 			e.printStackTrace();
 		}
 		baseDao.getHibernateTemplate().save(bankModel);
+		@SuppressWarnings("unchecked")
 		List<BankModel> list = (List<BankModel>) baseDao.getHibernateTemplate().find("from BankModel");
 		if (list.isEmpty()) {
 			out.print("<script language='javascript'>alert('银行卡添加失败！');window.location='PersonalInformationPages/addCard.jsp';</script>");

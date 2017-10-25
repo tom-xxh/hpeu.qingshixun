@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -21,59 +23,45 @@
 			<div class="right">
 				<!--当前页面位置信息加在这里 ↓-->
 				<div class="guide">理财信息管理->收益管理</div>
-					<div class="right-serch">
-						<form action="#" method="post">
-							<label for="date">按时间段查询:</label><br>
-								&nbsp; &nbsp; <input type="text" id="date" name="date"> —— <input type="text" id="date" name="date">
-							<button type="submit">查询</button><br>
-							
-							<label for="date">按银行卡账号查询:</label><br> 
-								&nbsp; &nbsp; <input type="text" id="account" name="account">
-							<button type="submit">查询</button><br>
-							
-							<label for="date">按时间段以及银行卡账号查询:<br>
-							&nbsp; &nbsp; 时间段:<input type="text" id="date" name="date"> —— <input type="text" id="date" name="date"><br>
-							&nbsp; &nbsp; 银行卡账号： <input type="text" id="account" name="account"></label>
-							<button type="submit">查询</button>
-							<br>
-						</form>
+				<div class="right-serch">
+					<form action="#" method="post">
+						<label for="date">按产品名称:</label> <input type="text"
+							id="productname" name="productname">
+						<button type="submit">查询</button>
+						<br>
+					</form>
 
-						<div class="roll-in-table">
-							<table border="1" cellpadding="0" cellspacing="0">
-								<thead>
+					<div class="roll-in-table">
+						<table border="1" cellpadding="0" cellspacing="0">
+							<thead>
+								<tr>
+									<th>产品名称</th>
+									<th>花费金额</th>
+									<th>当前利率</th>
+									<th>购买日期</th>
+									<th>预估收益</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${list}" var="obj" varStatus="stuts">
+								<s:if test="#stuts.odd == true">
 									<tr>
-										<th>日期</th>
-										<th>账号</th>
-										<th>转入金额</th>
-										<th>转出金额</th>
-										<th>收益</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>2017/10/1</td>
-										<td>123</td>
-										<td>1000</td>
-										<td>2000</td>
-										<td>-1000</td>
-									</tr>
-									<tr>
-										<td>2017/10/2</td>
-										<td>234</td>
-										<td>2000</td>
-										<td>1000</td>
-										<td>1000</td>
-									</tr>
-									<tr>
-										<td>2017/10/3</td>
-										<td>456</td>
-										<td>3000</td>
-										<td>3000</td>
-										<td>0</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+								</s:if>
+								<s:else>
+									<tr class="even">
+								</s:else>
+								<td>${obj.productname }</td>
+								<td>${obj.totalmoney }</td>
+								<td>${obj.interestrate }</td>
+								<td>${obj.createDate }</td>
+								<td>${obj.earnings }</td>
+								<td><a href="deleteEarningsAction?earningsModel.id=${obj.id }">删除记录</a></td>
+								</tr>
+							</c:forEach>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

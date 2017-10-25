@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
@@ -47,7 +47,8 @@
 							<td>${obj.productnumber }</td>
 							<td>${obj.totalmoney }</td>
 							<td>${obj.createDate }</td>
-							<td><a href="deleteOrderAction?orderModel.id=${obj.id }">取消订单</a></td>
+							<td><a href="deleteOrderAction?orderModel.id=${obj.id }">取消订单</a>&nbsp;/&nbsp;
+							<a href="saveEarningsAction?orderModel.id=${obj.id }">提交订单</a></td>
 							</tr>
 						</c:forEach>
 					</table>
