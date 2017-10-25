@@ -13,13 +13,12 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 	<!-- 得到数据库连接 -->
-	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/school" />
-		<property name="username" value="root" />
-		<property name="password" value="txd19931018txd" />
-	</bean>
+	 <bean id="ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/administer"/>
+        <property name="username" value="root"/>
+        <property name="password" value="tt19950821"/>
+    </bean>
 
 	<!-- hibernate -->
 	<bean id="sessionFactory"

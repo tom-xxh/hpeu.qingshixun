@@ -23,7 +23,7 @@
 		<div id="wrapper">
 			<div id="login" class="animate form">
 				<a class="aflate" id="Alogin">x</a>
-				<form action="login" method="post">
+				<form action="login" method="post" id="from">
 					<h1>
 						<img src="images/logo3.png">
 					</h1>
@@ -42,7 +42,7 @@
 							value="loginkeeping" /> <label for="loginkeeping">记住密码</label>
 					</p>
 					<p class="login button">
-						<input type="submit" value="登录" class="submit" />
+						<input type="button" id="loginInput" value="登录" class="submit" />
 					</p>
 					<p class="change-link">
 						没有账号 ? <a href="#" class="to-register">注册</a>
@@ -51,7 +51,7 @@
 			</div>
 			<div id="register" class="animate form">
 				<a class="aflate" id="Alogin">x</a>
-				<form action="add" method="post">
+				<form action="add" method="post"  id="fromAdd">
 					<h1>
 						<img src="images/logo3.png">
 					</h1>
@@ -65,9 +65,11 @@
 					<p>
 						<label for="emailsignup" class="youmail" data-icon="e">
 							邮箱地址</label> <input id="emailsignup" name="userModel.email"
-							required="required" type="email" placeholder="请输入邮箱地址" /> <span
-							id="spanemailOne" class="error_msg2one">您输入的邮箱有误,在请重新输入</span> <span
-							id="spanemail" class="error_msg2">X</span>
+							required="required" type="email" placeholder="请输入邮箱地址" />
+							<div id="spanEmail">
+                             <span id="spanemailOneEmail" class="error_msg2one"> 1212123</span>
+                             </div>
+                              <span id="spanemail" class="error_msg2">X</span>
 					</p>
 					<p>
 						<label for="passwordsignup" class="youpasswd" data-icon="p">密码
@@ -83,7 +85,7 @@
 							id="passwordSpan" class="error_msg3">X</span>
 					</p>
 					<p class="signin button">
-						<input type="submit" value="注册" />
+						<input type="button" value="注册" id="addInput"/>
 					</p>
 				</form>
 				<p class="change-link">
@@ -166,89 +168,93 @@
 								});
 
 								<!--注册账户示例-->
-								$('#usernamesignup')
-										.on(
-												"blur",
-												function() {
-													if ($('#usernamesignup')
-															.val().length < 6) {
-														$('#spannameOne').css(
-																'visibility',
-																'visible');
-														$('#spanname').css(
-																'visibility',
-																'visible');
-													} else {
-														$('#spannameOne').css(
-																'visibility',
-																'hidden');
-														$('#spanname').css(
-																'visibility',
-																'hidden');
-													}
-												})
-								<!--注册邮箱示例-->
-								$('#emailsignup')
-										.on(
-												"blur",
-												function() {
-													if ($('#emailsignup').val()
-															.indexOf('@') == -1) {
-														$('#spanemailOne').css(
-																'visibility',
-																'visible');
-														$('#spanemail').css(
-																'visibility',
-																'visible');
-													} else {
-														$('#spanemailOne').css(
-																'visibility',
-																'hidden');
-														$('#spanemail').css(
-																'visibility',
-																'hidden');
-													}
-												})
-
-								<!--注册密码示例-->
-								$('#passwordsignup-confirm')
-										.on(
-												"blur",
-												function() {
-													if ($(
-															'#passwordsignup-confirm')
-															.val() == $(
-															'#passwordsignup')
-															.val()) {
-														$('#passwordSpanOne')
-																.css(
-																		'visibility',
-																		'hidden');
-														$('#passwordSpan').css(
-																'visibility',
-																'hidden');
-													} else {
-														$('#passwordSpanOne')
-																.css(
-																		'visibility',
-																		'visible');
-														$('#passwordSpan').css(
-																'visibility',
-																'visible');
-													}
-												})
-								/* $('#Alogin').on('click', function() {
-
-									$('#login').css("visibility", 'hidden');
-
-								}); */
-								// 								$('#Aregister').on('click', function() {
-								// 									$('#register').css("visibility", 'hidden');
-								// 								});
+								  $('#addInput').on("click",function(str){
+							        	 var obj=$(this);
+							        	 var msg="您可以注册此用户确定注册吗？";
+							        	 if(confirm(msg)==true){
+							        		 obj.parents($('#fromAdd')).submit(); //验证码正确提交表单
+							        		 return false; 
+							        	 }else{
+							        		 return false;
+							        	 }
+								  })
 								$('.aflate').on('click', function() {
 									$('#register').css("display", 'none');
 									$('#login').css("display", 'none');
 								});
+								
+								
+					            $('#loginInput').on("click",function(str){
+					            	var obj=$(this);
+					            	  <!--Ajax-->
+					                  var loginNmae=$('#username').val();
+					                  var loginPassword=$('#password').val();
+					                  $.post("loginAA",{"loginName":loginNmae,"loginPassword":loginPassword},function(data){
+					                	  if(data=="1"){
+					                		 alert("账号密码错误!");
+					                		 return false;
+					                	  }else if(data=="0"){
+					                		  obj.parents('form').submit(); //验证码正确提交表单
+					                		  return false;
+					                	  }
+					                  })
+					                
+					         })
+					            
+					            $('#usernamesignup').on("blur",function(str){
+					                <!--Ajax-->
+					                var username=$('#usernamesignup').val();
+					                $.post("useraction",{"name":username},function(data) {
+					                	if(data=="1"){
+					                		$('#spannameOne').css('visibility', 'hidden');
+					                        $('#spanname').css('visibility', 'hidden');
+					                		
+					                		$('#spannameOne').html(" ");
+					                        
+					                	}else if(data=="0"){
+					                		$('#spannameOne').html("该用户已存在！");
+					                		
+					                		 $('#spannameOne').css('visibility', 'visible');
+					                         $('#spanname').css('visibility', 'visible');
+					                	}else if(data=="2"){
+					                		$('#spannameOne').html("用户名不得少于6位并且不能大于12位！");
+					                		
+					               		 $('#spannameOne').css('visibility', 'visible');
+					                        $('#spanname').css('visibility', 'visible');
+					               	}
+					                },"json");
+					                
+					         })
+
+					            $('#emailsignup').on("blur",function(){
+					                 <!--Ajax-->
+					                 var userEmail=$('#emailsignup').val();
+					                 $.post("useremail",{"email":userEmail},function(data){
+					                	 if(data=="1"){
+					                		 $('#spanemailOneEmail').html(" ");
+					                		 
+					                		 $('#spanemailOneEmail').css('visibility', 'hidden');
+					                         $('#spanemail').css('visibility', 'hidden');
+					                 	}else if(data=="0"){
+					                 		$('#spanemailOneEmail').html("该邮箱已存在！");
+					                 		 $('#spanemailOneEmail').css('visibility', 'visible');
+					                         $('#spanemail').css('visibility', 'visible');
+					                 		
+					                 	}
+					                 },"json");
+					            })
+
+					             
+					             
+					            $('#passwordsignup-confirm').on("blur",function(){
+					                if($('#passwordsignup-confirm').val()===$('#passwordsignup').val()){
+					                    $('#passwordSpanOne').css('visibility', 'hidden');
+					                          $('#passwordSpan').css('visibility', 'hidden');
+					                }else{
+					                       $('#passwordSpanOne').css('visibility', 'visible');
+					                             $('#passwordSpan').css('visibility', 'visible');
+					                 }
+					             })
 							})
 		</script>
 	</div>

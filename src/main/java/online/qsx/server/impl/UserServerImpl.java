@@ -49,5 +49,17 @@ public class UserServerImpl {
 	}
 
 
+		//注册账号查询
+		public List<UserModel> findUserName(String name){
+			List<UserModel> username=userDaoImpl.findUserName(name);
+			return username;
+			
+		}
+		//注册账号邮箱
+			public List<UserModel> findUserEmail(String Email){
+				List<UserModel> userEmail=userDaoImpl.findUserEmail(Email);
+				return userEmail;
+				
+			}
 
 }

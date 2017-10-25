@@ -95,9 +95,23 @@ public class UserDaoImpl {
 		return id;
 	}
 
-	// 增加
-	public void addUserModel(UserModel userModel) {
+	//注册
+	public void addUserModel(UserModel userModel){
 		baseDao.getHibernateTemplate().save(userModel);
 	}
+	//注册账号查询
+			public  List<UserModel> findUserName(String name){
+				String hql="from UserModel UM where UM.name=?";
+				@SuppressWarnings("unchecked")
+				List<UserModel> username= (List<UserModel>) baseDao.getHibernateTemplate().find(hql,name);
+				return username;
+			}
+		//注册邮箱哪个查询
+			public  List<UserModel> findUserEmail(String email){
+				String hql="from UserModel UM where UM.email=?";
+				@SuppressWarnings("unchecked")
+				List<UserModel> useremail= (List<UserModel>) baseDao.getHibernateTemplate().find(hql,email);
+				return useremail;
+			}
 
-}
+	}
