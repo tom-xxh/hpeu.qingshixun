@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>理财模块-转入金额</title>
+<title>理财模块-提现</title>
 <base href="<%=basePath%>">
 <link rel="stylesheet" type="text/css" href="css/mmm.css">
 <link rel="stylesheet" type="text/css" href="css/financing_right.css">
@@ -20,29 +20,26 @@
 		<div class="main">
 			<%@include file="FI-GUIDE.jsp"%>
 			<div class="right">
-				<div class="guide">理财信息管理->金额转入</div>
 				<div class="function">
-					<form action="TransferInAction" method="post">
-						<label>请输入银行卡账号:</label> <input type="text" id="account"
-							name="transferModel.bankcard"><br><br> <label>&nbsp; &nbsp;请输入转入金额:</label> <input
-							type="text" id="money" name="transferModel.transfer_Money"><br><br>
-						<button type="submit" onclick="return sure()">转入</button>
+					<form action="saveOrderAction?productModel.id=${ProductModel.id }" method="post">
+						<input type="hidden" value="${ProductModel.id }" />
+						产品编号：${ProductModel.productcard }<br><br>
+						产品名称：${ProductModel.productname }<br><br>
+						产品类型：${ProductModel.producttype }<br><br>
+						产品单价：${ProductModel.productprice }<br><br>
+						跌涨率&nbsp;&nbsp;&nbsp;：${ProductModel.interestrate }<br><br>
+						请输入购买数量：<input type="text" name="productnumber" id="num" placeholder="请输入购买数量！"><br><br>
+						<button type="submit" onclick="return sure()">确定</button>
 					</form>
-				</div>
 			</div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
 	function sure(){
-		var account=document.getElementById("account").value;
-		var money=document.getElementById("money").value;
-		if(isNaN(account)||account<=0||!(/^\d+$/.test(account))){
-			alert("请输入正确的银行卡号!");
-			return false;
-		}
-		if(money<=0||!(/^\d+$/.test(money))){
-			alert("请输入正确的金额数量!");
+		var num=document.getElementById("num").value;
+		if(isNaN(num)||num<=0||!(/^\d+$/.test(num))){
+			alert("请输入正确的数值,只允许输入整数!");
 			return false;
 		}
 	}

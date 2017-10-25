@@ -26,8 +26,8 @@ public class TransferOutServerImpl {
 	}
 	
 	//保存转出信息
-	public int saveTransferOut(TransferModel transferModel){
-		return transferOutDaoImpl.saveTransferOut(transferModel);
+	public void saveTransferOut(TransferModel transferModel){
+		transferOutDaoImpl.saveTransferOut(transferModel);
 	}
 	
 	public void deleteTransferInfos(TransferModel transferModel){

@@ -18,7 +18,7 @@ public class TransferInServerImpl {
 	}
 	
 	//保存转入信息
-	public int saveTransferIn(TransferModel transferModel){
-		return transferInDaoImpl.saveTransferIn(transferModel);
+	public void saveTransferIn(TransferModel transferModel){
+		transferInDaoImpl.saveTransferIn(transferModel);
 	}
 }

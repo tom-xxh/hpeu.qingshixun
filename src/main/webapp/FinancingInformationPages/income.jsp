@@ -22,9 +22,6 @@
 			<div class="right">
 				<div class="guide">理财信息管理->账单详情</div>
 					<div class="right-serch">
-						<form action="FindTransferOutAction" method="post">
-							<button type="submit">查询</button>
-						</form>
 						<div class="roll-in-table">
 							<table border="1" cellpadding="0" cellspacing="0">
 								<thead>

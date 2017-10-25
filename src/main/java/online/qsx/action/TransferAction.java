@@ -35,16 +35,8 @@ public class TransferAction {
 	public String transferOut(){
 		transferModel.setDate(new Date());
 		transferModel.setStatus("转出");
-		if(transferOutServerImpl.saveTransferOut(transferModel)==1){
-			list=transferOutServerImpl.getTransferOutInfos();
-			return "transferOut";
-		}
-		else if(transferOutServerImpl.saveTransferOut(transferModel)==-2){
-			return "bankcardnotexit";
-		}
-		else{
-			return "default";
-		}
+		transferOutServerImpl.saveTransferOut(transferModel);
+		return "transferOut";
 	}
 	
 	//转入
@@ -52,17 +44,8 @@ public class TransferAction {
 		System.out.println("转入");
 		transferModel.setDate(new Date());
 		transferModel.setStatus("转入");
-		if(transferInServerImpl.saveTransferIn(transferModel)==1){
-			list=transferInServerImpl.getTransferInInfos();
-			return "transferIn";
-		}
-		if(transferInServerImpl.saveTransferIn(transferModel)==-2){
-			list=transferInServerImpl.getTransferInInfos();
-			return "default";
-		}
-		else{
-			return "bankcardnotexit";
-		}
+		transferInServerImpl.saveTransferIn(transferModel);
+		return "transferIn";
 	}
 	
 	public String deleteTransferInfos() {

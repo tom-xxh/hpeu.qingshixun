@@ -141,6 +141,10 @@
 			<result name="succeed">FinancingInformationPages/products.jsp
 			</result>
 		</action>
+		<action name="addNumAction" class="OrderAction" method="addNum">
+			<result name="succeed">FinancingInformationPages/addNum.jsp
+			</result>
+		</action>
 		<!-- 取消订单 -->
 		<action name="deleteOrderAction" class="OrderAction" method="deleteOrderInfos">
 			<result name="succeed">FinancingInformationPages/order.jsp
@@ -151,14 +155,10 @@
 		<!-- 转入信息显示页面 -->
 		<action name="TransferInAction" class="TransferAction" method="transferIn">
 			<result name="transferIn">/FinancingInformationPages/income.jsp</result>
-			<result name="bankcardnotexit">/FinancingInformationPages/bankCardNotExitOther.jsp</result>
-			<result name="default">/FinancingInformationPages/transferInDefault.jsp</result>
 		</action>
 		<!-- 转出信息显示页面 -->
 		<action name="TransferOutAction" class="TransferAction" method="transferOut">
 			<result name="transferOut">/FinancingInformationPages/income.jsp</result>
-			<result name="default">/FinancingInformationPages/transferOutDefault.jsp</result>
-			<result name="bankcardnotexit">/FinancingInformationPages/bankCardNotExit.jsp</result>
 		</action>
 
 		<!-- 转出查询页面 -->

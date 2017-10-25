@@ -10,9 +10,13 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionContext;
+
 import online.qsx.common.BaseDao;
 import online.qsx.model.BankModel;
 import online.qsx.model.OrderModel;
+import online.qsx.model.ProductModel;
 
 @Repository
 public class OrderDaoImpl {
@@ -42,6 +46,7 @@ public class OrderDaoImpl {
 		}
 		baseDao.getHibernateTemplate().save(OrderModel);
 		List<OrderModel> list = (List<OrderModel>) baseDao.getHibernateTemplate().find("from OrderModel");
+		List<ProductModel> list1 = (List<ProductModel>) baseDao.getHibernateTemplate().find("from ProductModel");
 		if (list.isEmpty()) {
 			out.print(
 					"<script language='javascript'>alert('订单添加失败！');window.location='findProductAction';</script>");

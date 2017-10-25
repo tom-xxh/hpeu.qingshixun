@@ -1,8 +1,14 @@
 package online.qsx.dao.impl;
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Date;
 
+import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -23,7 +29,18 @@ public class TransferInDaoImpl {
 		return (List<TransferModel>) baseDao.getHibernateTemplate().find("from TransferModel");
 	}
 	
-	public int saveTransferIn(TransferModel transferModel){
+	public void saveTransferIn(TransferModel transferModel){
+		HttpServletResponse response = null;
+		response = ServletActionContext.getResponse();
+		response.setContentType("text/html;charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		int i=0;
 		Double count=(double) 0;
 		UserModel userModel1 = baseDao.getHibernateTemplate().get(UserModel.class,UserAction.index);
@@ -43,14 +60,23 @@ public class TransferInDaoImpl {
 				}
 				userModel1.setUser_count(userModel1.getUser_count()+transferModel.getTransfer_Money());
 				baseDao.getHibernateTemplate().save(transferModel);
-				return 1;
+				out.print(
+						"<script language='javascript'>alert('转入成功！');window.location='FindTransferOutAction';</script>");
+				out.flush();
+				out.close();
 			}
 			else{
-				return -2;
+				out.print(
+						"<script language='javascript'>alert('银行卡余额不足，转入失败！');window.location='FinancingInformationPages/earnings.jsp';</script>");
+				out.flush();
+				out.close();
 			}
 		}
 		else{
-			return -1;
+			out.print(
+					"<script language='javascript'>alert('银行卡不存在，转入失败！');window.location='FinancingInformationPages/earnings.jsp';</script>");
+			out.flush();
+			out.close();
 		}
 		
 	}

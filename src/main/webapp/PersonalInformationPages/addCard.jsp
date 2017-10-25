@@ -55,7 +55,7 @@
 								</li>
 								<li>
 									<div class="grxx">
-										<input type="submit" name="addCard" value="同意协议并确定"> <a
+										<input type="submit" name="addCard" value="同意协议并确定" onclick="return sure()"> <a
 											href="#">《银行卡绑定协议》</a>
 									</div>
 								</li>
@@ -69,4 +69,29 @@
 	</div>
 	</div>
 </body>
+<script type="text/javascript">
+	function sure(){
+		var reg = /^[\a-\z\A-\Z\u4E00-\u9FA5]+$/;
+		var username=document.getElementById("username").value;
+		var password=document.getElementById("password").value;
+		var email=document.getElementById("email").value;
+		var idcard=document.getElementById("idcard").value;
+		if(idcard==""){
+			alert("手机号不能为空!");
+			return false;
+		}
+		if(username==""||!reg.test(username)){
+			alert("用户名只能是中文或者汉字，且不能为空!");
+			return false;
+		}
+		if(password==""){
+			alert("身份证号不能为空!");
+			return false;
+		}
+		if(email==""||isNaN(account)){
+			alert("银行卡号不能为空!");
+			return false;
+		}
+	}
+</script>
 </html>

@@ -27,10 +27,24 @@
 							<input type="text" id="account" name="transferModel.bankcard"><br><br>
 						<label>&nbsp; &nbsp;请输入提现金额:</label> 
 							<input type="text" id="money" name="transferModel.transfer_Money"><br><br>
-						<button type="submit">提现</button>
+						<button type="submit" onclick="return sure()">提现</button>
 					</form>
 			</div>
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	function sure(){
+		var account=document.getElementById("account").value;
+		var money=document.getElementById("money").value;
+		if(isNaN(account)||account<=0||!(/^\d+$/.test(account))){
+			alert("请输入正确的银行卡号!");
+			return false;
+		}
+		if(money<=0||!(/^\d+$/.test(money))){
+			alert("请输入正确的金额数量!");
+			return false;
+		}
+	}
+</script>
 </html>

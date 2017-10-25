@@ -20,6 +20,17 @@ public class OrderAction {
 	private List<OrderModel> list;
 	private OrderModel orderModel;
 	private ProductModel productModel;
+	private int productnumber;
+
+	public int getProductnumber() {
+		return productnumber;
+	}
+
+
+	public void setProductnumber(int productnumber) {
+		this.productnumber = productnumber;
+	}
+
 
 	public String findOrderInfos() {
 		list = orderServerImpl.getOrderInfos();
@@ -33,9 +44,7 @@ public class OrderAction {
 		return "succeed";
 	}
 	
-	
 	public String saveOrderInfos() {
-		int productnumber = 10;
 		productModel = productServerImpl.getProductInfo(productModel);
 		OrderModel orderModel1 = new OrderModel();
 		orderModel1.setProductcard(productModel.getProductcard());
@@ -44,6 +53,11 @@ public class OrderAction {
 		orderModel1.setTotalmoney(productModel.getProductprice() * productnumber);
 		orderModel1.setCreateDate(new Date());
 		orderServerImpl.saveOrderInfos(orderModel1);
+		return "succeed";
+	}
+	
+	public String addNum(){
+		productModel = productServerImpl.getProductInfo(productModel);
 		return "succeed";
 	}
 

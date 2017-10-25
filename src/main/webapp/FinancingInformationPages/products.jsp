@@ -44,8 +44,12 @@
 								<td>${obj.producttype }</td>
 								<td>${obj.productprice }</td>
 								<td>${obj.interestrate }</td>
-								<td><a href="saveOrderAction?productModel.id=${obj.id }">买入</a></td>
-								</tr>
+								<td>
+									<a href="addNumAction?productModel.id=${obj.id }">
+									买入
+									</a>
+								</td>
+								</tr>			
 							</c:forEach>
 						</table>
 				</div>

@@ -1,8 +1,13 @@
 package online.qsx.dao.impl;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -24,7 +29,18 @@ public class TransferOutDaoImpl {
 	public List<TransferModel> getTransferInfos() {
 		return (List<TransferModel>) baseDao.getHibernateTemplate().find("from TransferModel");
 	}
-	public int saveTransferOut(TransferModel transferModel){
+	public void saveTransferOut(TransferModel transferModel){
+		HttpServletResponse response = null;
+		response = ServletActionContext.getResponse();
+		response.setContentType("text/html;charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		int i=0;
 		Double brankcount=(double) 0;
 		UserModel userModel1 = baseDao.getHibernateTemplate().get(UserModel.class,UserAction.index);
@@ -42,16 +58,26 @@ public class TransferOutDaoImpl {
 						bankModel.setBank_count(brankcount+transferModel.getTransfer_Money());
 					}
 				}
+//				page.RegisterStartupScript("","<script> if (confirm('"+str_Message+"')==true){document.forms(0)."+btn+".click();}</script>");
 				userModel1.setUser_count(userModel1.getUser_count()-transferModel.getTransfer_Money());
 				baseDao.getHibernateTemplate().save(transferModel);
-				return 1;
+				out.print(
+						"<script language='javascript'>alert('提现成功！');window.location='FindTransferOutAction';</script>");
+				out.flush();
+				out.close();
 			}
 			else{
-				return -1;
+				out.print(
+						"<script language='javascript'>alert('账户余额不足，提现失败！');window.location='FinancingInformationPages/expend.jsp';</script>");
+				out.flush();
+				out.close();
 			}
 		}
 		else{
-			return -2;
+			out.print(
+					"<script language='javascript'>alert('银行卡不存在，提现失败！');window.location='FinancingInformationPages/expend.jsp';</script>");
+			out.flush();
+			out.close();
 		}
 	}
 	

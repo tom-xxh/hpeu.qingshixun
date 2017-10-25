@@ -30,7 +30,7 @@
 			<div class="first-menu" id="first-menu2"
 				onclick="window.location.href='FinancingInformationPages/expend.jsp';">提取现金</div>
 			<div class="first-menu" id="first-menu3"
-				onclick="window.location.href='FinancingInformationPages/income.jsp';">账单详情</div>
+				onclick="window.location.href='FindTransferOutAction';">账单详情</div>
 
 			<div class="first-menu" id="first-menu4"
 				onclick="window.location.href='FinancingInformationPages/queryExpend.jsp';">收益管理</div>
