@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import online.qsx.dao.impl.TransferInDaoImpl;
 import online.qsx.model.TransferModel;
+import online.qsx.model.UserModel;
 
 @Service
 public class TransferInServerImpl {
@@ -17,8 +18,9 @@ public class TransferInServerImpl {
 		return transferInDaoImpl.getTransferInfos();
 	}
 
-	// 保存转入信息
-	public void saveTransferIn(TransferModel transferModel) {
-		transferInDaoImpl.saveTransferIn(transferModel);
+	
+	//保存转入信息
+	public void saveTransferIn(TransferModel transferModel,UserModel userModel){
+		transferInDaoImpl.saveTransferIn(transferModel,userModel);
 	}
 }

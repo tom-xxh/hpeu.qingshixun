@@ -30,7 +30,7 @@ public class TransferInDaoImpl {
 		return (List<TransferModel>) baseDao.getHibernateTemplate().find("from TransferModel");
 	}
 	
-	public void saveTransferIn(TransferModel transferModel){
+	public void saveTransferIn(TransferModel transferModel,UserModel userModel){
 		HttpServletResponse response = null;
 		response = ServletActionContext.getResponse();
 		response.setContentType("text/html;charset=UTF-8");
@@ -44,8 +44,6 @@ public class TransferInDaoImpl {
 		}
 		int i=0;
 		Double count=(double) 0;
-		UserModel userModel1 = baseDao.getHibernateTemplate().get(UserModel.class,UserAction.index);
-		@SuppressWarnings("unchecked")
 		List<BankModel> list=(List<BankModel>) baseDao.getHibernateTemplate().find("from BankModel");
 		for (BankModel bankModel : list) {
 			if(bankModel.getBankcard().equals(transferModel.getBankcard())){
@@ -60,7 +58,7 @@ public class TransferInDaoImpl {
 						bankModel.setBank_count(bankModel.getBank_count()-transferModel.getTransfer_Money());
 					}
 				}
-				userModel1.setUser_count(userModel1.getUser_count()+transferModel.getTransfer_Money());
+				userModel.setUser_count(userModel.getUser_count()+transferModel.getTransfer_Money());;
 				baseDao.getHibernateTemplate().save(transferModel);
 				out.print(
 						"<script language='javascript'>alert('转入成功！');window.location='FindTransferOutAction';</script>");

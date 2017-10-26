@@ -17,6 +17,10 @@ public class UserServerImpl {
 	public List<UserModel> getUsers() {
 		return userDaoImpl.getUsers();
 	}
+	
+	public UserModel getUser(UserModel userModel) {
+		return userDaoImpl.getUser(userModel);
+	}
 
 	public void deleteUserModel(UserModel userModel) {
 		userDaoImpl.deleteUserModel(userModel);
@@ -32,9 +36,7 @@ public class UserServerImpl {
 		userDaoImpl.addUserModel(userModel);
 	}
 
-	public UserModel getUser(UserModel userModel) {
-		return userDaoImpl.getUser(userModel);
-	}
+	
 
 	public void edit(UserModel userModel) {
 		System.out.println("111");

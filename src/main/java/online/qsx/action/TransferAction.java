@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import online.qsx.model.TransferModel;
+import online.qsx.model.UserModel;
 import online.qsx.server.impl.TransferOutServerImpl;
+import online.qsx.server.impl.UserServerImpl;
 import online.qsx.server.impl.TransferInServerImpl;
 
 @Component("TransferAction")
@@ -16,8 +18,12 @@ public class TransferAction {
 	private TransferOutServerImpl transferOutServerImpl;
 
 	@Autowired
-	private TransferInServerImpl transferInServerImpl;
+	private TransferInServerImpl transferInServerImpl;	
+	
+	@Autowired
+	private UserServerImpl userServerImpl;	
 	private TransferModel transferModel;
+	private UserModel userModel;
 	private List<TransferModel> list;
 
 	// 信息查询
@@ -30,18 +36,20 @@ public class TransferAction {
 	public String transferOut() {
 		transferModel.setDate(new Date());
 		transferModel.setStatus("转出");
-
-		transferOutServerImpl.saveTransferOut(transferModel);
+		userModel = userServerImpl.getUser(userModel);
+		System.out.println("action:"+userModel.toString());
+		transferModel.setUserModel(userModel);
+		transferOutServerImpl.saveTransferOut(transferModel,userModel);
 		return "transferOut";
 	}
-
-	// 转入
-	public String transferIn() {
-		System.out.println("转入");
+	
+	//转入
+	public String transferIn(){
 		transferModel.setDate(new Date());
 		transferModel.setStatus("转入");
-
-		transferInServerImpl.saveTransferIn(transferModel);
+		userModel = userServerImpl.getUser(userModel);
+		transferModel.setUserModel(userModel);
+		transferInServerImpl.saveTransferIn(transferModel,userModel);
 		return "transferIn";
 	}
 
@@ -82,5 +90,13 @@ public class TransferAction {
 	public void setTransferInServerImpl(TransferInServerImpl transferInServerImpl) {
 		this.transferInServerImpl = transferInServerImpl;
 	}
+	
+//	public UserModel getUserModel() {
+//		return userModel;
+//	}
+//
+//	public void setUserModel(UserModel userModel) {
+//		this.userModel = userModel;
+//	}
 
 }

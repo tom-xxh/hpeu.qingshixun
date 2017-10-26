@@ -39,6 +39,8 @@ public class UserDaoImpl {
 	public UserModel getUser(UserModel userModel) {
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		Long idd = (Long) session.getAttribute("id");
+		System.out.println("用户id"+idd);
+		System.out.println(baseDao.getHibernateTemplate().get(UserModel.class,idd).toString());
 		return baseDao.getHibernateTemplate().get(UserModel.class, idd);
 	}
 

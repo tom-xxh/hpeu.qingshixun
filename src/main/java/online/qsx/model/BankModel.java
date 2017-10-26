@@ -27,6 +27,19 @@ public class BankModel {
 	private Long bankcard;
 	private Long phonenumber;
 	private Double bank_count;
+	
+	@ManyToOne(cascade={CascadeType.ALL} ,fetch = FetchType.EAGER)
+	@JoinColumn(name="user_id")
+	private BankModel bankModel;
+
+
+	public BankModel getBankModel() {
+		return bankModel;
+	}
+
+	public void setBankModel(BankModel bankModel) {
+		this.bankModel = bankModel;
+	}
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.ALL })
 	@JoinColumn(name = "user_id")

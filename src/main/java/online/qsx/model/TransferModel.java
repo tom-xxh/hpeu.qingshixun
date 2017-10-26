@@ -2,10 +2,15 @@ package online.qsx.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -13,6 +18,9 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "t_transfer")
 public class TransferModel {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="transfer_id")
 	private Long transferId;
 	
 	@Temporal(TemporalType.DATE)
@@ -21,8 +29,20 @@ public class TransferModel {
 	private Long bankcard;
 	private String status;//操作
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ManyToOne(cascade={CascadeType.ALL} ,fetch = FetchType.EAGER)
+	@JoinColumn(name="user_id")
+	private UserModel userModel;
+	
+	public UserModel getUserModel() {
+		return userModel;
+	}
+
+	public void setUserModel(UserModel userModel) {
+		System.out.println("100000000000000");
+		this.userModel = userModel;
+	}
+
+	
 	public Long getTransferId() {
 		return transferId;
 	}
@@ -68,20 +88,6 @@ public class TransferModel {
 	public String toString() {
 		return "TransferModel [transferId=" + transferId + ", date=" + date + ", transfer_Money=" + transfer_Money
 				+ ", bankcard=" + bankcard + ", status=" + status + "]";
-	}
-
-	public TransferModel(Date date, double transfer_Money, Long bankcard) {
-		super();
-		this.date = date;
-		this.transfer_Money = transfer_Money;
-		this.bankcard = bankcard;
-	}
-
-	public TransferModel() {
-		super();
-	}
-	
-	
-	
+	}	
 
 }

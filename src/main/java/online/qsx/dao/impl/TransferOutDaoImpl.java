@@ -27,8 +27,7 @@ public class TransferOutDaoImpl {
 		return (List<TransferModel>) baseDao.getHibernateTemplate().find("from TransferModel");
 	}
 
-	@SuppressWarnings("unchecked")
-	public void saveTransferOut(TransferModel transferModel) {
+	public void saveTransferOut(TransferModel transferModel,UserModel userModel){
 		HttpServletResponse response = null;
 		response = ServletActionContext.getResponse();
 		response.setContentType("text/html;charset=UTF-8");
@@ -42,25 +41,23 @@ public class TransferOutDaoImpl {
 		}
 		int i = 0;
 		Double brankcount = (double) 0;
-		UserModel userModel1 = baseDao.getHibernateTemplate().get(UserModel.class, UserAction.index);
 		List<BankModel> list = (List<BankModel>) baseDao.getHibernateTemplate().find("from BankModel");
 		for (BankModel bankModel : list) {
 			if (bankModel.getBankcard().equals(transferModel.getBankcard())) {
 				i = 1;
 			}
 		}
-		if (i == 1) {
-			if (userModel1.getUser_count() > transferModel.getTransfer_Money()) {
+
+		if(i==1){
+			if(userModel.getUser_count()>transferModel.getTransfer_Money()){
 				for (BankModel bankModel : list) {
 					if (bankModel.getBankcard().equals(transferModel.getBankcard())) {
 						brankcount = bankModel.getBank_count();
 						bankModel.setBank_count(brankcount + transferModel.getTransfer_Money());
 					}
 				}
-				// page.RegisterStartupScript("","<script> if
-				// (confirm('"+str_Message+"')==true){document.forms(0)."+btn+".click();}</script>");
-				userModel1.setUser_count(userModel1.getUser_count() - transferModel.getTransfer_Money());
-				baseDao.getHibernateTemplate().save(transferModel);
+				userModel.setUser_count(userModel.getUser_count()-transferModel.getTransfer_Money());
+				baseDao.getHibernateTemplate().saveOrUpdate(transferModel);
 				out.print(
 						"<script language='javascript'>alert('提现成功！');window.location='FindTransferOutAction';</script>");
 				out.flush();

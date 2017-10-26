@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import online.qsx.dao.impl.TransferOutDaoImpl;
 import online.qsx.model.TransferModel;
+import online.qsx.model.UserModel;
 
 @Service
 public class TransferOutServerImpl {
@@ -23,8 +24,8 @@ public class TransferOutServerImpl {
 	}
 	
 	//保存转出信息
-	public void saveTransferOut(TransferModel transferModel){
-		transferOutDaoImpl.saveTransferOut(transferModel);
+	public void saveTransferOut(TransferModel transferModel,UserModel userModel){
+		transferOutDaoImpl.saveTransferOut(transferModel,userModel);
 	}
 	
 	public void deleteTransferInfos(TransferModel transferModel){
