@@ -21,7 +21,6 @@ import online.qsx.model.UserModel;
 public class TransferOutDaoImpl {
 	@Autowired
 	private BaseDao baseDao;
-
 	@SuppressWarnings("unchecked")
 	public List<TransferModel> getTransferInfos() {
 		return (List<TransferModel>) baseDao.getHibernateTemplate().find("from TransferModel");

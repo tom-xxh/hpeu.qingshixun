@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="online.qsx.listener.OnlineCounters"%>
+	pageEncoding="UTF-8" import="online.qsx.listener.OnlineCounters" %>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 

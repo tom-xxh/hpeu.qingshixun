@@ -50,7 +50,7 @@
 							 				<td>${temp.transfer_Money}</td>
 							 				<td>${temp.bankcard}</td>
 							 				<td>
-							 					<a href="DeleteTransferInfos?TransferModel.transferId=${temp.transferId }">删除</a>
+							 					<a href="DeleteTransferInfos?transferModel.transferId=${temp.transferId }">删除</a>
 							 				</td>
 								 		</tr>
 							 		</c:forEach>

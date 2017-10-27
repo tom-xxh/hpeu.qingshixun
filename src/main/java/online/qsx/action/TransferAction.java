@@ -37,7 +37,7 @@ public class TransferAction {
 		transferModel.setDate(new Date());
 		transferModel.setStatus("转出");
 		userModel = userServerImpl.getUser(userModel);
-		System.out.println("action:"+userModel.toString());
+//		System.out.println("action:"+userModel.toString());
 		transferModel.setUserModel(userModel);
 		transferOutServerImpl.saveTransferOut(transferModel,userModel);
 		return "transferOut";
